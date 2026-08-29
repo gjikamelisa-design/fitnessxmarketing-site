@@ -1,0 +1,107 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Marketing, sales, and business-growth resources for personal trainers and fitness businesses.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <title>{title} | Fitness x Marketing</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">Fitness<span>x</span>Marketing</a>
+      <nav>
+        <a href="/blog">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {new Date().getFullYear()} Fitness x Marketing</p>
+    </footer>
+
+    <style is:global>
+      :root {
+        --dark: #252a34;
+        --slate: #3a4252;
+        --teal: #08d9d6;
+        --deep-teal: #06a8a5;
+        --cyan: #1df7f4;
+        --gray: #eaeaea;
+        --mint: #eaf6f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: var(--dark);
+        background: #ffffff;
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--deep-teal);
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+        background: var(--dark);
+      }
+
+      .brand {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.25rem;
+        text-decoration: none;
+      }
+
+      .brand span {
+        color: var(--cyan);
+      }
+
+      .site-header nav a {
+        color: var(--mint);
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 1.5rem;
+      }
+
+      .site-header nav a:hover {
+        color: var(--cyan);
+      }
+
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 5rem;
+      }
+
+      .site-footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--slate);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--gray);
+      }
+    </style>
+  </body>
+</html>

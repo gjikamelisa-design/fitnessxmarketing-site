@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'A sample fast-loading article page';
+const description = 'This is what one article looks like — duplicate this file for every new post.';
+---
+
+<Layout title={title} description={description}>
+  <article>
+    <h1>{title}</h1>
+    <p class="meta">Published {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+    <p>
+      Replace everything in this file with your real article. Because Astro renders this
+      to plain HTML at build time — no client-side framework loading in the background —
+      it ships to the browser fast by default, without you having to do anything extra for it.
+    </p>
+
+    <h2>How to add your next article</h2>
+    <p>
+      Copy this file, rename it to match the new article's URL slug (for example
+      <code>src/pages/blog/wearable-data-for-coaching.astro</code>), swap in the real title,
+      description, and body, then add a link to it from the articles list page. Push to GitHub
+      and it's live on the next deploy.
+    </p>
+  </article>
+
+  <style>
+    article {
+      max-width: 68ch;
+    }
+    .meta {
+      color: #3a4252;
+      font-size: 0.9rem;
+      margin-top: -0.5rem;
+    }
+    code {
+      background: #eaf6f6;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</Layout>
