@@ -1,43 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-
-const posts = [
-  {
-    href: '/blog/sample-article',
-    title: 'A sample fast-loading article page',
-    description: 'What a single article looks like in this setup — copy this file to start a new one.',
-  },
-];
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Articles" description="Marketing, sales, and business-growth articles for personal trainers.">
-  <h1>Articles</h1>
-  <ul class="post-list">
-    {posts.map((post) => (
-      <li>
-        <a href={post.href}>{post.title}</a>
-        <p>{post.description}</p>
-      </li>
-    ))}
-  </ul>
-
-  <style>
-    .post-list {
-      list-style: none;
-      padding: 0;
-    }
-    .post-list li {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid #eaeaea;
-    }
-    .post-list a {
-      font-size: 1.15rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .post-list p {
-      margin: 0.35rem 0 0;
-      color: #3a4252;
-    }
-  </style>
+<Layout title="Home">
+  <h1>Fitness Marketing</h1>
+  <p>Marketing, sales, and business-growth tools for personal trainers and fitness businesses.</p>
+  <p>Frameworks, templates, and practical systems for client acquisition, sales, positioning, and smarter coaching.</p>
+  <p><a href="/blog">Browse the articles →</a></p>
 </Layout>
