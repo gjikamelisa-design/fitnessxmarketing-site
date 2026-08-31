@@ -1,6 +1,12 @@
 {
   "name": "fitnessxmarketing-site",
   "compatibility_date": "2026-08-29",
+  "routes": [
+    {
+      "pattern": "fitnessxmarketing.com/posts/wearable-data-and-data-driven-coaching*",
+      "zone_name": "fitnessxmarketing.com"
+    }
+  ],
   "assets": {
     "directory": "./dist"
   }
