@@ -1,0 +1,794 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const seoTitle = 'How to Turn Wearable Data Into a Client-Facing Service';
+const articleTitle = 'Wearable Data for Coaching: How to Sell Data-Driven Personal Training Services';
+const description = 'Learn how personal trainers can use wearable data to adjust client programs, create add-ons or coaching tiers, and make their service more valuable.';
+const canonical = '/posts/wearable-data-and-data-driven-coaching';
+const publishedTime = '2026-08-29T00:00:00+02:00';
+const modifiedTime = '2026-08-31T00:00:00+02:00';
+const socialImage = '/posts/wearable-data-and-data-driven-coaching/images/include-in-existing-coaching.jpg';
+const articleId = `https://fitnessxmarketing.com${canonical}`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': articleId,
+      headline: articleTitle,
+      name: seoTitle,
+      description,
+      datePublished: publishedTime,
+      dateModified: modifiedTime,
+      mainEntityOfPage: articleId,
+      image: `https://fitnessxmarketing.com${socialImage}`,
+      articleSection: 'Coaching & Programming',
+      author: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `https://fitnessxmarketing.com${canonical}#faq-schema`,
+      url: `https://fitnessxmarketing.com${canonical}#faqs`,
+      name: 'FAQs about delivering wearable coaching',
+      inLanguage: 'en',
+      isPartOf: {
+        '@id': articleId,
+      },
+      mainEntity: [
+        {
+          '@type': 'Question',
+          '@id': `https://fitnessxmarketing.com${canonical}#faq-better-coaching`,
+          url: `https://fitnessxmarketing.com${canonical}#faq-better-coaching`,
+          name: 'How can you show that wearable data leads to better coaching?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Keep a simple record: Trend → client context → coaching decision → what happened next. For example: The client’s VO₂ max estimate dropped after one hard session. They felt normal and completed the workout as planned, so I treated the reading as possible algorithm noise and waited for the seven-day average. The estimate stabilized, and no unnecessary program change was made. This shows how your judgment affected the coaching, even when the correct decision was to leave the plan alone.',
+          },
+        },
+        {
+          '@type': 'Question',
+          '@id': `https://fitnessxmarketing.com${canonical}#faq-explain-data`,
+          url: `https://fitnessxmarketing.com${canonical}#faq-explain-data`,
+          name: 'How do you explain the data without overwhelming the client?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Explain only what changed, why it may matter, and what you are doing next. For example: Your recovery markers have been below your normal range, and you also reported feeling tired. We’ll reduce today’s intensity and review the trend again before your next hard session.',
+          },
+        },
+        {
+          '@type': 'Question',
+          '@id': `https://fitnessxmarketing.com${canonical}#faq-minimum-service`,
+          url: `https://fitnessxmarketing.com${canonical}#faq-minimum-service`,
+          name: 'What is a minimum viable wearable coaching service?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Start with consent and a personal baseline, a few metrics connected to the client’s goal, one weekly trend review, adjustments when justified, a short client explanation, and a simple monthly summary. You do not need to monitor every client’s dashboard daily.',
+          },
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={seoTitle}
+  titleTemplate={false}
+  description={description}
+  canonical={canonical}
+  image={socialImage}
+  imageAlt="A checklist showing when to include wearable data review in an existing personal training service"
+  type="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  structuredData={structuredData}
+>
+  <article>
+    <header class="article-header">
+      <p class="eyebrow"><a href="/posts">Articles</a> / Coaching &amp; Programming</p>
+      <h1>{articleTitle}</h1>
+      <p class="dek">A practical system for turning the data clients already collect into better coaching decisions, clearer deliverables, and a service you can price sustainably.</p>
+      <div class="byline">
+        <span>Fitness x Marketing</span>
+        <span aria-hidden="true">•</span>
+        <time datetime="2026-08-29">August 29, 2026</time>
+        <span aria-hidden="true">•</span>
+        <span>18 min read</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">I reviewed wearable-data coaching offers and spoke with coaches to see what changes when clients share their data: what they receive, how it affects their training, and whether it changes the package or price.</p>
+
+      <p>This matters because <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12795147/" target="_blank" rel="noopener noreferrer">about two in five U.S. adults</a> already use a wearable to monitor their health.</p>
+
+      <p>If wearable data sounds like more admin, this article is not for you. If you want to use data your clients already collect to improve your coaching and build a more valuable service, here is the simplest way to start.</p>
+
+      <nav class="contents" aria-label="Article contents">
+        <p>In this article</p>
+        <ol>
+          <li><a href="#service-add-on">Build the basic service</a></li>
+          <li><a href="#define-the-service">Decide what it includes</a></li>
+          <li><a href="#charge-extra">Choose the offer type</a></li>
+          <li><a href="#pricing">Price by depth and frequency</a></li>
+          <li><a href="#client-fit">Find the right clients</a></li>
+          <li><a href="#faqs">Wearable coaching FAQs</a></li>
+        </ol>
+      </nav>
+
+      <section id="service-add-on">
+        <h2>How to use wearable data as a personal training service add-on</h2>
+
+        <p>Coaches, fitness content creators, and influencers are already publishing educational content about wearables.</p>
+
+        <div class="social-grid">
+          <figure>
+            <img src="/posts/wearable-data-and-data-driven-coaching/images/wearable-content-grid-1.png" alt="Grid of social media posts discussing wearable technology surveys, fitness trackers, and health data" width="851" height="1847" loading="lazy" decoding="async" />
+            <figcaption>Social media posts about wearable tracking and consumer fitness devices.</figcaption>
+          </figure>
+          <figure>
+            <img src="/posts/wearable-data-and-data-driven-coaching/images/wearable-content-grid-2.png" alt="Grid of social media posts discussing wearable metrics, HRV, device capabilities, and recovery trends" width="852" height="1846" loading="lazy" decoding="async" />
+            <figcaption>Social media posts about wearable metrics, HRV, and recovery data.</figcaption>
+          </figure>
+        </div>
+
+        <p>Education is a good first step. But as a personal trainer, you also need to turn what you know, and the tools already available, into something you can use with clients.</p>
+
+        <p>The data should help you improve a client’s health results or a specific area of performance. An endurance client, for example, may want to improve their VO₂ max. A client interested in healthy ageing may also care about it because <a href="https://www.thecardiologyadvisor.com/news/cardiorespiratory-fitness-exercise-blood-pressure-mortality-risk/" target="_blank" rel="noopener noreferrer">higher cardiorespiratory fitness</a> is associated with a lower risk of death from all causes.</p>
+
+        <p>This does not mean sending clients more charts. It means building a simple service around the data.</p>
+
+        <p>A simple service could start with onboarding, one weekly review, program adjustments when needed, and a short explanation for the client. A monthly summary then makes their progress, and your coaching work, more visible.</p>
+
+        <div class="steps">
+          <section>
+            <div>
+              <h3>1. Wearable onboarding</h3>
+              <p>Start by explaining:</p>
+              <ul>
+                <li>How wearable data fits into your coaching.</li>
+                <li>Which information you need: usually HRV, resting heart rate, sleep, and recovery or readiness score. Skip anything that isn't tied to their goal; more data points isn't more service.</li>
+                <li>How the client should share it: a manual weekly screenshot works to start. Some coaches automate this entirely through a training platform that pulls straight from Garmin, Wahoo, or Zwift, so the client never touches an export button again.</li>
+                <li>How often you will review it.</li>
+                <li>What could change as a result: anything from training volume and intensity to daily activity or a recovery habit (the full list is in step 3).</li>
+                <li>What is and is not included in their package.</li>
+              </ul>
+              <p>The client should know what they need to provide and what they can expect from you.</p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h3>2. Weekly review</h3>
+              <p>Review the most relevant wearable trends alongside the client’s normal check-in. Focus on information connected to the goal rather than every number the device collects.</p>
+              <p>Weekly is a common rhythm, often paired with a slower layer for larger patterns: a monthly summary, a quarterly retest, or both.</p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h3>3. Coaching decision</h3>
+              <p>Decide whether to keep the plan as it is or adjust training volume, intensity, cardio zones, exercise selection, daily activity, or a recovery habit.</p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h3>4. Short explanation</h3>
+              <p>Tell the client what you noticed, why it matters, and what they should do next. This could be a short message or voice note.</p>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h3>5. Monthly summary</h3>
+              <p>Show what improved, which patterns you noticed, what you changed, and what you will focus on next.</p>
+            </div>
+          </section>
+        </div>
+
+        <figure class="full-bleed process-figure">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/five-step-wearable-coaching-process.gif" alt="Animated five-step wearable data coaching process: onboard, review weekly, decide, explain, and summarize" width="720" height="405" loading="lazy" decoding="async" />
+          <figcaption>A five-step wearable-data coaching process, from onboarding to the monthly progress summary.</figcaption>
+        </figure>
+      </section>
+
+      <section id="define-the-service">
+        <h2>Decide what your wearable coaching service will include</h2>
+
+        <p>Most trainers overcomplicate this because they think they need to be highly technical or understand every metric a tracker collects. You do not. Start with the device your client already has, the metrics you already understand, and the coaching decisions you are already qualified to make.</p>
+
+        <p>Five questions define the service.</p>
+
+        <h3>1. What is the client trying to achieve?</h3>
+        <p>Start with the result, not the wearable. The client may want to:</p>
+        <ul>
+          <li>Improve endurance or VO₂ max</li>
+          <li>Prepare for a race</li>
+          <li>Manage training load around sleep, work, and family responsibilities</li>
+          <li>Become more consistent with daily activity</li>
+          <li>Understand why they are struggling to recover, lose weight, or build muscle despite following the plan</li>
+        </ul>
+
+        <p>The problem you build the service around should match who you coach: general-health clients, healthy-ageing clients, endurance athletes, or people preparing for a specific event.</p>
+
+        <p>If you are unsure which problem to build the service around, return to the questions your ideal clients are already asking.</p>
+        <p><a class="button" href="https://ideal-client-faqs.lovable.app/" target="_blank" rel="noopener noreferrer">Use the Ideal Client FAQ Tool</a></p>
+
+        <h3>2. What information will you review?</h3>
+        <p>The device matters. Garmin, WHOOP, Oura, Fitbit, and Apple Watch do not collect or present information in the same way. Survey your clients, or check their wrists, and focus on one or two main devices you can study closely.</p>
+
+        <p>Select only the information that relates to the client’s goal:</p>
+        <ul>
+          <li>Sleep duration</li>
+          <li>Resting heart rate</li>
+          <li>Heart-rate variability</li>
+          <li>Recovery or readiness scores</li>
+          <li>Daily activity</li>
+          <li>Training load</li>
+          <li>Heart-rate zones</li>
+          <li>VO₂ max estimates</li>
+        </ul>
+
+        <p>You must also decide how you will receive the information:</p>
+        <ul>
+          <li><strong>Connected platform:</strong> saves time but requires compatible software.</li>
+          <li><strong>Screenshots:</strong> simple to start but harder to manage across many clients.</li>
+          <li><strong>Exported report:</strong> offers more context but takes longer to review.</li>
+          <li><strong>Weekly form or diary:</strong> requires no integration, but depends on the client’s own reporting rather than the device’s numbers.</li>
+        </ul>
+
+        <aside class="resource-callout">
+          <p class="kicker">FREE RESOURCE</p>
+          <h3>Wearable Data IF/THEN Cheat Sheet</h3>
+          <p>Review common HRV, resting-heart-rate, sleep, activity, and skin-temperature signals, the context to check, and coaching responses to consider.</p>
+          <a class="button" href="https://evanescent-quasar-664.notion.site/Wearable-Data-IF-THEN-Cheat-Sheet-35164734786a806689cdd0a3def94bae" target="_blank" rel="noopener noreferrer">Open the free sheet</a>
+        </aside>
+
+        <h3>3. What coaching decisions could change?</h3>
+        <ul>
+          <li><strong>Change</strong> the intensity or volume of a workout</li>
+          <li><strong>Move</strong> a difficult session to another day</li>
+          <li><strong>Adjust</strong> the client’s heart-rate zones</li>
+          <li><strong>Add</strong> more recovery between demanding sessions</li>
+          <li><strong>Review</strong> activity or sleep habits during a check-in</li>
+          <li><strong>Keep</strong> the program exactly as it is</li>
+          <li><strong>Recommend</strong> that the client speak with an appropriate healthcare professional</li>
+        </ul>
+
+        <p>Not every score needs a response. Sometimes the correct coaching decision is to continue with the plan and watch the trend.</p>
+
+        <h3>4. How often will you review it, and what will the client receive?</h3>
+        <p>This can be an add-on to the coaching you already deliver, rather than a separate assessment, lab test, or testing service. Shape it around how often you look at the data:</p>
+        <ul>
+          <li><strong>One-time:</strong> review the data the client already has and provide a plan around their goal. This is closer to a consultation than an ongoing coaching product.</li>
+          <li><strong>Ongoing:</strong> provide regular feedback and plan changes inside the coaching relationship the client already pays for.</li>
+          <li><strong>Higher tier:</strong> give the client more of your time and expertise, not only more frequent check-ins. This fits race preparation, demanding goals, or plans that need closer attention.</li>
+        </ul>
+
+        <h3>5. What are the limits?</h3>
+        <p>Make the boundaries clear:</p>
+        <ul>
+          <li>You do not monitor the client’s data live</li>
+          <li>You review it only at the agreed time</li>
+          <li>You do not diagnose medical conditions</li>
+          <li>A low recovery score does not automatically cancel a workout</li>
+          <li>The client must still tell you how they feel</li>
+          <li>You only review the metrics included in the service</li>
+          <li>Persistent or concerning readings may require referral to a qualified healthcare professional</li>
+        </ul>
+
+        <p>Consumer trackers operate in the real world, not under perfect laboratory conditions. Their measurements and calculated scores are estimates that can differ between devices, algorithms, and conditions of use.</p>
+
+        <h3>Put the five answers together</h3>
+        <p>Use this sentence to create the first version of your offer:</p>
+
+        <blockquote>For [type of client], I review [selected information] every [frequency] to help me decide [what may change]. You receive [deliverable]. This does not include [boundary].</blockquote>
+
+        <p>For example:</p>
+
+        <blockquote>For endurance clients using Garmin or WHOOP, I review sleep, recovery, and training-load trends each week alongside the regular check-in. I use the information to adjust cardio intensity or training volume when needed. The client receives a short explanation and an updated plan. I do not monitor data live or use it to diagnose health problems.</blockquote>
+
+        <p>These two resources can help you turn the offer into something you can deliver consistently.</p>
+        <h2 class="tool-section-heading">Try It With One Client Today!</h2>
+
+        <div class="tool-actions" aria-label="Free coaching tools">
+          <a class="button" href="https://vo2maxtrainingprotocol.fitnessxmarketing.com/">VO2MAX Training Protocol</a>
+          <a class="button" href="https://wearabletracking.fitnessxmarketing.com/">Wearable Tracking Check-in Tool</a>
+        </div>
+      </section>
+
+      <section id="charge-extra">
+        <h2>Should you charge extra for wearable data coaching?</h2>
+
+        <p>Wearable data can increase a client’s lifetime value without requiring you to find a completely new audience. Start with current clients who already use Garmin, WHOOP, Oura, Fitbit, or Apple Watch:</p>
+        <ul>
+          <li>Identify current clients who already use a wearable.</li>
+          <li>Choose one problem you can help them solve.</li>
+          <li>Create one clear deliverable.</li>
+          <li>Test it as an add-on or inside a higher tier.</li>
+        </ul>
+
+        <h3>Option 1: Include it in your existing coaching</h3>
+        <p>Wearable review can make the existing service stronger without creating an entirely new delivery process. You can advertise it as a feature, as long as you explain what happens because of it, and increase the price for new clients.</p>
+
+        <div class="before-after">
+          <p><strong>Instead of:</strong> “Wearable integration included.”</p>
+          <p><strong>Say:</strong> “Each week, I review your activity and recovery trends alongside your check-in so I can adjust your plan when work, travel, or poor recovery disrupts it.”</p>
+        </div>
+
+        <figure class="full-bleed">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/include-in-existing-coaching.jpg" alt="Five signs that wearable data review fits inside an existing personal training service" width="1536" height="1024" loading="lazy" decoding="async" />
+        </figure>
+
+        <h3>Option 2: Offer it separately</h3>
+        <p>A separate service can be a lower-commitment way for a new client to experience your coaching. The client leaves with an explanation, a small number of priorities, and a clear next action.</p>
+
+        <p>Offer wearable coaching separately when clients need a deeper report, a specific outcome, or a useful one-off service.</p>
+
+        <figure class="full-bleed">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/offer-separately.jpg" alt="Four signs that wearable coaching should be offered as a separate service" width="1536" height="1024" loading="lazy" decoding="async" />
+        </figure>
+
+        <h3>Option 3: Create a higher coaching tier</h3>
+        <p>The difference is not simply that the premium client shares wearable data. It is that you accept a greater delivery obligation: reviewing more often, responding sooner, making more decisions, and giving the client more access to your judgment.</p>
+
+        <p>Create a higher tier when the service requires more reviews, proactive support, faster responses, and goal-specific analysis.</p>
+
+        <figure class="full-bleed">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/higher-coaching-tier.jpg" alt="Seven characteristics of a higher-tier wearable coaching service" width="1536" height="1024" loading="lazy" decoding="async" />
+        </figure>
+
+        <h3>Use this five-question test</h3>
+        <ul>
+          <li>Does this replace something I already do, or add another task?</li>
+          <li>How often must I review the information?</li>
+          <li>Is it useful for every client or only a specific group?</li>
+          <li>Does it create a new expectation for response time or access?</li>
+          <li>What does the client receive that is not already part of the package?</li>
+        </ul>
+
+        <p>If it fits into your current check-in with almost no additional work, include it. If it creates one separate deliverable for selected clients, make it an add-on or standalone service. If it requires frequent review, proactive communication, and faster adjustments, build a higher coaching tier around it.</p>
+      </section>
+
+      <section id="pricing">
+        <h2>How to price wearable coaching: depth and frequency</h2>
+
+        <p>Most trainers would build Basic, Pro, and Premium packages where each tier simply does more of everything. That is the wrong model.</p>
+
+        <p class="highlighted-text">How deeply you go, pointing something out versus changing the program, and how often you look, once a week versus continuously, are two different questions. A client can want one without the other.</p>
+
+        <p>Bundle them into one ladder and you either overcharge someone who only wants depth or undercharge someone who only wants frequency.</p>
+
+        <figure class="full-bleed">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/lower-touch-vs-higher-touch.jpg" alt="Comparison of lower-touch and higher-touch wearable coaching by depth, frequency, expertise, and delivery effort" width="1536" height="1024" loading="lazy" decoding="async" />
+          <figcaption>Depth and frequency should be priced separately because they create different delivery obligations.</figcaption>
+        </figure>
+
+        <p>Pick a setting from each row and add them up. In this research, that lands between roughly $15 and $70 per month.</p>
+
+        <p>Many trainers settle around $29–$39 for a weekly review with meaningful recommendations. That range sits toward the lower-middle on purpose: it can be sustainable at scale without promising same-day intervention for every client.</p>
+
+        <figure class="full-bleed">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/pricing-reference-points.jpg" alt="Wearable coaching pricing reference points based on the client’s existing package and the depth of service" width="1536" height="1024" loading="lazy" decoding="async" />
+        </figure>
+
+        <p>This is research, not a rulebook. Your own current price matters most. Start with what the client already pays, then use the range as a check against overpricing or underpricing the service.</p>
+      </section>
+
+      <section id="client-fit">
+        <h2>Which personal training clients care about wearable tracking?</h2>
+
+        <p>Owning a smartwatch does not automatically make someone a good fit for wearable coaching. What matters is whether the data helps solve a problem they already care about.</p>
+
+        <figure class="full-bleed">
+          <img src="/posts/wearable-data-and-data-driven-coaching/images/client-fit.jpg" alt="Comparison of clients most and least likely to value wearable coaching" width="1536" height="1024" loading="lazy" decoding="async" />
+        </figure>
+      </section>
+
+      <section id="faqs" aria-labelledby="faqs-heading">
+        <h2 id="faqs-heading">FAQs about delivering wearable coaching</h2>
+
+        <div class="faq-list">
+          <article class="faq" id="faq-better-coaching" aria-labelledby="faq-better-coaching-question">
+            <h3 id="faq-better-coaching-question">How can you show that wearable data leads to better coaching?</h3>
+            <div class="faq-answer">
+              <p>Keep a simple record: Trend → client context → coaching decision → what happened next. For example: The client’s VO₂ max estimate dropped after one hard session. They felt normal and completed the workout as planned, so I treated the reading as possible algorithm noise and waited for the seven-day average. The estimate stabilized, and no unnecessary program change was made. This shows how your judgment affected the coaching, even when the correct decision was to leave the plan alone.</p>
+            </div>
+          </article>
+
+          <article class="faq" id="faq-explain-data" aria-labelledby="faq-explain-data-question">
+            <h3 id="faq-explain-data-question">How do you explain the data without overwhelming the client?</h3>
+            <div class="faq-answer">
+              <p>Explain only what changed, why it may matter, and what you are doing next. For example: Your recovery markers have been below your normal range, and you also reported feeling tired. We’ll reduce today’s intensity and review the trend again before your next hard session.</p>
+            </div>
+          </article>
+
+          <article class="faq" id="faq-minimum-service" aria-labelledby="faq-minimum-service-question">
+            <h3 id="faq-minimum-service-question">What is a minimum viable wearable coaching service?</h3>
+            <div class="faq-answer">
+              <p>Start with consent and a personal baseline, a few metrics connected to the client’s goal, one weekly trend review, adjustments when justified, a short client explanation, and a simple monthly summary. You do not need to monitor every client’s dashboard daily.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion: try it with one client</h2>
+
+        <p>Add this process to the coaching of one or two current clients who already use a wearable and see what happens.</p>
+
+        <p>Review their relevant trends once a week, make one decision when needed, and send a short explanation. After four weeks, ask what they found useful and note how much time the service took to deliver.</p>
+
+        <p>That is a good starting point. Improve the process, include it in your coaching, or turn it into an add-on once you know what clients value.</p>
+
+        <aside class="final-cta">
+          <p class="kicker">TRY THE FREE TOOLS</p>
+          <div>
+            <a class="button button-light" href="https://vo2maxtrainingprotocol.fitnessxmarketing.com/">VO2MAX Training Protocol</a>
+            <a class="button button-outline" href="https://wearabletracking.fitnessxmarketing.com/">Wearable Tracking Check-in Tool</a>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </article>
+
+  <style>
+    article {
+      --article-width: 70ch;
+    }
+
+    .article-header {
+      border-bottom: 1px solid #dfe3e6;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .eyebrow,
+    .kicker {
+      color: #068f8c;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6.8vw, 4.65rem);
+      letter-spacing: -0.045em;
+      line-height: 1.02;
+      margin: 0.8rem 0 1.3rem;
+      max-width: 18ch;
+    }
+
+    .dek {
+      color: #3a4252;
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+
+    .byline {
+      align-items: center;
+      color: #606a78;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      gap: 0.45rem;
+      margin-top: 1.7rem;
+    }
+
+    .byline span:first-child {
+      color: #252a34;
+      font-weight: 700;
+    }
+
+    .article-body {
+      font-size: 1.06rem;
+      margin: 0 auto;
+      max-width: var(--article-width);
+    }
+
+    .lead {
+      color: #252a34;
+      font-size: 1.3rem;
+      font-weight: 560;
+      line-height: 1.55;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.18;
+      scroll-margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 5vw, 2.75rem);
+      letter-spacing: -0.035em;
+      margin: 4.8rem 0 1.35rem;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+      letter-spacing: -0.015em;
+      margin: 2.8rem 0 0.8rem;
+    }
+
+    p,
+    li {
+      color: #3a4252;
+    }
+
+    li + li {
+      margin-top: 0.45rem;
+    }
+
+    strong {
+      color: #252a34;
+    }
+
+    a {
+      font-weight: 650;
+      text-underline-offset: 0.2rem;
+    }
+
+    .contents {
+      background: #f5fbfb;
+      border: 1px solid #d3eeee;
+      border-radius: 14px;
+      margin: 2.8rem 0;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .contents > p {
+      color: #252a34;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .contents ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .contents a {
+      color: #252a34;
+      text-decoration-color: #08d9d6;
+    }
+
+    figure {
+      margin: 2.5rem 0;
+    }
+
+    figure img {
+      border-radius: 12px;
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    figcaption {
+      color: #687281;
+      font-size: 0.88rem;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .social-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 2rem auto 2.5rem;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .social-grid figure {
+      margin: 0;
+    }
+
+    .social-grid img {
+      height: auto;
+    }
+
+    .full-bleed {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .process-figure {
+      max-width: 400px;
+    }
+
+    .steps {
+      border-bottom: 1px solid #dfe3e6;
+      margin: 2.5rem 0;
+    }
+
+    .steps > section {
+      border-top: 1px solid #dfe3e6;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      padding: 1.5rem 0;
+    }
+
+    .steps > section > span {
+      align-items: center;
+      background: #08d9d6;
+      border-radius: 50%;
+      color: #252a34;
+      display: flex;
+      font-weight: 850;
+      height: 2.4rem;
+      justify-content: center;
+      width: 2.4rem;
+    }
+
+    .steps h3,
+    .steps p:first-of-type {
+      margin-top: 0;
+    }
+
+    blockquote {
+      background: #f5f7f8;
+      border-left: 4px solid #08d9d6;
+      color: #252a34;
+      font-size: 1.05rem;
+      font-weight: 560;
+      margin: 1.6rem 0;
+      padding: 1.2rem 1.35rem;
+    }
+
+    .resource-callout,
+    .final-cta {
+      border-radius: 16px;
+      margin: 2.8rem 0;
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+    }
+
+    .resource-callout {
+      background: #eaf6f6;
+      border: 1px solid #c9e8e7;
+    }
+
+    .resource-callout h3 {
+      margin-top: 0.3rem;
+    }
+
+    .button {
+      background: #252a34;
+      border: 1px solid #252a34;
+      color: #fff;
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-top: 0.5rem;
+      padding: 0.85rem 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .tool-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2.8rem 0;
+    }
+
+    .before-after {
+      background: #f5f7f8;
+      border-radius: 12px;
+      padding: 0.5rem 1.25rem;
+    }
+
+    .highlighted-text {
+      background: #eaeaea;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0;
+      margin-top: 1.5rem;
+    }
+
+    .faq {
+      border-top: 1px solid #dfe3e6;
+      padding: 1.5rem 0;
+      scroll-margin-top: 2rem;
+    }
+
+    .faq:last-child {
+      border-bottom: 1px solid #dfe3e6;
+    }
+
+    .faq h3 {
+      margin: 0 0 1rem;
+    }
+
+    .faq-answer > :first-child {
+      margin-top: 0;
+    }
+
+    .faq-answer > :last-child {
+      margin-bottom: 0;
+    }
+
+    .final-cta {
+      background: #252a34;
+      color: #fff;
+      margin-top: 3.5rem;
+    }
+
+    .final-cta .kicker {
+      color: #08d9d6;
+    }
+
+    .final-cta h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .final-cta > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .button-light {
+      background: #08d9d6;
+      border-color: #08d9d6;
+      color: #252a34;
+    }
+
+    .button-outline {
+      background: transparent;
+      border-color: #9da6b2;
+      color: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .social-grid {
+        gap: 0.6rem;
+      }
+
+      .tool-actions .button {
+        text-align: center;
+        width: 100%;
+      }
+
+      .steps > section {
+        grid-template-columns: 1fr;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    href: '/posts/wearable-data-and-data-driven-coaching',
+    title: 'Wearable Data for Coaching: How to Sell Data-Driven Personal Training Services',
+    description: 'Turn wearable data into useful program decisions, a clear client deliverable, and a service you can price sustainably.',
+    category: 'Coaching & Programming',
+  },
+];
+---
+
+<Layout title="Articles" description="Practical marketing, sales, business-growth, AI, and coaching articles for fitness professionals.">
+  <p class="eyebrow">FITNESS X MARKETING</p>
+  <h1>Articles</h1>
+  <p class="intro">Practical systems and research for building a smarter fitness business.</p>
+
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li>
+        <p class="category">{post.category}</p>
+        <a href={post.href}>{post.title}</a>
+        <p>{post.description}</p>
+      </li>
+    ))}
+  </ul>
+
+  <style>
+    .eyebrow,
+    .category {
+      color: #06a8a5;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1;
+      margin: 0.4rem 0 1rem;
+    }
+
+    .intro {
+      color: #3a4252;
+      font-size: 1.15rem;
+      margin-bottom: 3rem;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .post-list li {
+      padding: 1.6rem 0;
+      border-top: 1px solid #eaeaea;
+    }
+
+    .post-list a {
+      color: #252a34;
+      font-size: clamp(1.25rem, 4vw, 1.65rem);
+      font-weight: 750;
+      line-height: 1.25;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #08d9d6;
+      text-underline-offset: 0.25rem;
+    }
+
+    .post-list li > p:last-child {
+      color: #3a4252;
+      margin-bottom: 0;
+      max-width: 65ch;
+    }
+  </style>
+</Layout>
