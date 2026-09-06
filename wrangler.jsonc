@@ -5,6 +5,10 @@
     {
       "pattern": "fitnessxmarketing.com/posts/wearable-data-and-data-driven-coaching*",
       "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/posts/yelp-chatgpt-personal-trainers*",
+      "zone_name": "fitnessxmarketing.com"
     }
   ],
   "assets": {
