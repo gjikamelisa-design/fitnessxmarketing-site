@@ -6,7 +6,7 @@ const articleTitle = 'Wearable Data for Coaching: How to Sell Data-Driven Person
 const description = 'Learn how personal trainers can use wearable data to adjust client programs, create add-ons or coaching tiers, and make their service more valuable.';
 const canonical = '/posts/wearable-data-and-data-driven-coaching';
 const publishedTime = '2026-08-29T00:00:00+02:00';
-const modifiedTime = '2026-08-31T00:00:00+02:00';
+const modifiedTime = '2026-09-06T00:00:00+02:00';
 const socialImage = '/posts/wearable-data-and-data-driven-coaching/images/include-in-existing-coaching.jpg';
 const articleId = `https://fitnessxmarketing.com${canonical}`;
 
@@ -98,6 +98,16 @@ const structuredData = {
       <p class="eyebrow"><a href="/posts">Articles</a> / Coaching &amp; Programming</p>
       <h1>{articleTitle}</h1>
       <p class="dek">A practical system for turning the data clients already collect into better coaching decisions, clearer deliverables, and a service you can price sustainably.</p>
+      <aside class="header-cta" aria-label="Free wearable coaching tools">
+        <div>
+          <p class="kicker">Free tools for personal trainers</p>
+          <p class="header-cta-title">Turn your client’s wearable data into a practical coaching decision.</p>
+        </div>
+        <div class="header-cta-actions">
+          <a class="button button-light" href="https://fitnessxmarketing.com/tools/wearable-tracking-for-coaches/biweekly-wearable-check-in-for-coaches/">Try the wearable check-in</a>
+          <a class="button button-outline" href="https://fitnessxmarketing.com/tools/wearable-tracking-for-coaches/vo2max-training-protocol/">Find a VO₂ Max protocol</a>
+        </div>
+      </aside>
       <div class="byline">
         <span>Fitness x Marketing</span>
         <span aria-hidden="true">•</span>
@@ -483,6 +493,43 @@ const structuredData = {
       max-width: 62ch;
     }
 
+    .header-cta {
+      align-items: center;
+      background: #252a34;
+      border-radius: 16px;
+      color: #fff;
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+      margin-top: 1.8rem;
+      padding: clamp(1.25rem, 3vw, 1.8rem);
+    }
+
+    .header-cta .kicker {
+      color: #08d9d6;
+      margin: 0 0 0.4rem;
+    }
+
+    .header-cta-title {
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      font-weight: 750;
+      line-height: 1.3;
+      margin: 0;
+      max-width: 34ch;
+    }
+
+    .header-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: flex-end;
+    }
+
+    .header-cta .button {
+      margin-top: 0;
+      text-align: center;
+    }
+
     .byline {
       align-items: center;
       color: #606a78;
@@ -773,6 +820,18 @@ const structuredData = {
     }
 
     @media (max-width: 640px) {
+      .header-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .header-cta-actions {
+        justify-content: stretch;
+      }
+
+      .header-cta .button {
+        width: 100%;
+      }
+
       .social-grid {
         gap: 0.6rem;
       }
