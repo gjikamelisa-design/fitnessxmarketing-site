@@ -38,8 +38,8 @@ const structuredData = {
         'personal training client objections',
       ],
       author: {
-        '@type': 'Person',
-        name: 'Melisa Gjika',
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
         url: 'https://fitnessxmarketing.com/',
       },
       publisher: {
@@ -92,7 +92,7 @@ const structuredData = {
       <h1>{title}</h1>
       <p class="dek">{description}</p>
       <div class="byline">
-        <span>Melisa Gjika</span>
+        <span>Fitness x Marketing</span>
         <span aria-hidden="true">•</span>
         <time datetime="2026-03-26">March 26, 2026</time>
         <span aria-hidden="true">•</span>
@@ -152,7 +152,7 @@ const structuredData = {
             loading="lazy"
             decoding="async"
           />
-          <figcaption>An objection is information—not an automatic rejection.</figcaption>
+          <figcaption>Where objections sit on the buying spectrum.</figcaption>
         </figure>
       </section>
 
@@ -162,8 +162,7 @@ const structuredData = {
 
         <div class="steps">
           <section>
-            <p class="step-label">Part 1</p>
-            <h3>Timing</h3>
+            <h3>Part 1: Timing</h3>
             <p><strong>Follow up within 24–48 hours.</strong> The conversation is still fresh. The longer you wait, the more their interest cools and the stranger the message can feel.</p>
             <p>After the first follow-up, wait 1–2 weeks before the second. After the second, wait 3–4 weeks before the third.</p>
             <p>Three follow-ups is enough for this system. If they have not responded after three, let it go and keep showing up through your content. They know where to find you.</p>
@@ -171,8 +170,7 @@ const structuredData = {
           </section>
 
           <section>
-            <p class="step-label">Part 2</p>
-            <h3>Intent</h3>
+            <h3>Part 2: Intent</h3>
             <p>Each follow-up has a specific job. They are not all “just checking in.”</p>
             <ol>
               <li><strong>Follow-up #1 is about the conversation.</strong> Thank them, address what was discussed, share a relevant result, answer an unasked question or offer a way to make the commitment feel smaller.</li>
@@ -182,8 +180,7 @@ const structuredData = {
           </section>
 
           <section>
-            <p class="step-label">Part 3</p>
-            <h3>Exit</h3>
+            <h3>Part 3: Exit</h3>
             <p>Some successful trainers keep following up, with more time between messages, until they receive a hard no. That can work. Whether it is right for you depends on your personality, the relationship and how comfortable you are with the sales side of your business.</p>
             <p>Knowing when to stop is as important as knowing when to start. After your final direct follow-up, let your content keep the relationship warm without sending another DM.</p>
           </section>
@@ -203,15 +200,15 @@ const structuredData = {
 
         <div class="message-grid">
           <section>
-            <p class="message-time">Follow-up #1 · 24–48 hours later</p>
+            <h3>Follow-up #1: 24–48 hours later</h3>
             <blockquote>“Hey [name], it was great talking to you. What did you end up thinking about [the thing they were most interested in or concerned about]?”</blockquote>
           </section>
           <section>
-            <p class="message-time">Follow-up #2 · 1–2 weeks later</p>
+            <h3>Follow-up #2: 1–2 weeks later</h3>
             <blockquote>“Hey [name], I was working with a client this week on [something related to their goal] and it reminded me of our conversation. Here’s what worked for them—[share a quick insight, a before-and-after, or a practical tip]. Thought you’d find it useful.”</blockquote>
           </section>
           <section>
-            <p class="message-time">Follow-up #3 · 3–4 weeks later</p>
+            <h3>Follow-up #3: 3–4 weeks later</h3>
             <blockquote>“Hey [name], it’s been a while! How’s everything going? Are you still looking to [their specific goal—lose weight, build muscle, get consistent, etc.] or have you moved on from that?”</blockquote>
           </section>
         </div>
@@ -245,7 +242,7 @@ const structuredData = {
             loading="lazy"
             decoding="async"
           />
-          <figcaption>Some objections should be addressed. Others are useful signs that the offer is not the right fit.</figcaption>
+          <figcaption>Examples of objections that signal a misconception or a mismatch.</figcaption>
         </figure>
 
         <p>The free Objection Playbook breaks down five common objections with visual frameworks, stories and practical ways to handle each one.</p>
@@ -274,9 +271,7 @@ const structuredData = {
     }
 
     .eyebrow,
-    .kicker,
-    .step-label,
-    .message-time {
+    .kicker {
       color: #068f8c;
       font-size: 0.75rem;
       font-weight: 800;
@@ -442,11 +437,6 @@ const structuredData = {
     .steps > section > :last-child,
     .message-grid section > :last-child {
       margin-bottom: 0;
-    }
-
-    .step-label,
-    .message-time {
-      margin: 0 0 0.45rem;
     }
 
     .note,
