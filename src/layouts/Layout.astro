@@ -9,6 +9,7 @@ interface Props {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  favicon?: string;
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -22,6 +23,7 @@ const {
   type = 'website',
   publishedTime,
   modifiedTime,
+  favicon = '/posts/wearable-data-and-data-driven-coaching/fitness-x-marketing-logo.jpeg',
   structuredData,
 } = Astro.props;
 
@@ -36,8 +38,8 @@ const currentPath = Astro.url.pathname;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpeg" href="/posts/wearable-data-and-data-driven-coaching/fitness-x-marketing-logo.jpeg" />
-    <link rel="apple-touch-icon" href="/posts/wearable-data-and-data-driven-coaching/fitness-x-marketing-logo.jpeg" />
+    <link rel="icon" type="image/jpeg" href={favicon} />
+    <link rel="apple-touch-icon" href={favicon} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
