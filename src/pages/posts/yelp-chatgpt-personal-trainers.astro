@@ -1,0 +1,500 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Yelp Reviews Are Coming to ChatGPT. Should Personal Trainers Care?';
+const description = 'ChatGPT may now use Yelp reviews and local business data when recommending nearby services. See exactly what personal trainers should do.';
+const canonical = '/posts/yelp-chatgpt-personal-trainers';
+const publishedTime = '2026-07-28T14:25:19.000Z';
+const modifiedTime = '2026-09-07T00:00:00+02:00';
+const imageBase = '/posts/yelp-chatgpt-personal-trainers/images';
+const socialImage = `${imageBase}/yelp-chatgpt-personal-trainers.jpg`;
+const articleId = `https://fitnessxmarketing.com${canonical}`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': articleId,
+      headline: title,
+      name: title,
+      description,
+      datePublished: publishedTime,
+      dateModified: modifiedTime,
+      mainEntityOfPage: articleId,
+      image: {
+        '@type': 'ImageObject',
+        url: `https://fitnessxmarketing.com${socialImage}`,
+        width: 1200,
+        height: 630,
+        caption: 'YELP ChatGPT personal trainers',
+      },
+      thumbnailUrl: `https://fitnessxmarketing.com${socialImage}`,
+      articleSection: 'AI Visibility',
+      inLanguage: 'en',
+      keywords: ['Yelp for personal trainers', 'ChatGPT for personal trainers', 'AI visibility for personal trainers'],
+      author: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://fitnessxmarketing.com/posts/yelp-chatgpt-personal-trainers/fitness-x-marketing-logo.jpeg',
+        },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${articleId}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Articles',
+          item: 'https://fitnessxmarketing.com/posts',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: articleId,
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  titleTemplate={false}
+  description={description}
+  canonical={canonical}
+  image={socialImage}
+  imageAlt="YELP ChatGPT personal trainers"
+  favicon="/posts/yelp-chatgpt-personal-trainers/fitness-x-marketing-logo.jpeg"
+  type="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  structuredData={structuredData}
+>
+  <article>
+    <header class="article-header">
+      <p class="eyebrow"><a href="/posts">Articles</a> / AI Visibility</p>
+      <h1>{title}</h1>
+      <p class="dek">{description}</p>
+      <div class="byline">
+        <span>Fitness x Marketing</span>
+        <span aria-hidden="true">•</span>
+        <time datetime="2026-07-28">July 28, 2026</time>
+        <span aria-hidden="true">•</span>
+        <span>2 min read</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <figure class="source-figure">
+        <img
+          src={`${imageBase}/yelp-chatgpt-axios-source.png`}
+          alt="Axios article announcing Yelp's partnership with ChatGPT to surface reviews"
+          width="1300"
+          height="1110"
+          loading="eager"
+          decoding="async"
+        />
+        <figcaption>Yelp × ChatGPT — Source: <a href="https://www.axios.com/2026/07/23/yelp-reviews-chatgpt-geo-partnership" target="_blank" rel="noopener noreferrer">Axios</a></figcaption>
+      </figure>
+
+      <p class="lead">Getting your personal training business into AI recommendations is hard. Every trainer and fitness brand wants to appear, but you cannot submit your business directly to ChatGPT.</p>
+
+      <p>Yelp gives local trainers a simpler route.</p>
+
+      <p><a href="https://www.axios.com/2026/07/23/yelp-reviews-chatgpt-geo-partnership" target="_blank" rel="noopener noreferrer">Yelp is licensing</a> its reviews, ratings, photos and business information to OpenAI. This means a complete Yelp page can help ChatGPT understand where you train, what services you offer, and what clients say about you.</p>
+
+      <p>Use the 30-minute action plan below to update the parts that matter.</p>
+
+      <p class="centered-action"><a class="button" href="https://drive.google.com/file/d/1_D8mPfJTD6JV-uo-LwtJo4BOEdtDpWFf/view?usp=sharing" target="_blank" rel="noopener noreferrer">Fix Yelp now — one sheet</a></p>
+
+      <nav class="contents" aria-label="Article contents">
+        <p>In this article</p>
+        <ol>
+          <li><a href="#what-chatgpt-gets">What ChatGPT can get from Yelp</a></li>
+          <li><a href="#should-trainers-care">Whether personal trainers should care</a></li>
+          <li><a href="#optimize-yelp">What to optimize on Yelp</a></li>
+          <li><a href="#action-plan">The seven-step action plan</a></li>
+          <li><a href="#ai-visibility">How Yelp fits into AI visibility</a></li>
+        </ol>
+      </nav>
+
+      <section id="what-chatgpt-gets">
+        <h2>What can ChatGPT get from Yelp?</h2>
+        <p>The reporting confirms that ChatGPT may receive:</p>
+        <ul>
+          <li>Review text and star ratings</li>
+          <li>Business photos</li>
+          <li>Other local business details</li>
+          <li>Yelp attribution and links when Yelp content is used</li>
+          <li>An upcoming Request a Quote path for eligible local services</li>
+        </ul>
+
+        <p>This doesn’t mean Yelp is now the only source ChatGPT uses, or that having a Yelp page guarantees a recommendation. Keep in mind, no ranking formula has been published, and there is no evidence that buying Yelp Ads will improve your visibility in ChatGPT.</p>
+      </section>
+
+      <section id="should-trainers-care">
+        <h2>Should personal trainers care?</h2>
+        <p class="rule"><strong>The simple rule is: If clients search for you by location, Yelp matters. If they don’t, focus elsewhere.</strong></p>
+
+        <figure class="priority-figure">
+          <img
+            src={`${imageBase}/yelp-priority-for-personal-trainers.png`}
+            alt="Yelp priority guide: high for local trainers, medium for hybrid trainers, and low for online-only coaches"
+            width="2160"
+            height="2160"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </section>
+
+      <section id="optimize-yelp">
+        <h2>What should trainers optimize on Yelp?</h2>
+        <p>Treat the following profile fields as source data that helps Yelp, and potentially ChatGPT, understand your business:</p>
+        <ol>
+          <li>Business name, phone number, website, location, and hours</li>
+          <li>Primary categories and individual services</li>
+          <li>Service area for mobile or at-home trainers</li>
+          <li>Specialties, business history, and trainer bio</li>
+          <li>Relevant business attributes</li>
+          <li>Real photos with useful captions</li>
+          <li>Reviews and owner responses</li>
+          <li>Messaging or quote-request availability</li>
+        </ol>
+        <p>For more, <a href="https://business.yelp.com/resources/articles/updating-your-business-information-on-yelp/" target="_blank" rel="noopener noreferrer">read Yelp’s profile guidance</a>.</p>
+      </section>
+
+      <section id="action-plan">
+        <h2>What exactly should local trainers do?</h2>
+
+        <div class="steps">
+          <section>
+            <h3>1. Claim the Yelp page</h3>
+            <p>Find the correct page, claim it, and remove or report duplicate and outdated listings.</p>
+          </section>
+
+          <section>
+            <h3>2. Fix the basic information</h3>
+            <p>Make sure the business name, phone number, website, hours, address, and service area are correct.</p>
+            <p>These details should match the trainer’s website and other business profiles.</p>
+          </section>
+
+          <section>
+            <h3>3. Add accurate services</h3>
+            <p>List the services genuinely offered, such as:</p>
+            <ul>
+              <li>One-to-one personal training</li>
+              <li>Semi-private training</li>
+              <li>Strength training</li>
+              <li>Beginner fitness</li>
+              <li>Mobile training</li>
+              <li>Small-group training</li>
+              <li>Hybrid coaching</li>
+            </ul>
+            <p>Don’t add irrelevant categories simply to appear in more searches.</p>
+          </section>
+
+          <section>
+            <h3>4. Write a specific trainer description</h3>
+            <p>Use this formula:</p>
+            <blockquote>We help [audience] achieve [credible outcome] through [training method] in [location].</blockquote>
+          </section>
+
+          <section>
+            <h3>5. Add real photos</h3>
+            <p>Show the trainer, studio, equipment, team, and real sessions—with client permission. Use captions that explain what is happening and avoid stock photography and galleries containing nothing but logos.</p>
+          </section>
+
+          <section>
+            <h3>6. Manage reviews correctly</h3>
+            <p>Respond to reviews calmly and specifically.</p>
+            <p>However, <strong>do not ask clients to post Yelp reviews or offer incentives</strong>. Yelp prohibits review solicitation. Its rules are different from those of some other review platforms. <a href="https://business.yelp.com/resources/articles/how-to-get-yelp-reviews-without-asking/" target="_blank" rel="noopener noreferrer">Read Yelp’s review policy</a>.</p>
+          </section>
+
+          <section>
+            <h3>7. Turn on messages</h3>
+            <p>Enable messaging or quote requests only if someone will respond promptly. A simple first response could be:</p>
+            <blockquote>Thanks for reaching out. Can you share your main goal, preferred training location or format, weekly availability, and ideal start date? I’ll reply with the most suitable option and current availability.</blockquote>
+          </section>
+        </div>
+
+        <p class="centered-action"><a class="button" href="https://drive.google.com/file/d/1_D8mPfJTD6JV-uo-LwtJo4BOEdtDpWFf/view?usp=sharing" target="_blank" rel="noopener noreferrer">Fix Yelp</a></p>
+      </section>
+
+      <section id="ai-visibility">
+        <h2>Yelp is only one part of AI visibility</h2>
+        <p>Lastly, do not optimize Yelp and ignore everything else.</p>
+        <p>Keep your website accurate and continue publishing useful blogs and FAQs. These should answer the same questions potential clients are now asking ChatGPT and other AI tools.</p>
+        <p>Not sure which questions to answer? Take the FAQ Quiz to identify the topics your website and content should cover.</p>
+
+        <aside class="final-cta">
+          <p class="kicker">Free tool for personal trainers</p>
+          <h2>Find the questions your ideal clients are already asking.</h2>
+          <a class="button button-light" href="https://ideal-client-faqs.lovable.app/" target="_blank" rel="noopener noreferrer">Get your clients’ FAQs</a>
+        </aside>
+
+        <p>This is only the beginning. <a href="https://fitnessmarketing.kit.com/profile" target="_blank" rel="noopener noreferrer">Subscribe</a> for more practical AI visibility updates created specifically for personal trainers.</p>
+      </section>
+    </div>
+  </article>
+
+  <style>
+    article {
+      --article-width: 70ch;
+    }
+
+    .article-header {
+      border-bottom: 1px solid #dfe3e6;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .eyebrow,
+    .kicker {
+      color: #068f8c;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6.8vw, 4.65rem);
+      letter-spacing: -0.045em;
+      line-height: 1.02;
+      margin: 0.8rem 0 1.3rem;
+      max-width: 18ch;
+    }
+
+    .dek {
+      color: #3a4252;
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+
+    .byline {
+      align-items: center;
+      color: #606a78;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      gap: 0.45rem;
+      margin-top: 1.7rem;
+    }
+
+    .byline span:first-child {
+      color: #252a34;
+      font-weight: 700;
+    }
+
+    .article-body {
+      font-size: 1.06rem;
+      margin: 0 auto;
+      max-width: var(--article-width);
+    }
+
+    .lead {
+      color: #252a34;
+      font-size: 1.3rem;
+      font-weight: 560;
+      line-height: 1.55;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.18;
+      scroll-margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 5vw, 2.75rem);
+      letter-spacing: -0.035em;
+      margin: 4.8rem 0 1.35rem;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+      letter-spacing: -0.015em;
+      margin: 0 0 0.8rem;
+    }
+
+    p,
+    li {
+      color: #3a4252;
+    }
+
+    li + li {
+      margin-top: 0.45rem;
+    }
+
+    strong {
+      color: #252a34;
+    }
+
+    a {
+      font-weight: 650;
+      text-underline-offset: 0.2rem;
+    }
+
+    figure {
+      margin: 2.5rem 0;
+    }
+
+    figure img {
+      border-radius: 12px;
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    figcaption {
+      color: #687281;
+      font-size: 0.88rem;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .source-figure {
+      margin-top: 0;
+      max-width: 560px;
+    }
+
+    .priority-figure {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 620px;
+    }
+
+    .contents {
+      background: #f5fbfb;
+      border: 1px solid #d3eeee;
+      border-radius: 14px;
+      margin: 2.8rem 0;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .contents > p {
+      color: #252a34;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .contents ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .contents a {
+      color: #252a34;
+      text-decoration-color: #08d9d6;
+    }
+
+    .rule {
+      background: #eaf6f6;
+      border-left: 4px solid #08d9d6;
+      font-size: 1.12rem;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .steps {
+      border-bottom: 1px solid #dfe3e6;
+      margin: 2.5rem 0;
+    }
+
+    .steps > section {
+      border-top: 1px solid #dfe3e6;
+      padding: 1.6rem 0;
+    }
+
+    .steps > section > :last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote {
+      background: #f5f7f8;
+      border-left: 4px solid #08d9d6;
+      color: #252a34;
+      font-size: 1.05rem;
+      font-weight: 560;
+      margin: 1.6rem 0;
+      padding: 1.2rem 1.35rem;
+    }
+
+    .centered-action {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .button {
+      background: #252a34;
+      border: 1px solid #252a34;
+      color: #fff;
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .final-cta {
+      background: #252a34;
+      border-radius: 16px;
+      color: #fff;
+      margin: 3.5rem 0 2rem;
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+    }
+
+    .final-cta .kicker {
+      color: #08d9d6;
+      margin: 0;
+    }
+
+    .final-cta h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .button-light {
+      background: #08d9d6;
+      border-color: #08d9d6;
+      color: #252a34;
+    }
+
+    @media (max-width: 640px) {
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .button {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  </style>
+</Layout>
