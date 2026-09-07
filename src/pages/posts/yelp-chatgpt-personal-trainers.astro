@@ -5,34 +5,68 @@ const title = 'Yelp Reviews Are Coming to ChatGPT. Should Personal Trainers Care
 const description = 'ChatGPT may now use Yelp reviews and local business data when recommending nearby services. See exactly what personal trainers should do.';
 const canonical = '/posts/yelp-chatgpt-personal-trainers';
 const publishedTime = '2026-07-28T14:25:19.000Z';
-const modifiedTime = '2026-09-06T00:00:00+02:00';
+const modifiedTime = '2026-09-07T00:00:00+02:00';
 const imageBase = '/posts/yelp-chatgpt-personal-trainers/images';
 const socialImage = `${imageBase}/yelp-chatgpt-personal-trainers.jpg`;
 const articleId = `https://fitnessxmarketing.com${canonical}`;
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  '@id': articleId,
-  headline: title,
-  name: title,
-  description,
-  datePublished: publishedTime,
-  dateModified: modifiedTime,
-  mainEntityOfPage: articleId,
-  image: `https://fitnessxmarketing.com${socialImage}`,
-  articleSection: 'AI Visibility',
-  inLanguage: 'en',
-  author: {
-    '@type': 'Organization',
-    name: 'Fitness x Marketing',
-    url: 'https://fitnessxmarketing.com/',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Fitness x Marketing',
-    url: 'https://fitnessxmarketing.com/',
-  },
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': articleId,
+      headline: title,
+      name: title,
+      description,
+      datePublished: publishedTime,
+      dateModified: modifiedTime,
+      mainEntityOfPage: articleId,
+      image: {
+        '@type': 'ImageObject',
+        url: `https://fitnessxmarketing.com${socialImage}`,
+        width: 1200,
+        height: 630,
+        caption: 'YELP ChatGPT personal trainers',
+      },
+      thumbnailUrl: `https://fitnessxmarketing.com${socialImage}`,
+      articleSection: 'AI Visibility',
+      inLanguage: 'en',
+      keywords: ['Yelp for personal trainers', 'ChatGPT for personal trainers', 'AI visibility for personal trainers'],
+      author: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://fitnessxmarketing.com/posts/yelp-chatgpt-personal-trainers/fitness-x-marketing-logo.jpeg',
+        },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${articleId}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Articles',
+          item: 'https://fitnessxmarketing.com/posts',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: articleId,
+        },
+      ],
+    },
+  ],
 };
 ---
 
@@ -42,7 +76,7 @@ const structuredData = {
   description={description}
   canonical={canonical}
   image={socialImage}
-  imageAlt="Yelp, ChatGPT and a new personal-training client enquiry"
+  imageAlt="YELP ChatGPT personal trainers"
   favicon="/posts/yelp-chatgpt-personal-trainers/fitness-x-marketing-logo.jpeg"
   type="article"
   publishedTime={publishedTime}

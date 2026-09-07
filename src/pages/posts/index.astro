@@ -7,6 +7,16 @@ const posts = [
     title: 'Wearable Data for Coaching: How to Sell Data-Driven Personal Training Services',
     description: 'Turn wearable data into useful program decisions, a clear client deliverable, and a service you can price sustainably.',
     category: 'Coaching & Programming',
+    image: '/posts/wearable-data-and-data-driven-coaching/images/include-in-existing-coaching.jpg',
+    imageAlt: 'A checklist showing when to include wearable data review in an existing personal training service',
+  },
+  {
+    href: '/posts/yelp-chatgpt-personal-trainers',
+    title: 'Yelp Reviews Are Coming to ChatGPT. Should Personal Trainers Care?',
+    description: 'ChatGPT may now use Yelp reviews and local business data when recommending nearby services. See exactly what personal trainers should do.',
+    category: 'AI Visibility',
+    image: '/posts/yelp-chatgpt-personal-trainers/images/yelp-chatgpt-personal-trainers.jpg',
+    imageAlt: 'YELP ChatGPT personal trainers',
   },
 ];
 ---
@@ -19,9 +29,14 @@ const posts = [
   <ul class="post-list">
     {posts.map((post) => (
       <li>
-        <p class="category">{post.category}</p>
-        <a href={post.href}>{post.title}</a>
-        <p>{post.description}</p>
+        <a class="thumbnail" href={post.href} aria-label={post.title}>
+          <img src={post.image} alt={post.imageAlt} width="1200" height="630" loading="lazy" decoding="async" />
+        </a>
+        <div>
+          <p class="category">{post.category}</p>
+          <a class="post-title" href={post.href}>{post.title}</a>
+          <p>{post.description}</p>
+        </div>
       </li>
     ))}
   </ul>
@@ -54,11 +69,14 @@ const posts = [
     }
 
     .post-list li {
-      padding: 1.6rem 0;
+      display: grid;
+      gap: 1.4rem;
+      grid-template-columns: minmax(180px, 0.75fr) minmax(0, 1.25fr);
+      padding: 2rem 0;
       border-top: 1px solid #eaeaea;
     }
 
-    .post-list a {
+    .post-title {
       color: #252a34;
       font-size: clamp(1.25rem, 4vw, 1.65rem);
       font-weight: 750;
@@ -72,6 +90,27 @@ const posts = [
       color: #3a4252;
       margin-bottom: 0;
       max-width: 65ch;
+    }
+
+    .thumbnail img {
+      aspect-ratio: 1200 / 630;
+      border-radius: 10px;
+      display: block;
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .post-list li > div > p:last-child {
+      color: #3a4252;
+      margin-bottom: 0;
+      max-width: 65ch;
+    }
+
+    @media (max-width: 640px) {
+      .post-list li {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </Layout>
