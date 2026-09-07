@@ -9,6 +9,10 @@
     {
       "pattern": "fitnessxmarketing.com/posts/yelp-chatgpt-personal-trainers*",
       "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/posts/follow-up-for-trainers*",
+      "zone_name": "fitnessxmarketing.com"
     }
   ],
   "assets": {
