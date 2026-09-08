@@ -13,6 +13,10 @@
     {
       "pattern": "fitnessxmarketing.com/posts/follow-up-for-trainers*",
       "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/posts/ai-for-personal-trainers-top-uses-cases-tasks*",
+      "zone_name": "fitnessxmarketing.com"
     }
   ],
   "assets": {
