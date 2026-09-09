@@ -25,6 +25,14 @@
     {
       "pattern": "fitnessxmarketing.com/posts/trainer-objections*",
       "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/posts/ideal-client-for-coaches*",
+      "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/tools/find-your-ideal-clients-faqs-for-coached*",
+      "zone_name": "fitnessxmarketing.com"
     }
   ],
   "assets": {

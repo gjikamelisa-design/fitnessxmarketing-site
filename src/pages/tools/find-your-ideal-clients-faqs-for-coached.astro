@@ -1,0 +1,272 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Find Your Ideal Client FAQs for Fitness Coaches';
+const description = 'A plug-and-play tool that turns your niche and ideal client FAQs into content that converts.';
+const canonical = '/tools/find-your-ideal-clients-faqs-for-coached';
+const toolId = `https://fitnessxmarketing.com${canonical}`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebApplication',
+      '@id': `${toolId}#application`,
+      name: title,
+      alternateName: 'ICP Profiler',
+      description,
+      url: toolId,
+      applicationCategory: 'BusinessApplication',
+      applicationSubCategory: 'Fitness marketing tool',
+      operatingSystem: 'Any operating system with a modern web browser',
+      browserRequirements: 'Requires JavaScript and a modern web browser',
+      isAccessibleForFree: true,
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      featureList: [
+        'Six-question ideal client profiler',
+        'Personalised positioning statement',
+        'Detailed ideal client profile',
+        'Custom GPT handoff for ideal client FAQs',
+        'Content-topic workflow based on client questions',
+      ],
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'Online personal trainers and fitness coaches',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://fitnessxmarketing.com/posts/wearable-data-and-data-driven-coaching/fitness-x-marketing-logo.jpeg',
+        },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${toolId}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Tools',
+          item: 'https://fitnessxmarketing.com/tools',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: toolId,
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  structuredData={structuredData}
+>
+  <header class="tool-intro">
+    <p class="eyebrow"><a href="/tools">Fitness marketing tools</a> / Ideal client FAQs</p>
+    <h1>Find Your Ideal Client’s FAQs</h1>
+    <p class="dek"><strong>Get your ideal client profile in 6 questions</strong> → find their FAQs with AI → get content topics that trigger them to act.</p>
+    <p class="time-note">In less than 5 minutes.</p>
+  </header>
+
+  <section class="tool-shell" aria-labelledby="tool-frame-title">
+    <h2 id="tool-frame-title" class="sr-only">Ideal Client FAQ Profiler</h2>
+    <iframe
+      id="icp-profiler-frame"
+      title="Ideal Client FAQ Profiler"
+      src="/tools/find-your-ideal-clients-faqs-for-coached/app/index.html"
+      loading="eager"
+      allow="clipboard-write"
+    ></iframe>
+  </section>
+
+  <section class="tool-details" aria-labelledby="about-tool">
+    <p class="section-label">About this free tool</p>
+    <h2 id="about-tool">Turn an ideal client profile into content people are already looking for</h2>
+
+    <div class="detail-grid">
+      <article>
+        <h3>Who is this for?</h3>
+        <p>Online personal trainers and fitness coaches who want to attract more clients through content without wasting hours brainstorming or relying on generic advice.</p>
+      </article>
+      <article>
+        <h3>What pain does it solve?</h3>
+        <p>If you second-guess what to post, this workflow gives you a reusable ideal client profile and a clearer set of questions to answer instead of another random content calendar.</p>
+      </article>
+      <article>
+        <h3>Why is it different?</h3>
+        <p>It starts with six concrete client questions, builds a profile from your answers, and then carries that context into an AI-assisted FAQ workflow. The content ideas are tied to the client you actually want to reach.</p>
+      </article>
+      <article>
+        <h3>How it works</h3>
+        <ol>
+          <li>Answer six questions about the clients you want to train.</li>
+          <li>Review the positioning statement and ideal client profile.</li>
+          <li>Use the profile with the linked Custom GPT to generate FAQs and content topics.</li>
+        </ol>
+      </article>
+    </div>
+
+    <aside class="privacy-note">
+      <h3>Privacy</h3>
+      <p>Your quiz choices are processed in your browser. If you enter your email to unlock the full report, the tool sends your email, answers and generated profile to the existing Fitness x Marketing lead system. Following on Instagram is a separate action on Instagram. The Custom GPT step opens ChatGPT, where OpenAI’s terms and privacy policy apply.</p>
+    </aside>
+  </section>
+
+  <script is:inline>
+    const frame = document.getElementById('icp-profiler-frame');
+    if (frame) {
+      const resizeFrame = () => {
+        try {
+          const body = frame.contentDocument?.body;
+          const root = frame.contentDocument?.documentElement;
+          const height = Math.max(body?.scrollHeight || 0, root?.scrollHeight || 0, 760);
+          frame.style.height = `${height}px`;
+        } catch {
+          frame.style.height = '920px';
+        }
+      };
+
+      frame.addEventListener('load', () => {
+        resizeFrame();
+        try {
+          const observer = new ResizeObserver(resizeFrame);
+          const root = frame.contentDocument?.getElementById('root');
+          if (root) observer.observe(root);
+        } catch {
+          // The fixed fallback height keeps the tool usable if observation is unavailable.
+        }
+      });
+    }
+  </script>
+
+  <style>
+    :global(main) {
+      max-width: 1180px;
+      padding-top: 2.2rem;
+    }
+
+    .tool-intro {
+      border-bottom: 1px solid #dfe3e6;
+      margin: 0 auto 2rem;
+      max-width: 900px;
+      padding: 1rem 0 2rem;
+      text-align: center;
+    }
+
+    .eyebrow,
+    .section-label {
+      color: #068f8c;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow a { color: inherit; text-decoration: none; }
+
+    h1 {
+      color: #252a34;
+      font-size: clamp(2.35rem, 6.5vw, 4.6rem);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin: 0.8rem auto 1.2rem;
+      max-width: 15ch;
+    }
+
+    .dek {
+      color: #3a4252;
+      font-size: clamp(1.08rem, 2.4vw, 1.35rem);
+      line-height: 1.55;
+      margin: 0 auto;
+      max-width: 64ch;
+    }
+
+    .time-note {
+      color: #068f8c;
+      font-weight: 750;
+      margin: 0.65rem 0 0;
+    }
+
+    .tool-shell {
+      background: #eaf6f6;
+      border: 1px solid #cfe8e8;
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgb(37 42 52 / 10%);
+      overflow: hidden;
+    }
+
+    iframe {
+      background: #fff;
+      border: 0;
+      display: block;
+      min-height: 760px;
+      width: 100%;
+    }
+
+    .tool-details {
+      margin: 5rem auto 0;
+      max-width: 900px;
+    }
+
+    .tool-details > h2 {
+      color: #252a34;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin: 0.7rem 0 2rem;
+      max-width: 20ch;
+    }
+
+    .detail-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-grid article,
+    .privacy-note {
+      background: #f5fbfb;
+      border: 1px solid #d3eeee;
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+
+    h3 { color: #252a34; font-size: 1.18rem; margin: 0 0 0.65rem; }
+    p, li { color: #3a4252; }
+    ol { margin-bottom: 0; padding-left: 1.25rem; }
+    li + li { margin-top: 0.45rem; }
+    .privacy-note { margin-top: 1rem; }
+    .privacy-note p { margin-bottom: 0; }
+
+    .sr-only {
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    @media (max-width: 700px) {
+      :global(main) { padding-left: 0.8rem; padding-right: 0.8rem; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .tool-shell { border-radius: 12px; }
+      .tool-intro { padding-left: 0.45rem; padding-right: 0.45rem; }
+    }
+  </style>
+</Layout>
