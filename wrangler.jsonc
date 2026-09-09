@@ -31,6 +31,10 @@
       "zone_name": "fitnessxmarketing.com"
     },
     {
+      "pattern": "fitnessxmarketing.com/posts/a-non-trendy-take-on-where-fitness-is-going*",
+      "zone_name": "fitnessxmarketing.com"
+    },
+    {
       "pattern": "fitnessxmarketing.com/tools/find-your-ideal-clients-faqs-for-coaches*",
       "zone_name": "fitnessxmarketing.com"
     }
