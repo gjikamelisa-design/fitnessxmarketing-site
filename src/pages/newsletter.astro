@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+
+const title = 'Fitness Marketing Newsletter for Personal Trainers';
+const description = 'Practical marketing, sales, AI and coaching ideas for personal trainers and independent fitness businesses—sent when there is something useful to share.';
+const canonical = '/newsletter/';
+const pageId = 'https://fitnessxmarketing.com/newsletter/';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': pageId,
+      url: pageId,
+      name: title,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': 'https://fitnessxmarketing.com/#website' },
+      about: {
+        '@type': 'Thing',
+        name: 'Fitness marketing for personal trainers',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageId}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://fitnessxmarketing.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Newsletter',
+          item: pageId,
+        },
+      ],
+    },
+  ],
+};
+
+const topics = [
+  {
+    number: '01',
+    title: 'Marketing & positioning',
+    description: 'Audience research, clearer offers, useful content and practical client-acquisition ideas.',
+  },
+  {
+    number: '02',
+    title: 'Sales & business growth',
+    description: 'Lead follow-up, objections, pricing, retention and systems for growing without an agency-sized team.',
+  },
+  {
+    number: '03',
+    title: 'AI & workflows',
+    description: 'Prompts, automations and experiments that help you save time while keeping human judgement in the loop.',
+  },
+  {
+    number: '04',
+    title: 'Fitness technology & coaching',
+    description: 'Wearables, data-informed coaching and tools that can add real value to your service.',
+  },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  mainClass="landing-main"
+  structuredData={structuredData}
+>
+  <div class="newsletter-page">
+    <section class="newsletter-hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">The Fitness × Marketing newsletter</p>
+          <h1>One useful thing at a time.</h1>
+        </div>
+        <div class="hero-details">
+          <p class="hero-copy">Practical marketing, sales, AI and coaching ideas for people building independent fitness businesses.</p>
+          <p>New resources arrive when there is something worth sharing—not because a content calendar says an email is due.</p>
+          <NewsletterSignup buttonLabel="Join the newsletter" />
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="shell about-grid">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="/fitness-x-marketing-logo.jpeg" alt="" width="160" height="160" />
+        </div>
+        <div>
+          <p class="eyebrow">Who’s behind it?</p>
+          <h2>Hi, I’m Melisa.</h2>
+          <p>Being an independent professional comes with annoying fine print: you end up becoming your own marketing team, salesperson, strategist, content creator and increasingly your own AI operations department too.</p>
+          <p>I’ve spent years working across content, marketing, SEO, AI and the fitness industry—building systems and frameworks to make that work easier to manage.</p>
+          <p><strong>Fitness × Marketing is where I share the useful ones.</strong></p>
+          <p>It’s not an agency. It’s a growing library of practical tools, ideas and experiments for fitness professionals building businesses of their own.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="topics-section" aria-labelledby="topics-heading">
+      <div class="shell">
+        <p class="eyebrow">What you’ll receive</p>
+        <h2 id="topics-heading">Useful across the whole business.</h2>
+        <div class="topic-grid">
+          {topics.map((topic) => (
+            <article class="topic-card">
+              <p class="topic-number">{topic.number}</p>
+              <h3>{topic.title}</h3>
+              <p>{topic.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="shell closing-grid">
+        <div>
+          <p class="eyebrow">Join when you’re ready</p>
+          <h2>Build a smarter fitness business, one useful idea at a time.</h2>
+        </div>
+        <div>
+          <p>Get new tools, research and practical systems directly in your inbox.</p>
+          <NewsletterSignup dark={true} buttonLabel="Join the newsletter" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .newsletter-page { overflow: hidden; }
+    .shell { margin: 0 auto; max-width: 1180px; padding-left: clamp(1.25rem, 4vw, 3rem); padding-right: clamp(1.25rem, 4vw, 3rem); }
+    .eyebrow, .topic-number { color: #068f8c; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    .newsletter-hero { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+    .hero-grid, .closing-grid { align-items: start; display: grid; gap: clamp(2.5rem, 7vw, 6rem); grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
+    h1 { font-size: clamp(3.5rem, 8.5vw, 6.7rem); letter-spacing: -0.065em; line-height: 0.95; margin: 1rem 0 0; max-width: 8ch; }
+    .hero-details { padding-top: 1.5rem; }
+    .hero-copy { color: #252a34; font-size: clamp(1.2rem, 2.7vw, 1.55rem); font-weight: 600; line-height: 1.45; }
+    .hero-details > p:not(.hero-copy) { color: #596371; margin-bottom: 2rem; }
+
+    .about-section { background: #f5fbfb; border-bottom: 1px solid #dfe3e6; border-top: 1px solid #dfe3e6; padding: clamp(4rem, 9vw, 7rem) 0; }
+    .about-grid { align-items: start; display: grid; gap: clamp(2.5rem, 8vw, 7rem); grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr); }
+    .brand-mark { background: #252a34; border-radius: 24px; box-shadow: 14px 14px 0 #bff5f3; max-width: 240px; padding: 2rem; }
+    .brand-mark img { display: block; height: auto; width: 100%; }
+    h2 { font-size: clamp(2.2rem, 5.2vw, 3.7rem); letter-spacing: -0.05em; line-height: 1.05; margin: 0.7rem 0 1.5rem; }
+    .about-grid p:not(.eyebrow) { color: #3a4252; font-size: 1.05rem; max-width: 66ch; }
+    .about-grid strong { color: #252a34; }
+
+    .topics-section { padding: clamp(4rem, 9vw, 7rem) 0; }
+    .topic-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); margin-top: 2.5rem; }
+    .topic-card { border: 1px solid #d7dde0; border-radius: 14px; min-height: 210px; padding: 1.5rem; }
+    .topic-number { margin: 0; }
+    .topic-card h3 { font-size: 1.25rem; margin: 0.7rem 0; }
+    .topic-card > p:last-child { color: #596371; line-height: 1.55; }
+
+    .closing-section { background: #252a34; color: #fff; padding: clamp(4rem, 9vw, 7rem) 0; }
+    .closing-section .eyebrow { color: #08d9d6; }
+    .closing-section h2 { color: #fff; margin-top: 0.7rem; }
+    .closing-section p { color: #dbe2e5; font-size: 1.05rem; }
+
+    @media (max-width: 760px) {
+      .hero-grid, .about-grid, .closing-grid, .topic-grid { grid-template-columns: 1fr; }
+      .hero-details { padding-top: 0; }
+      .brand-mark { max-width: 150px; }
+      .topic-card { min-height: 0; }
+    }
+  </style>
+</Layout>

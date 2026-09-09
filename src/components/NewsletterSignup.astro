@@ -1,0 +1,112 @@
+---
+interface Props {
+  dark?: boolean;
+  buttonLabel?: string;
+}
+
+const { dark = false, buttonLabel = 'Join the newsletter' } = Astro.props;
+---
+
+<form
+  class:list={['newsletter-form', { dark }]}
+  action="https://fitnessxmarketing.kit.com/posts"
+  method="POST"
+  target="_blank"
+>
+  <label>
+    <span class="sr-only">Email address</span>
+    <input name="email_address" type="email" autocomplete="email" placeholder="Your email address" required />
+  </label>
+  <button type="submit">{buttonLabel}</button>
+</form>
+<p class:list={['form-note', { dark }]}>No spam. Unsubscribe anytime.</p>
+
+<style>
+  .newsletter-form {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    max-width: 660px;
+  }
+
+  label {
+    display: block;
+  }
+
+  input,
+  button {
+    border-radius: 10px;
+    font: inherit;
+    min-height: 52px;
+  }
+
+  input {
+    background: #fff;
+    border: 1px solid #cfd6da;
+    color: #252a34;
+    padding: 0.8rem 1rem;
+    width: 100%;
+  }
+
+  input:focus {
+    border-color: #068f8c;
+    outline: 3px solid rgba(8, 217, 214, 0.2);
+  }
+
+  button {
+    background: #08d9d6;
+    border: 1px solid #08d9d6;
+    color: #252a34;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    padding: 0.8rem 1.2rem;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    background: #1df7f4;
+    border-color: #1df7f4;
+  }
+
+  .newsletter-form.dark input {
+    background: #303641;
+    border-color: #5c6572;
+    color: #fff;
+  }
+
+  .newsletter-form.dark input::placeholder {
+    color: #b8c0c8;
+  }
+
+  .form-note {
+    color: #687281;
+    font-size: 0.78rem;
+    margin: 0.65rem 0 0;
+  }
+
+  .form-note.dark {
+    color: #aeb7c0;
+  }
+
+  .sr-only {
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  @media (max-width: 600px) {
+    .newsletter-form {
+      grid-template-columns: 1fr;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+</style>

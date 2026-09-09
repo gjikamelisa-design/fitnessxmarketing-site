@@ -10,6 +10,7 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   favicon?: string;
+  mainClass?: string;
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -24,6 +25,7 @@ const {
   publishedTime,
   modifiedTime,
   favicon = '/posts/wearable-data-and-data-driven-coaching/fitness-x-marketing-logo.jpeg',
+  mainClass,
   structuredData,
 } = Astro.props;
 
@@ -76,10 +78,10 @@ const currentPath = Astro.url.pathname;
         <a href="https://fitnessxmarketing.com/tools" aria-current={currentPath.startsWith('/tools') ? 'page' : undefined}>Tools</a>
         <a href="https://fitnessxmarketing.com/posts" aria-current={currentPath.startsWith('/posts') || currentPath.startsWith('/blog') ? 'page' : undefined}>Articles</a>
       </nav>
-      <p class="resource-hub"><span aria-hidden="true"></span> Resource Hub</p>
+      <a class="resource-hub" href="https://fitnessxmarketing.com/newsletter/" aria-current={currentPath.startsWith('/newsletter') ? 'page' : undefined}><span aria-hidden="true"></span> Newsletter</a>
     </header>
 
-    <main>
+    <main class={mainClass}>
       <slot />
     </main>
 
@@ -171,6 +173,7 @@ const currentPath = Astro.url.pathname;
         gap: 0.7rem;
         letter-spacing: 0.2em;
         margin: 0;
+        text-decoration: none;
         text-transform: uppercase;
         white-space: nowrap;
       }
@@ -186,6 +189,11 @@ const currentPath = Astro.url.pathname;
         max-width: 900px;
         margin: 0 auto;
         padding: 3rem 1.5rem 5rem;
+      }
+
+      main.landing-main {
+        max-width: none;
+        padding: 0;
       }
 
       .site-footer {
@@ -208,8 +216,13 @@ const currentPath = Astro.url.pathname;
           border-top: 1px solid #eef0f2;
           justify-content: space-between;
           gap: 0.85rem;
+          order: 3;
           padding-top: 0.8rem;
           width: 100%;
+        }
+
+        .brand {
+          order: 1;
         }
 
         .site-header nav a {
@@ -218,7 +231,9 @@ const currentPath = Astro.url.pathname;
         }
 
         .resource-hub {
-          display: none;
+          display: flex;
+          margin-left: auto;
+          order: 2;
         }
 
         main {
