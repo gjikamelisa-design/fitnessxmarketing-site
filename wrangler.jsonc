@@ -21,6 +21,10 @@
     {
       "pattern": "fitnessxmarketing.com/posts/do-personal-trainers-need-to-look-the-part-coaches-weigh-in*",
       "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/posts/trainer-objections*",
+      "zone_name": "fitnessxmarketing.com"
     }
   ],
   "assets": {
