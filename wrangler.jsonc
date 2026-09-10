@@ -7,6 +7,14 @@
       "zone_name": "fitnessxmarketing.com"
     },
     {
+      "pattern": "fitnessxmarketing.com/sitemap.xml",
+      "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/robots.txt",
+      "zone_name": "fitnessxmarketing.com"
+    },
+    {
       "pattern": "fitnessxmarketing.com/newsletter*",
       "zone_name": "fitnessxmarketing.com"
     },
