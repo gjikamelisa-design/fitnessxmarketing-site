@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const tools = [
+  {
+    number: '01',
+    category: 'Coaching',
+    title: 'VO₂ Max Training Protocol Finder',
+    description: 'Match a client’s recent readings, recovery and current training week with a suitable interval protocol.',
+    action: 'Find a protocol',
+    href: '/tools/wearable-tracking-for-coaches/vo2max-training-protocol/',
+  },
+  {
+    number: '02',
+    category: 'Coaching',
+    title: 'Wearable Data Interpretation Tool',
+    description: 'Turn HRV, resting heart rate, sleep and training-load changes into a clearer coaching conversation.',
+    action: 'Run the check-in',
+    href: '/tools/wearable-tracking-for-coaches/biweekly-wearable-check-in-for-coaches/',
+  },
+  {
+    number: '03',
+    category: 'Marketing',
+    title: 'Ideal Client FAQ Finder',
+    description: 'Build an ideal-client profile and turn the questions your audience is already asking into useful content topics.',
+    action: 'Find client FAQs',
+    href: '/tools/find-your-ideal-clients-faqs-for-coaches/',
+  },
+];
+
+const resources = [
+  {
+    category: 'Sales',
+    price: 'Free',
+    title: 'The Objection Playbook',
+    description: 'Understand five objections that cost personal trainers clients and respond without sounding pushy.',
+    action: 'View the playbook',
+    href: 'https://melisag.gumroad.com/l/objections-playbook-for-personal-trainers',
+    image: 'https://public-files.gumroad.com/sxic91ite1hh6h2lohzbp79ris6i',
+    imageAlt: 'The Objection Playbook for personal trainers',
+  },
+  {
+    category: 'Content',
+    price: '$9.99',
+    title: 'High-Conversion Content Calendar',
+    description: 'Build a 30-day marketing system with a content bank, calendar and AI prompt for writing promotional posts.',
+    action: 'View the content system',
+    href: 'https://melisag.gumroad.com/l/aedrea',
+    image: 'https://public-files.gumroad.com/kglvg5e106hyjo6rybh3o87qs4mm',
+    imageAlt: 'High-Conversion Content Calendar for personal trainers',
+  },
+  {
+    category: 'Branding',
+    price: '$19',
+    title: 'The WHY Factor Workbook',
+    description: 'Define your coaching brand’s purpose, values, voice, positioning and ideal-client fit through guided exercises.',
+    action: 'View the workbook',
+    href: 'https://melisag.gumroad.com/l/thebrandingworkbook',
+    image: 'https://public-files.gumroad.com/0ajyv5pwxls8bti3pq5wxrxt0au4',
+    imageAlt: 'The WHY Factor branding workbook for fitness coaches',
+  },
+];
+
+const title = 'Free Fitness Marketing Tools and Resources for Personal Trainers';
+const description = 'Use free coaching and fitness marketing tools, then explore practical playbooks and resources for growing a personal training business.';
+const pageUrl = 'https://fitnessxmarketing.com/tools';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': pageUrl,
+      url: pageUrl,
+      name: title,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': 'https://fitnessxmarketing.com/#website' },
+      publisher: { '@id': 'https://fitnessxmarketing.com/#organization' },
+    },
+    {
+      '@type': 'ItemList',
+      name: 'Fitness x Marketing tools and resources',
+      itemListElement: [...tools, ...resources].map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.title,
+        url: item.href.startsWith('http') ? item.href : `https://fitnessxmarketing.com${item.href}`,
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical="/tools"
+  mainClass="landing-main"
+  structuredData={structuredData}
+>
+  <div class="tools-page">
+    <header class="tools-hero">
+      <div class="shell hero-copy">
+        <p class="eyebrow">Tools & resources</p>
+        <h1>Practical tools for building a smarter fitness business.</h1>
+        <p>Free tools and practical resources for personal trainers and fitness businesses.</p>
+        <a href="#free-tools">Browse tools</a>
+      </div>
+    </header>
+
+    <div>
+      <section class="tool-section" id="free-tools" aria-label="Free interactive tools">
+        <div class="shell">
+          <div class="tool-grid">
+            {tools.map((tool) => (
+              <a class="tool-card" href={tool.href}>
+                <div class="card-topline">
+                  <span class="number">{tool.number}</span>
+                  <span class="badge">{tool.category}</span>
+                  <span class="badge free">Free</span>
+                </div>
+                <h3>{tool.title}</h3>
+                <p>{tool.description}</p>
+                <span class="card-action">{tool.action}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="resource-section" aria-labelledby="resources-heading">
+        <div class="shell">
+          <div class="resource-heading">
+            <h2 id="resources-heading">Playbooks & resources</h2>
+          </div>
+
+          <div class="resource-grid">
+            {resources.map((resource) => (
+              <article class="resource-card">
+                <a class="resource-image" href={resource.href} target="_blank" rel="noopener noreferrer" aria-label={resource.title}>
+                  <img src={resource.image} alt={resource.imageAlt} width="1200" height="675" loading="lazy" decoding="async" />
+                </a>
+                <div class="resource-copy">
+                  <div class="resource-meta">
+                    <span>{resource.category}</span>
+                    <span>{resource.price}</span>
+                  </div>
+                  <h3><a href={resource.href} target="_blank" rel="noopener noreferrer">{resource.title}</a></h3>
+                  <p>{resource.description}</p>
+                  <a class="resource-action" href={resource.href} target="_blank" rel="noopener noreferrer">
+                    {resource.action}
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-band">
+        <div class="shell newsletter-grid">
+          <h2>Get new tools and practical ideas.</h2>
+          <a href="/newsletter/">Join the newsletter</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <style>
+    .tools-page { overflow: hidden; }
+    .shell { margin: 0 auto; max-width: 1180px; padding-left: clamp(1.25rem, 4vw, 3rem); padding-right: clamp(1.25rem, 4vw, 3rem); }
+    .eyebrow { color: #068f8c; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+    .tools-hero { background: #fff; border-bottom: 1px solid #e8ebed; padding: clamp(2.5rem, 4vw, 3.5rem) 0; }
+    .hero-copy { margin-left: auto; margin-right: auto; }
+    h1 { font-size: clamp(2.75rem, 5.4vw, 4.8rem); letter-spacing: -0.055em; line-height: 0.98; margin: 1.1rem 0 1.5rem; max-width: 12ch; }
+    .hero-copy > p:not(.eyebrow) { color: #687281; font-size: clamp(1.05rem, 1.8vw, 1.2rem); line-height: 1.55; margin: 0 0 1.5rem; max-width: 52ch; }
+    .hero-copy a, .newsletter-band a { background: #252a34; border-radius: 0; color: #fff; display: inline-block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.07em; padding: 0.95rem 1.2rem; text-decoration: none; text-transform: uppercase; }
+
+    .tool-section { padding: clamp(3rem, 6vw, 5rem) 0; }
+    .resource-heading h2, .newsletter-band h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.045em; line-height: 1.04; margin: 0; }
+    .tool-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tool-card { border: 1px solid #d7dde0; border-radius: 16px; color: #252a34; display: flex; flex-direction: column; min-height: 340px; padding: 1.5rem; text-decoration: none; transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
+    .tool-card:hover, .tool-card:focus-visible { border-color: #068f8c; box-shadow: 0 16px 34px rgba(37, 42, 52, 0.1); transform: translateY(-3px); }
+    .card-topline { align-items: center; display: flex; gap: 0.5rem; }
+    .number { color: #068f8c; font-size: 0.8rem; font-weight: 800; margin-right: auto; }
+    .badge { background: #eaf6f6; border-radius: 999px; color: #067f7d; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; padding: 0.35rem 0.55rem; text-transform: uppercase; }
+    .badge.free { background: #252a34; color: #fff; }
+    .tool-card h3 { font-size: clamp(1.45rem, 2.7vw, 2rem); letter-spacing: -0.04em; line-height: 1.1; margin: 3rem 0 0.9rem; }
+    .tool-card > p { color: #596371; line-height: 1.55; margin: 0; }
+    .card-action { color: #067f7d; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; margin-top: auto; padding-top: 2rem; text-transform: uppercase; }
+
+    .resource-section { background: #252a34; color: #fff; padding: clamp(4rem, 9vw, 7rem) 0; }
+    .resource-section .eyebrow { color: #08d9d6; }
+    .resource-heading { margin-bottom: 2.5rem; }
+    .resource-heading h2 { color: #fff; }
+    .resource-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .resource-card { background: #fff; border-radius: 16px; color: #252a34; overflow: hidden; }
+    .resource-image { background: #eef5f5; display: block; overflow: hidden; }
+    .resource-image img { aspect-ratio: 16 / 9; display: block; height: auto; object-fit: cover; transition: transform 180ms ease; width: 100%; }
+    .resource-card:hover .resource-image img { transform: scale(1.015); }
+    .resource-copy { display: flex; flex-direction: column; min-height: 310px; padding: 1.35rem; }
+    .resource-meta { display: flex; justify-content: space-between; }
+    .resource-meta span { color: #068f8c; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    .resource-copy h3 { font-size: 1.5rem; letter-spacing: -0.035em; line-height: 1.15; margin: 0.9rem 0 0.75rem; }
+    .resource-copy h3 a { color: #252a34; text-decoration: none; }
+    .resource-copy > p { color: #596371; line-height: 1.55; margin: 0; }
+    .resource-action { color: #067f7d; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.06em; margin-top: auto; padding-top: 1.5rem; text-decoration: none; text-transform: uppercase; }
+
+    .newsletter-band { padding: clamp(3rem, 6vw, 5rem) 0; }
+    .newsletter-grid { align-items: center; display: flex; gap: 2rem; justify-content: space-between; }
+
+    @media (max-width: 900px) {
+      .tool-grid, .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tool-card:last-child, .resource-card:last-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 720px) {
+      .tool-grid, .resource-grid { grid-template-columns: 1fr; }
+      .newsletter-grid { align-items: flex-start; flex-direction: column; }
+      .tool-card, .resource-copy { min-height: 0; }
+      .tool-card h3 { margin-top: 2.25rem; }
+      .tool-card:last-child, .resource-card:last-child { grid-column: auto; }
+    }
+  </style>
+</Layout>
