@@ -11,6 +11,14 @@
       "zone_name": "fitnessxmarketing.com"
     },
     {
+      "pattern": "fitnessxmarketing.com/posts",
+      "zone_name": "fitnessxmarketing.com"
+    },
+    {
+      "pattern": "fitnessxmarketing.com/posts/",
+      "zone_name": "fitnessxmarketing.com"
+    },
+    {
       "pattern": "fitnessxmarketing.com/posts/wearable-data-and-data-driven-coaching*",
       "zone_name": "fitnessxmarketing.com"
     },

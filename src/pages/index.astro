@@ -115,14 +115,17 @@ const structuredData = {
         <a href="/posts">
           <span>Read & learn</span>
           <small>Articles and practical frameworks</small>
+          <span class="decision-action">Browse articles</span>
         </a>
         <a class="featured" href="/tools">
           <span>Use free tools</span>
           <small>Interactive tools built for coaches</small>
+          <span class="decision-action">Open free tools</span>
         </a>
         <a href="/newsletter/">
           <span>Join the newsletter</span>
           <small>One useful thing at a time</small>
+          <span class="decision-action">Subscribe</span>
         </a>
       </div>
     </section>
@@ -219,24 +222,35 @@ const structuredData = {
 
     .decisions { display: grid; gap: 0.85rem; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; }
     .decisions a {
-      align-items: center;
+      align-items: flex-start;
       background: #fff;
       border: 1px solid #cfd6da;
       border-radius: 14px;
       color: #252a34;
-      display: grid;
-      gap: 0.2rem 1rem;
-      grid-template-columns: 1fr auto;
-      min-height: 122px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      min-height: 162px;
       padding: 1.3rem;
       text-decoration: none;
-      transition: border-color 160ms ease, transform 160ms ease;
+      transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
     }
-    .decisions a:hover { border-color: #068f8c; transform: translateY(-2px); }
+    .decisions a:hover, .decisions a:focus-visible { border-color: #068f8c; box-shadow: 0 12px 28px rgba(37, 42, 52, 0.1); transform: translateY(-2px); }
     .decisions .featured { background: #252a34; border-color: #252a34; color: #fff; }
     .decisions span { font-size: 1.05rem; font-weight: 800; }
-    .decisions small { color: #687281; font-size: 0.83rem; grid-column: 1; }
+    .decisions small { color: #687281; font-size: 0.83rem; }
     .decisions .featured small { color: #cfd9dd; }
+    .decisions .decision-action {
+      border-bottom: 2px solid #08d9d6;
+      color: #067f7d;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      margin-top: auto;
+      padding-bottom: 0.12rem;
+      text-transform: uppercase;
+    }
+    .decisions .featured .decision-action { color: #08d9d6; }
     .content-section {
       border-top: 1px solid #dfe3e6;
       padding-bottom: clamp(4rem, 8vw, 7rem);

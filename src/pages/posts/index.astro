@@ -3,154 +3,178 @@ import Layout from '../../layouts/Layout.astro';
 
 const posts = [
   {
-    href: '/posts/wearable-data-and-data-driven-coaching',
-    title: 'Wearable Data for Coaching: How to Sell Data-Driven Personal Training Services',
-    description: 'Turn wearable data into useful program decisions, a clear client deliverable, and a service you can price sustainably.',
-    category: 'Coaching & Programming',
-    image: '/posts/wearable-data-and-data-driven-coaching/images/include-in-existing-coaching.jpg',
-    imageAlt: 'A checklist showing when to include wearable data review in an existing personal training service',
+    href: '/posts/a-non-trendy-take-on-where-fitness-is-going/',
+    title: 'Where Fitness Is Really Heading in 2026 (No Hype)',
+    description: "Skip the trend roundups. Here is what is actually shifting in fitness, from retention-driven growth to Gen Z's social-first training culture.",
+    category: 'Fitness Industry',
+    image: '/posts/a-non-trendy-take-on-where-fitness-is-going/images/fitness-trends-2026.jpeg',
+    imageAlt: 'Fitness trends 2026',
   },
   {
-    href: '/posts/yelp-chatgpt-personal-trainers',
-    title: 'Yelp Reviews Are Coming to ChatGPT. Should Personal Trainers Care?',
-    description: 'ChatGPT may now use Yelp reviews and local business data when recommending nearby services. See exactly what personal trainers should do.',
-    category: 'AI Visibility',
-    image: '/posts/yelp-chatgpt-personal-trainers/images/yelp-chatgpt-personal-trainers.jpg',
-    imageAlt: 'YELP ChatGPT personal trainers',
-  },
-  {
-    href: '/posts/ai-for-personal-trainers-top-uses-cases-tasks',
-    title: "Where Does AI Actually Fit in a Personal Trainer's Business?",
-    description: 'A task-by-task breakdown of what AI can do for a coach right now, including specific free tools.',
-    category: 'AI for Personal Trainers',
-    image: '/posts/ai-for-personal-trainers-top-uses-cases-tasks/images/ai-use-cases-for-personal-trainers.png',
-    imageAlt: "Where Does AI Actually Fit in a Personal Trainer's Business, A task-by-task breakdown",
-  },
-  {
-    href: '/posts/do-personal-trainers-need-to-look-the-part-coaches-weigh-in',
-    title: 'Do Personal Trainers Need to Look the Part? Coaches Weigh In',
-    description: "I asked personal trainers whether body image actually matters in the fitness industry. Here's what they said!",
-    category: 'Fitness Marketing',
-    image: '/posts/do-personal-trainers-need-to-look-the-part-coaches-weigh-in/images/linkedin-poll-personal-trainer-physique.png',
-    imageAlt: 'LinkedIn poll asking personal trainers whether they need to look jacked',
-  },
-  {
-    href: '/posts/trainer-objections',
-    title: 'How to Handle Objections as a Personal Trainer.',
-    description: "Most objections aren't rejection, they're signals. Learn the 5 types personal trainers face.",
-    category: 'Sales & Objections',
-    image: '/posts/trainer-objections/images/personal-training-objections-ebook.png',
-    imageAlt: 'Personal training objections ebook',
-  },
-  {
-    href: '/posts/ideal-client-for-coaches',
+    href: '/posts/ideal-client-for-coaches/',
     title: 'How Fitness Coaches Can Use Ideal Client FAQs to Attract Better Clients',
-    description: 'Use ideal client FAQs to answer questions, filter leads, and create content that compounds in AI search.',
+    description: 'Use ideal client FAQs to answer questions, filter leads and create content that compounds in AI search.',
     category: 'AI Visibility & Content',
     image: '/posts/ideal-client-for-coaches/images/ideal-client-faqs-for-fitness-coaches.jpeg',
     imageAlt: 'Get booked by answering your ideal client FAQs',
   },
   {
-    href: '/posts/a-non-trendy-take-on-where-fitness-is-going',
-    title: 'Where Fitness Is Really Heading in 2026 (No Hype)',
-    description: "Skip the trend roundups. Here's what's actually shifting in fitness in 2026 from retention-driven growth to Gen Z's social-first training culture.",
-    category: 'Fitness Industry',
-    image: '/posts/a-non-trendy-take-on-where-fitness-is-going/images/fitness-trends-2026.jpeg',
-    imageAlt: 'fitness trends 2026',
+    href: '/posts/trainer-objections/',
+    title: 'How to Handle Objections as a Personal Trainer',
+    description: 'Most objections are not rejection. Learn the five types personal trainers face and what each one is telling you.',
+    category: 'Sales & Objections',
+    image: '/posts/trainer-objections/images/personal-training-objections-ebook.png',
+    imageAlt: 'Personal training objections ebook',
+  },
+  {
+    href: '/posts/follow-up-for-trainers/',
+    title: 'How to Follow Up With Personal Training Leads',
+    description: 'A three-step follow-up system for personal training clients who said they would think about it.',
+    category: 'Sales',
+    image: '/posts/follow-up-for-trainers/images/personal-training-client-follow-up-system.png',
+    imageAlt: 'Personal training client follow up system',
+  },
+  {
+    href: '/posts/do-personal-trainers-need-to-look-the-part-coaches-weigh-in/',
+    title: 'Do Personal Trainers Need to Look the Part? Coaches Weigh In',
+    description: 'Personal trainers discuss whether body image actually matters in the fitness industry.',
+    category: 'Fitness Marketing',
+    image: '/posts/do-personal-trainers-need-to-look-the-part-coaches-weigh-in/images/linkedin-poll-personal-trainer-physique.png',
+    imageAlt: 'LinkedIn poll asking personal trainers whether they need to look jacked',
+  },
+  {
+    href: '/posts/ai-for-personal-trainers-top-uses-cases-tasks/',
+    title: "Where Does AI Actually Fit in a Personal Trainer's Business?",
+    description: 'A task-by-task breakdown of what AI can do for a coach right now, including specific free tools.',
+    category: 'AI for Personal Trainers',
+    image: '/posts/ai-for-personal-trainers-top-uses-cases-tasks/images/ai-use-cases-for-personal-trainers.png',
+    imageAlt: "Where Does AI Actually Fit in a Personal Trainer's Business, a task-by-task breakdown",
+  },
+  {
+    href: '/posts/yelp-chatgpt-personal-trainers/',
+    title: 'Yelp Reviews Are Coming to ChatGPT. Should Personal Trainers Care?',
+    description: 'See what the Yelp and ChatGPT connection means for local trainers and which actions are worth taking.',
+    category: 'AI Visibility',
+    image: '/posts/yelp-chatgpt-personal-trainers/images/yelp-chatgpt-personal-trainers.jpg',
+    imageAlt: 'Yelp ChatGPT personal trainers',
+  },
+  {
+    href: '/posts/wearable-data-and-data-driven-coaching/',
+    title: 'Wearable Data for Coaching: How to Sell Data-Driven Personal Training Services',
+    description: 'Turn wearable data into useful programme decisions, a clear client deliverable and a service you can price sustainably.',
+    category: 'Coaching & Programming',
+    image: '/posts/wearable-data-and-data-driven-coaching/images/include-in-existing-coaching.jpg',
+    imageAlt: 'A checklist showing when to include wearable data review in an existing personal training service',
   },
 ];
+
+const title = 'Fitness Marketing Articles for Personal Trainers';
+const description = 'Practical articles about fitness marketing, sales, AI, coaching technology and building a stronger personal training business.';
+const pageUrl = 'https://fitnessxmarketing.com/posts';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': pageUrl,
+      url: pageUrl,
+      name: title,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': 'https://fitnessxmarketing.com/#website' },
+      publisher: { '@id': 'https://fitnessxmarketing.com/#organization' },
+    },
+    {
+      '@type': 'ItemList',
+      itemListElement: posts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: post.title,
+        url: `https://fitnessxmarketing.com${post.href}`,
+      })),
+    },
+  ],
+};
 ---
 
-<Layout title="Articles" description="Practical marketing, sales, business-growth, AI, and coaching articles for fitness professionals.">
-  <p class="eyebrow">FITNESS X MARKETING</p>
-  <h1>Articles</h1>
-  <p class="intro">Practical systems and research for building a smarter fitness business.</p>
+<Layout
+  title={title}
+  description={description}
+  canonical="/posts"
+  mainClass="landing-main"
+  structuredData={structuredData}
+>
+  <div class="articles-page">
+    <header class="articles-hero shell">
+      <p class="eyebrow">Read & learn</p>
+      <h1>Fitness marketing articles for personal trainers.</h1>
+      <p>Practical thinking on marketing, sales, AI, coaching technology and building a stronger fitness business.</p>
+    </header>
 
-  <ul class="post-list">
-    {posts.map((post) => (
-      <li>
-        <a class="thumbnail" href={post.href} aria-label={post.title}>
-          <img src={post.image} alt={post.imageAlt} width="1200" height="630" loading="lazy" decoding="async" />
-        </a>
-        <div>
-          <p class="category">{post.category}</p>
-          <a class="post-title" href={post.href}>{post.title}</a>
-          <p>{post.description}</p>
+    <section class="articles-section" aria-labelledby="all-articles">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">The library</p>
+          <h2 id="all-articles">Latest articles</h2>
         </div>
-      </li>
-    ))}
-  </ul>
+
+        <div class="article-grid">
+          {posts.map((post) => (
+            <article class="article-card">
+              <a class="card-image" href={post.href} aria-label={post.title}>
+                <img src={post.image} alt={post.imageAlt} width="1200" height="630" loading="lazy" decoding="async" />
+              </a>
+              <div class="card-copy">
+                <p class="category">{post.category}</p>
+                <h3><a href={post.href}>{post.title}</a></h3>
+                <p>{post.description}</p>
+                <a class="read-link" href={post.href}>Read article</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
 
   <style>
-    .eyebrow,
-    .category {
-      color: #06a8a5;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+    .articles-page { overflow: hidden; }
+    .shell { margin: 0 auto; max-width: 1180px; padding-left: clamp(1.25rem, 4vw, 3rem); padding-right: clamp(1.25rem, 4vw, 3rem); }
+    .eyebrow, .category { color: #068f8c; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    .articles-hero { padding-bottom: clamp(4rem, 8vw, 6.5rem); padding-top: clamp(4rem, 9vw, 7.5rem); }
+    .articles-hero h1 {
+      font-size: clamp(3rem, 7.6vw, 6rem);
+      letter-spacing: -0.06em;
+      line-height: 0.98;
+      margin: 1rem 0 1.5rem;
+      max-width: 12ch;
+    }
+    .articles-hero > p:last-child { color: #3a4252; font-size: clamp(1.15rem, 2.4vw, 1.45rem); line-height: 1.55; max-width: 67ch; }
+
+    .articles-section { background: #f5fbfb; border-top: 1px solid #dfe3e6; padding: clamp(4rem, 8vw, 7rem) 0; }
+    .section-heading { margin-bottom: 2rem; }
+    .section-heading h2 { font-size: clamp(2rem, 5vw, 3.35rem); letter-spacing: -0.045em; line-height: 1.05; margin: 0.6rem 0 0; }
+
+    .article-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .article-card { background: #fff; border: 1px solid #d7dde0; border-radius: 14px; display: flex; flex-direction: column; overflow: hidden; }
+    .card-image { display: block; overflow: hidden; }
+    .card-image img { aspect-ratio: 1200 / 630; display: block; height: auto; object-fit: cover; transition: transform 180ms ease; width: 100%; }
+    .article-card:hover .card-image img { transform: scale(1.015); }
+    .card-copy { display: flex; flex: 1; flex-direction: column; padding: 1.3rem; }
+    .category { margin: 0; }
+    .card-copy h3 { font-size: 1.25rem; letter-spacing: -0.025em; line-height: 1.25; margin: 0.6rem 0 0.75rem; }
+    .card-copy h3 a { color: #252a34; text-decoration: none; }
+    .card-copy > p:not(.category) { color: #596371; font-size: 0.95rem; line-height: 1.55; }
+    .read-link { align-self: flex-start; border-bottom: 2px solid #08d9d6; color: #067f7d; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.08em; margin-top: auto; padding-top: 1rem; text-decoration: none; text-transform: uppercase; }
+    .article-card:focus-within { border-color: #068f8c; box-shadow: 0 12px 28px rgba(37, 42, 52, 0.1); }
+
+    @media (max-width: 900px) {
+      .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 4.5rem);
-      line-height: 1;
-      margin: 0.4rem 0 1rem;
-    }
-
-    .intro {
-      color: #3a4252;
-      font-size: 1.15rem;
-      margin-bottom: 3rem;
-    }
-
-    .post-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .post-list li {
-      display: grid;
-      gap: 1.4rem;
-      grid-template-columns: minmax(180px, 0.75fr) minmax(0, 1.25fr);
-      padding: 2rem 0;
-      border-top: 1px solid #eaeaea;
-    }
-
-    .post-title {
-      color: #252a34;
-      font-size: clamp(1.25rem, 4vw, 1.65rem);
-      font-weight: 750;
-      line-height: 1.25;
-      text-decoration-thickness: 2px;
-      text-decoration-color: #08d9d6;
-      text-underline-offset: 0.25rem;
-    }
-
-    .post-list li > p:last-child {
-      color: #3a4252;
-      margin-bottom: 0;
-      max-width: 65ch;
-    }
-
-    .thumbnail img {
-      aspect-ratio: 1200 / 630;
-      border-radius: 10px;
-      display: block;
-      height: auto;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    .post-list li > div > p:last-child {
-      color: #3a4252;
-      margin-bottom: 0;
-      max-width: 65ch;
-    }
-
-    @media (max-width: 640px) {
-      .post-list li {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 600px) {
+      .article-grid { grid-template-columns: 1fr; }
     }
   </style>
 </Layout>
