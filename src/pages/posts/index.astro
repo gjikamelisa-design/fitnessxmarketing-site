@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 
 const posts = [
   {
@@ -135,6 +136,17 @@ const structuredData = {
         </div>
       </div>
     </section>
+
+    <section class="newsletter-band" aria-labelledby="articles-newsletter-heading">
+      <div class="shell newsletter-grid">
+        <div>
+          <p class="eyebrow">The newsletter</p>
+          <h2 id="articles-newsletter-heading">One useful thing at a time.</h2>
+          <p>Get practical marketing, sales, AI and coaching ideas for fitness businesses.</p>
+        </div>
+        <NewsletterSignup dark={true} />
+      </div>
+    </section>
   </div>
 
   <style>
@@ -169,8 +181,15 @@ const structuredData = {
     .read-link { align-self: flex-start; border-bottom: 2px solid #08d9d6; color: #067f7d; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.08em; margin-top: auto; padding-top: 1rem; text-decoration: none; text-transform: uppercase; }
     .article-card:focus-within { border-color: #068f8c; box-shadow: 0 12px 28px rgba(37, 42, 52, 0.1); }
 
+    .newsletter-band { background: #252a34; color: #fff; padding: clamp(4rem, 8vw, 6rem) 0; }
+    .newsletter-grid { align-items: center; display: grid; gap: clamp(2rem, 6vw, 5rem); grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+    .newsletter-band .eyebrow { color: #08d9d6; margin: 0; }
+    .newsletter-band h2 { color: #fff; font-size: clamp(2rem, 5vw, 3.35rem); letter-spacing: -0.045em; line-height: 1.05; margin: 0.6rem 0 1rem; }
+    .newsletter-band p:not(.eyebrow) { color: #dbe2e5; margin: 0; max-width: 48ch; }
+
     @media (max-width: 900px) {
       .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .newsletter-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {

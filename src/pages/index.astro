@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 
 const posts = [
   {
@@ -210,7 +211,8 @@ const structuredData = {
         </div>
         <div>
           <p>New tools, frameworks, research and practical ideas, sent when there is something worth sharing.</p>
-          <a class="button" href="/newsletter/">See what you’ll get</a>
+          <NewsletterSignup dark={true} />
+          <a class="newsletter-details" href="/newsletter/">See what you’ll get</a>
         </div>
       </div>
     </section>
@@ -325,7 +327,8 @@ const structuredData = {
     .newsletter-grid { align-items: center; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; }
     .newsletter-band .eyebrow { color: #08d9d6; }
     .newsletter-band p { color: #dbe2e5; font-size: 1.05rem; max-width: 52ch; }
-    .button { background: #08d9d6; color: #252a34; display: inline-block; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; margin-top: 1rem; padding: 0.9rem 1.1rem; text-decoration: none; text-transform: uppercase; }
+    .newsletter-details { color: #08d9d6; display: inline-block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; margin-top: 1rem; text-decoration: none; text-transform: uppercase; }
+    .newsletter-details:hover, .newsletter-details:focus-visible { color: #1df7f4; text-decoration: underline; }
 
     @media (max-width: 760px) {
       .decisions, .newsletter-grid { grid-template-columns: 1fr; }

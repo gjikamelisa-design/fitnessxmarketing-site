@@ -89,7 +89,9 @@ const topics = [
         <div class="hero-details">
           <p class="hero-copy">Practical marketing, sales, AI and coaching ideas for fitness businesses.</p>
           <p>New resources arrive when there is something worth sharing, not because a content calendar says an email is due.</p>
-          <NewsletterSignup buttonLabel="Join the newsletter" />
+          <div id="newsletter-signup">
+            <NewsletterSignup />
+          </div>
         </div>
       </div>
     </section>
@@ -134,7 +136,7 @@ const topics = [
         </div>
         <div>
           <p>Get new tools, research and practical systems directly in your inbox.</p>
-          <NewsletterSignup dark={true} buttonLabel="Join the newsletter" />
+          <a class="closing-link" href="#newsletter-signup">Join the newsletter</a>
         </div>
       </div>
     </section>
@@ -171,6 +173,8 @@ const topics = [
     .closing-section .eyebrow { color: #08d9d6; }
     .closing-section h2 { color: #fff; margin-top: 0.7rem; }
     .closing-section p { color: #dbe2e5; font-size: 1.05rem; }
+    .closing-link { background: #08d9d6; border-radius: 10px; color: #252a34; display: inline-block; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.07em; margin-top: 0.75rem; padding: 0.9rem 1.2rem; text-decoration: none; text-transform: uppercase; }
+    .closing-link:hover, .closing-link:focus-visible { background: #1df7f4; }
 
     @media (max-width: 760px) {
       .hero-grid, .about-grid, .closing-grid, .topic-grid { grid-template-columns: 1fr; }
