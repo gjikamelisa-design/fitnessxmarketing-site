@@ -115,17 +115,14 @@ const structuredData = {
         <a href="/posts">
           <span>Read & learn</span>
           <small>Articles and practical frameworks</small>
-          <strong aria-hidden="true">→</strong>
         </a>
         <a class="featured" href="/tools">
           <span>Use free tools</span>
           <small>Interactive tools built for coaches</small>
-          <strong aria-hidden="true">→</strong>
         </a>
         <a href="/newsletter/">
           <span>Join the newsletter</span>
           <small>One useful thing at a time</small>
-          <strong aria-hidden="true">→</strong>
         </a>
       </div>
     </section>
@@ -136,7 +133,7 @@ const structuredData = {
           <p class="eyebrow">Latest articles</p>
           <h2 id="latest-heading">Ideas you can put to work.</h2>
         </div>
-        <a href="/posts">View all articles →</a>
+        <a href="/posts">View all articles</a>
       </div>
 
       <div class="card-scroller article-scroller">
@@ -162,7 +159,7 @@ const structuredData = {
             <p class="eyebrow">Free tools</p>
             <h2 id="tools-heading">Make the next decision clearer.</h2>
           </div>
-          <a href="/tools">View all tools →</a>
+          <a href="/tools">View all tools</a>
         </div>
 
         <div class="card-scroller tool-scroller">
@@ -171,7 +168,7 @@ const structuredData = {
               <p class="tool-number">{tool.number}</p>
               <h3><a href={tool.href}>{tool.title}</a></h3>
               <p>{tool.description}</p>
-              <a class="text-link" href={tool.href}>{tool.action} →</a>
+              <a class="text-link" href={tool.href}>{tool.action}</a>
             </article>
           ))}
         </div>
@@ -185,8 +182,8 @@ const structuredData = {
           <h2>One useful thing at a time.</h2>
         </div>
         <div>
-          <p>New tools, frameworks, research and practical ideas—sent when there is something worth sharing.</p>
-          <a class="button" href="/newsletter/">See what you’ll get →</a>
+          <p>New tools, frameworks, research and practical ideas, sent when there is something worth sharing.</p>
+          <a class="button" href="/newsletter/">See what you’ll get</a>
         </div>
       </div>
     </section>
@@ -240,8 +237,6 @@ const structuredData = {
     .decisions span { font-size: 1.05rem; font-weight: 800; }
     .decisions small { color: #687281; font-size: 0.83rem; grid-column: 1; }
     .decisions .featured small { color: #cfd9dd; }
-    .decisions strong { color: #08d9d6; font-size: 1.35rem; grid-column: 2; grid-row: 1 / span 2; }
-
     .content-section {
       border-top: 1px solid #dfe3e6;
       padding-bottom: clamp(4rem, 8vw, 7rem);
