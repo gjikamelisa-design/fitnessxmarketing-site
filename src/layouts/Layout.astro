@@ -30,7 +30,11 @@ const {
 } = Astro.props;
 
 const documentTitle = titleTemplate ? `${title} | Fitness x Marketing` : title;
-const canonicalUrl = new URL(canonical ?? Astro.url.pathname, Astro.site).toString();
+const canonicalUrlObject = new URL(canonical ?? Astro.url.pathname, Astro.site);
+if (canonicalUrlObject.pathname !== '/' && !canonicalUrlObject.pathname.endsWith('/')) {
+  canonicalUrlObject.pathname = `${canonicalUrlObject.pathname}/`;
+}
+const canonicalUrl = canonicalUrlObject.toString();
 const imageUrl = image ? new URL(image, Astro.site).toString() : undefined;
 const currentPath = Astro.url.pathname;
 ---
@@ -75,8 +79,8 @@ const currentPath = Astro.url.pathname;
       <a class="brand" href="https://fitnessxmarketing.com/">FITNESS <span>×</span> MARKETING</a>
       <nav aria-label="Main navigation">
         <a href="https://fitnessxmarketing.com/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a>
-        <a href="https://fitnessxmarketing.com/tools" aria-current={currentPath.startsWith('/tools') ? 'page' : undefined}>Tools</a>
-        <a href="https://fitnessxmarketing.com/posts" aria-current={currentPath.startsWith('/posts') || currentPath.startsWith('/blog') ? 'page' : undefined}>Articles</a>
+        <a href="https://fitnessxmarketing.com/tools/" aria-current={currentPath.startsWith('/tools') ? 'page' : undefined}>Tools</a>
+        <a href="https://fitnessxmarketing.com/posts/" aria-current={currentPath.startsWith('/posts') || currentPath.startsWith('/blog') ? 'page' : undefined}>Articles</a>
       </nav>
       <a class="resource-hub" href="https://fitnessxmarketing.com/newsletter/" aria-current={currentPath.startsWith('/newsletter') ? 'page' : undefined}><span aria-hidden="true"></span> Newsletter</a>
     </header>
