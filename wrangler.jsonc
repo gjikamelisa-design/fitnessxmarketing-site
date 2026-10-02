@@ -3,63 +3,7 @@
   "compatibility_date": "2026-08-29",
   "routes": [
     {
-      "pattern": "fitnessxmarketing.com/",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/sitemap.xml",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/robots.txt",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/newsletter*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/wearable-data-and-data-driven-coaching*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/yelp-chatgpt-personal-trainers*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/follow-up-for-trainers*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/ai-for-personal-trainers-top-uses-cases-tasks*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/do-personal-trainers-need-to-look-the-part-coaches-weigh-in*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/trainer-objections*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/ideal-client-for-coaches*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/posts/a-non-trendy-take-on-where-fitness-is-going*",
-      "zone_name": "fitnessxmarketing.com"
-    },
-    {
-      "pattern": "fitnessxmarketing.com/tools/find-your-ideal-clients-faqs-for-coaches*",
+      "pattern": "fitnessxmarketing.com/*",
       "zone_name": "fitnessxmarketing.com"
     }
   ],

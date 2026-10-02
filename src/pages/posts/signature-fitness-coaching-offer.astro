@@ -1,0 +1,266 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'How to Build a Signature Fitness Coaching Offer';
+const articleTitle = 'How to Build a Signature Fitness Coaching Offer (What Top Fitness Coaches Actually Do)';
+const description = 'Most trainers guess at their signature offer structure. See what top fitness coaches actually use for duration, delivery, and funnel, then build yours.';
+const canonical = '/posts/signature-fitness-coaching-offer/';
+const socialImage = '/signature-fitness-coaching-offer/images/signature-program-for-coaches.png';
+const publishedTime = '2026-09-15T00:00:00+02:00';
+const articleUrl = `https://fitnessxmarketing.com${canonical}`;
+
+const faqItems = [
+  ['How long should a signature coaching program be?', "There's no single right answer, but the pattern leans toward 12 weeks for a defined-arc offer, or an open-ended monthly structure for an ongoing one. Per-month pricing tends to drop as the commitment length grows, so a longer program isn't automatically the harder sell."],
+  ['Should I offer one price point or a tiered structure?', 'Tiered, in nearly every real example researched. The difference between tiers is almost always access and responsiveness: async check-ins vs. weekly calls vs. daily messaging access, not how much content each tier includes.'],
+  ['Do I need a sales call to sell a signature offer?', 'No. Instant-buy subscription models work well for lower-touch, lower-price tiers where the price itself lowers the risk. Application and discovery-call funnels fit higher-access, higher-price tiers, where the coach genuinely needs to assess fit before taking someone on.'],
+  ["What's a waitlist funnel, and when does it make sense?", 'A waitlist collects interest ahead of a scheduled launch date, which creates real scarcity instead of manufactured urgency. It fits cohort-based or capacity-limited offers, like a coach running fixed start dates, better than an always-open, evergreen program.'],
+  ["What’s the difference between signature program, flagship service, and premium service for personal trainers and coaches?", '“Signature” describes that recognizable approach. “Flagship” describes an offer\'s central place in your business. “Premium” describes its service level or positioning. One program can be all three at once. What actually matters is whether the structure makes the coaching easier for you to deliver well, easier for clients to follow, and more likely to produce the result you promised.'],
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': articleUrl,
+      headline: articleTitle,
+      name: title,
+      description,
+      datePublished: publishedTime,
+      mainEntityOfPage: articleUrl,
+      image: `https://fitnessxmarketing.com${socialImage}`,
+      author: { '@type': 'Organization', name: 'Fitness x Marketing', url: 'https://fitnessxmarketing.com/' },
+      publisher: { '@type': 'Organization', name: 'Fitness x Marketing', url: 'https://fitnessxmarketing.com/' },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${articleUrl}#faqs`,
+      mainEntity: faqItems.map(([name, text]) => ({
+        '@type': 'Question',
+        name,
+        acceptedAnswer: { '@type': 'Answer', text },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={title} titleTemplate={false} description={description} canonical={canonical} image={socialImage} imageAlt="What a signature program for fitness coaches includes" type="article" publishedTime={publishedTime} structuredData={structuredData}>
+  <article>
+    <header class="article-header">
+      <p class="eyebrow"><a href="/posts/">Articles</a> / Offers &amp; Positioning</p>
+      <h1>{articleTitle}</h1>
+      <p class="dek"><em>A signature fitness coaching offer comes down to three deliberate decisions: duration, delivery, and funnel. Here's what ten real fitness coaching businesses chose for each, laid side by side so you can build yours on purpose.</em></p>
+      <div class="byline"><span>Fitness x Marketing</span><span aria-hidden="true">•</span><time datetime="2026-09-15">September 15, 2026</time></div>
+    </header>
+
+    <div class="article-body">
+      <p>Ask ten trainers how long their coaching program should run, what each tier costs, or how someone actually buys in. Most will tell you the same thing: however their first client wanted it, years ago, never revisited since. That's not a signature offer. That's an accident nobody's gone back to audit.</p>
+      <p>I did the research for you.</p>
+      <p>I pulled the real duration, pricing, delivery model, and funnel structure from ten coaching businesses actually selling right now. The range runs from a $50-a-month accountability app to a $3,027 biohacking program with lab work built in.</p>
+      <p>I checked all of it against a pricing dataset that shows exactly what happens to your <a href="https://www.warriorbabe.com/read/online-fitness-coaching-prices" target="_blank" rel="noopener noreferrer">per-month rate</a> as commitment length grows. Below is what a signature fitness coaching offer looks like when someone builds it on purpose.</p>
+
+      <section id="what-signature-means">
+        <h2>What “signature” actually means (most people are using the word wrong)</h2>
+        <p>Most trainers think a signature program needs a groundbreaking secret. A “revolutionary” discovery about how fascia works. A rocket-ship framework that reinvented exercise science.</p>
+        <p>It doesn't. A signature program is proven fundamentals like:</p>
+        <ul><li>Progressive overload</li><li>Appropriate nutrition</li><li>Recovery</li><li>Consistent practice</li></ul>
+        <p>The science isn't new. <strong>What makes it signature is how you organize those fundamentals</strong>, with enough clarity and consistency that clients can actually follow it and stick with it.</p>
+        <p>That's what matters if you're figuring out how to structure a coaching program for personal trainers. A signature program is your approach made clear and repeatable. It brings together</p>
+        <ul><li>Who it serves</li><li>What it helps them achieve</li><li>How they progress</li><li>How you support and adjust that progress along the way</li></ul>
+        <p>At its simplest, that means documenting the starting assessment, the priorities, the progression, the check-ins, and what changes when a client struggles or their circumstances shift. The structure stays consistent. The prescription adapts to the person.</p>
+
+        <figure>
+          <a href="/signature-fitness-coaching-offer/images/signature-program-for-coaches.png"><img src="/signature-fitness-coaching-offer/images/signature-program-for-coaches.png" alt="What a signature program for fitness coaches is, including its fundamentals and three offer decisions" width="1672" height="941" loading="eager" decoding="async" /></a>
+          <figcaption>What's a signature program for fitness coaches</figcaption>
+        </figure>
+
+        <aside class="source-callout">
+          <h3>Do you need to trademark a signature method?</h3>
+          <p>No. Businesses like <a href="https://thearlovskimethod.com/the-method-1" target="_blank" rel="noopener noreferrer">The Arlovski Method</a> or <a href="https://www.strongselves.com/our-programs" target="_blank" rel="noopener noreferrer">Health-Esteem Method™</a> run named frameworks without necessarily having registered them. What makes them signature is that the same method underpins every tier of support they sell, not the ™ next to the name. Get this distinction right before you touch duration, delivery, or funnel: a name slapped onto an undifferentiated offer won't hold up any better than no name at all.</p>
+        </aside>
+      </section>
+
+      <section id="duration-delivery-funnel">
+        <h2>What top fitness coaches actually do: duration, delivery, and funnel</h2>
+        <p>Here we break down the three decisions trainers tend to make:</p>
+
+        <h3>01. Signature Coaching Program Duration: The 12-Week Pattern</h3>
+        <p>The ten programs researched span a real range.</p>
+        <ul>
+          <li><a href="https://julielohre.com/online-personal-training/" target="_blank" rel="noopener noreferrer">FITBODY</a> runs strength training in rotating <strong>four-week blocks</strong></li>
+          <li><a href="https://future.co/survey/intro" target="_blank" rel="noopener noreferrer">Future</a> is a standing <strong>monthly subscription with no fixed end date</strong>.</li>
+          <li><a href="https://shopbengreenfieldlife.mykajabi.com/sales-page" target="_blank" rel="noopener noreferrer">BGL Elite Coaching</a> (Ben Greenfield's program) runs a <strong>fixed 16 weeks</strong> at $797/month.</li>
+          <li><a href="https://ownitcoaching.com/programs/" target="_blank" rel="noopener noreferrer">OWN IT</a>'s executive-concierge offer runs <strong>multiple months across three phases</strong>.</li>
+        </ul>
+        <p><strong>The single most common length, though, is 12 weeks.</strong></p>
+        <p>That's because (or at least I believe so) research on resistance-training protocols puts the <strong>minimum effective window for measurable <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5969184" target="_blank" rel="noopener noreferrer">strength and hypertrophy changes</a> at 10 to 12 weeks</strong>. This most likely explains why the industry converged on it as the default arc.</p>
+        <p><strong><a href="https://thefixgym.com/12-week-transformation/" target="_blank" rel="noopener noreferrer">The Fix Gym</a>, <a href="https://www.bosefitness.com/twelve-week-body-transformation-program" target="_blank" rel="noopener noreferrer">Bose Fitness</a>'s global transformation program, <a href="https://barbell-logic.com/lean-in-12-transformation/" target="_blank" rel="noopener noreferrer">Lean in 12</a>, and the Catherine Piot Institute's 12 Weeks Signature Programme all land there.</strong></p>
+        <p>But all four treat it as a full arc with distinct stages inside it, not just twelve weeks of workouts.</p>
+        <ul>
+          <li><a href="https://www.bosefitness.com/twelve-week-body-transformation-program" target="_blank" rel="noopener noreferrer">Bose Fitness</a> runs five phases</li>
+          <li><a href="https://catherinepiotinstitute.com/" target="_blank" rel="noopener noreferrer">The Catherine Piot</a> program runs assessment, then momentum, then integration, across the same twelve weeks.</li>
+        </ul>
+        <p>That lines up with the wider fitness coaching program duration <a href="https://www.warriorbabe.com/read/online-fitness-coaching-prices" target="_blank" rel="noopener noreferrer">pricing data</a>:</p>
+        <ul><li><strong>$$$ - Month-to-month</strong> coaching running <strong>$400–800/month</strong></li><li><strong>$$- 6-month programs</strong> dropping to <strong>$300–500/month</strong></li><li><strong>$- 12-month</strong> programs landing at <strong>$250–600/month</strong></li></ul>
+        <p>The per-month price falls as the commitment length grows, because coaches are pricing for retention and results, not per-month margin.</p>
+        <p><strong>☑️ Action:</strong> don't default to month-to-month because it feels like the easier sell. Decide duration based on how long your method genuinely takes to produce the result you're promising, then price the commitment to match. The coaches above aren't picking a number that sounds good. They're picking the number their method actually needs.</p>
+
+        <h3>02. Signature Coaching Program Delivery: Tiered Access Beats One Flat Offer</h3>
+        <p>Every multi-tier example in the research draws the line between tiers at access and responsiveness.</p>
+        <p>The Response Method runs three tiers:</p>
+        <ul><li>Foundation</li><li>A 16-week flagship called Evolution</li><li>Application-only VIP tier</li></ul>
+        <p>What changes between them is <strong>how fast and how personally the client can reach the coach</strong>, not how many workouts they get.</p>
+        <p><strong>OWN IT's top tier adds a quarterly <a href="https://ownitcoaching.com/how-it-works/" target="_blank" rel="noopener noreferrer">in-person Immersion</a> with the founder</strong>.</p>
+        <p>FITBODY's entire pitch is “<strong>me, not an app, not a junior coach</strong>,” a direct shot at app-based competitors that can't offer that level of access at any price.</p>
+        <p>The published pricing data backs this up outside the ten as well.</p>
+        <p><strong>☑️ Action:</strong> Overall, with each tier you add delivery intensity: async check-ins, then weekly calls, then daily Voxer or WhatsApp access, rather than more workouts.</p>
+        <p>If you're only selling one tier, you're leaving both the price-sensitive lead and the client who's ready to pay more for direct access on the table. A 2–3 tier structure, where the difference is speed and personalization rather than content, is what's actually converting across every example here.</p>
+
+        <h3>03. Signature Coaching Program Funnel: Four Models, Matched to the Tier</h3>
+        <div class="funnel-text">
+          <h4>Funnel model 1: Waitlist/launch.</h4>
+          <p>Lean in 12 runs fixed cohort start dates (“next cohort starts Aug 10th”) that create real urgency and a community-pressure effect solo evergreen offers can't replicate.</p>
+          <p><a href="https://www.stephgaudreau.com/strength-program-interest-list/" target="_blank" rel="noopener noreferrer">Steph Gaudreau's strength program</a> runs the simplest version of this: a plain name-and-email interest list ahead of a scheduled launch window, with early-list bonuses building urgency before the cart even opens.</p>
+
+          <h4>Funnel model 2: Quiz-qualified</h4>
+          <p><a href="https://www.coachsootz.com/" target="_blank" rel="noopener noreferrer">The Response Method</a> runs the most sophisticated funnel in the research, and it's really two separate steps, not one:</p>
+          <ol>
+            <li>A free 12-question self-assessment that delivers an instant diagnosis (you're labeled “Recovery,” “Fuel,” “Stress,” or “Signal”)</li>
+            <li>Then a 30-minute discovery call explicitly framed as “I'll tell you if it's not a fit.”</li>
+          </ol>
+          <p>The quiz and the call do different jobs. The quiz pre-qualifies and pre-sells, so by the time someone's on the call, they already believe the program understands their specific problem.</p>
+          <p>That's a meaningfully better-qualified lead than someone who books a call cold. If you're building this specific piece, <a href="https://fitnessxmarketing.com/posts/ai-lead-generation-for-personal-trainers/">the interactive quiz breakdown</a> covers the mechanics.</p>
+
+          <h4>Funnel model 3: Application/discovery-call</h4>
+          <p>No quiz step here, just a direct application or a consult booking. OWN IT gates its free consultation behind an application. <a href="https://www.bosefitness.com/twelve-week-body-transformation-program" target="_blank" rel="noopener noreferrer">Bose Fitness</a> runs a no-pressure “Fitness Clarity Call.”</p>
+          <p><strong>These convert on trust that's already built elsewhere</strong>, via brand reputation, copy, niche-specific empathy, rather than on a pre-qualifying step before the call.</p>
+
+          <h4>Funnel model 3: Instant-buy subscription</h4>
+          <p>Future, as a bigger shark, skips the call entirely: a $50 first-month trial is the whole funnel, backed by a 30-day refund and App Store proof instead of before-and-afters.</p>
+          <p><a href="https://shopbengreenfieldlife.mykajabi.com/sales-page" target="_blank" rel="noopener noreferrer">BGL Elite</a> runs a direct sales page with “spaces limited” urgency and a 24-hour trial guarantee after the onboarding call. That lowers the risk of a $797/month commitment enough to convert without a live sales conversation.</p>
+        </div>
+        <figure class="portrait-figure"><a href="/signature-fitness-coaching-offer/images/funnel-model.png"><img src="/signature-fitness-coaching-offer/images/funnel-model.png" alt="Four funnel models for a signature fitness coaching offer: waitlist, quiz-qualified, discovery call, and instant-buy subscription" width="1122" height="1402" loading="lazy" decoding="async" /></a><figcaption>4 Funnels to sell personal training packages</figcaption></figure>
+        <p><strong>☑️ Action:</strong> Pick the funnel after duration and tier are set, not before. Its whole job is matching the right amount of friction to what's actually being sold. A $50/month subscription doesn't need a discovery call. A $797/month application-only tier shouldn't be sold with a self-serve checkout button.</p>
+      </section>
+
+      <section id="build-your-program">
+        <h2>Building your signature program or method (this is what makes it yours)</h2>
+        <ol class="steps" aria-label="Five steps to build a signature fitness coaching program">
+          <li>
+            <div>
+              <h3>Start by writing down what you actually do with a client</h3>
+              <p>In order, think about how you take decision on:</p>
+              <ul>
+                <li>Your starting line with a new client</li>
+                <li>What you prioritize</li>
+                <li>How often you check progress</li>
+                <li>What do you do when something isn't working?</li>
+              </ul>
+              <p>Those four answers are a big part of your method. If they’re clear and specific, they are something you can differentiate yourself with.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Break it into phases</h3>
+              <p>Almost nobody does the same thing on day 1 as day 60. There's typically:</p>
+              <ul>
+                <li>An early phase for assessment and getting started</li>
+                <li>A middle phase for the real work</li>
+                <li>A later phase for locking in the result and keeping it</li>
+              </ul>
+              <p>🔎 <strong>RNT does this well:</strong> the same phased structure for every client, one phase for getting the result, one for maintaining it, with the actual plan personalized inside each phase.</p>
+              <p><strong>☑️Action: Giving your phases a cool name doesn't hurt, either.</strong> It's not required, but it helps with positioning and marketing, as long as the substance behind it holds up. A cool name is a plus on top of a real method, not a substitute for one.</p>
+              <p>The exercises themselves don't make it signature. Everyone prescribes squats. What makes it yours is what you do around them: the rest periods, the rep ranges, how long you hold a block before progressing, the tempo, when you deload.</p>
+              <p>Two coaches can both prescribe squats and end up with completely different signature programs, because one holds 3x5 with three minutes rest for six weeks straight and the other cycles rep ranges every two weeks.</p>
+              <p>Finally, check duration separately for beginners and already-trained clients, they rarely take the same amount of time. And if you've already got a track record, look across your clients for what keeps repeating, the same stalls, the same fixes. Those repeats become your shared structure.</p>
+            </div>
+          </li>
+          <li><div><h3>Find your duration</h3><p>Look back at your last 5–10 clients who got real, lasting results, separately for beginners and for people who'd already trained. They rarely take the same amount of time.</p><p><strong>☑️Action:</strong> How long did it actually take before the change stuck, for each group?</p><p>That number is your duration, not a round one like "8 weeks" because it sounds catchy.</p></div></li>
+          <li>
+            <div>
+              <h3>Decide your delivery</h3>
+              <ol class="delivery-list">
+                <li><span aria-hidden="true">1️⃣</span>Does this method need you watching and adjusting in real time, catching form mistakes, catching when someone's about to quit?<br />→ That's your high-touch version, weekly calls or daily check-ins.</li>
+                <li><span aria-hidden="true">2️⃣</span>Does it mostly run the same no matter who's doing it, with just occasional check-ins?<br />→ That's your lighter version, an app or async check-ins.</li>
+                <li><span aria-hidden="true">3️⃣</span>If you can do both, that's your tiers: hands-on is the expensive one, lighter-touch is the cheaper one.</li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Pick your funnel</h3>
+              <p>Does everyone who wants this start from the same place, or are there real different starting points? Think: a beginner versus someone who's trained for years, fast metabolism versus slow?</p>
+              <ul>
+                <li><strong>Quiz:</strong> If there are real different starting points. That will sort people into the right version before they buy.</li>
+                <li><strong>Book a call:</strong> If it's genuinely one thing for one kind of person, and you need to do the assessment and explanation life.</li>
+                <li><strong>3. Buy now:</strong> If you already have enough proof (reviews, results) out there, that people don't need you to explain it to them live before they commit.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+        <figure class="portrait-figure"><a href="/signature-fitness-coaching-offer/images/building-your-signature-program.png"><img src="/signature-fitness-coaching-offer/images/building-your-signature-program.png" alt="Five steps for building a signature fitness coaching program" width="1024" height="1536" loading="lazy" decoding="async" /></a><figcaption>Building your signature program in five steps.</figcaption></figure>
+      </section>
+
+      <section id="quiz-fit">
+        <h2>Where the quiz fits in, and where it doesn't</h2>
+        <p>A quiz-qualified funnel is one of the four models above. Although I believe it to be superior to others because:</p>
+        <ul><li>It does qualify the lead beforehand for you; only interested people commit to it</li><li>It helps you deliver a personalized offer, based on their answers</li><li>You kinda show a sneak peek at your services.</li></ul>
+        <p><a href="https://www.coachsootz.com/" target="_blank" rel="noopener noreferrer">The Response Method</a> is proof this works specifically in fitness coaching, not just coaching in general. A 12-question self-assessment that produces an instant, specific-feeling diagnosis is what makes the follow-up discovery call convert. Reason being, the lead already believes the program understands their exact problem before the call even starts.</p>
+        <p>That's a high-intent lead magnet doing real pre-qualification work. It's not a generic PDF checklist, and not interactivity for its own sake.</p>
+        <p>If you're building that specific piece (the quiz itself, not just the funnel it sits inside), <a href="/posts/ai-lead-generation-for-personal-trainers/">go build it using this breakdown</a> rather than starting from scratch here. It covers the mechanics this section deliberately doesn't re-explain.</p>
+      </section>
+
+      <section id="faqs">
+        <h2>FAQs</h2>
+        {faqItems.map(([question, answer], index) => <div class="faq"><h3>{index + 1}. {question}</h3><p>{answer}</p></div>)}
+      </section>
+
+      <h2>Conclusion</h2>
+      <p>None of the coaches in this research improvised their way to an offer that converts. Each picked a duration based on what their method actually needs, a delivery structure where the tiers differ by access rather than volume, and a funnel that matches the friction to the price.</p>
+      <p>The offers that look effortless from the outside are the ones where all three of those decisions got made on purpose. That usually happens after looking at what was already working somewhere else first.</p>
+      <p>If your next step is building the application funnel's entry point specifically, <a href="/posts/ai-lead-generation-for-personal-trainers/">the interactive quiz breakdown</a> is where to go next. If it's picking your own duration and tier, everything above is the actual research. Copy the pattern, not any one coach's whole template.</p>
+    </div>
+  </article>
+
+  <style>
+    article { --article-width: 70ch; }
+    .article-header { border-bottom: 1px solid #dfe3e6; margin-bottom: 2.5rem; padding: 1.5rem 0 2.5rem; }
+    .eyebrow { color: #068f8c; font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow a { color: inherit; text-decoration: none; }
+    h1 { font-size: clamp(2.15rem, 5.8vw, 4.05rem); letter-spacing: -.042em; line-height: 1.04; margin: .8rem 0 1.3rem; max-width: 19ch; }
+    .dek { color: #3a4252; font-size: clamp(1.08rem, 2.1vw, 1.28rem); line-height: 1.58; max-width: 64ch; }
+    .byline { align-items: center; color: #606a78; display: flex; flex-wrap: wrap; font-size: .9rem; gap: .45rem; margin-top: 1.7rem; }
+    .byline span:first-child { color: #252a34; font-weight: 700; }
+    .article-body { font-size: 1rem; margin: 0 auto; max-width: var(--article-width); overflow-wrap: anywhere; }
+    h2, h3 { line-height: 1.18; scroll-margin-top: 2rem; }
+    h2 { font-size: clamp(1.7rem, 3.8vw, 2.3rem); letter-spacing: -.03em; margin: 4.3rem 0 1.25rem; }
+    h3 { font-size: clamp(1.18rem, 2.7vw, 1.45rem); letter-spacing: -.012em; margin: 2.5rem 0 .8rem; }
+    h4 { color: #252a34; font-size: 1.08rem; margin: .15rem 0 .65rem; }
+    p, li { color: #3a4252; }
+    li + li { margin-top: .45rem; }
+    strong { color: #252a34; }
+    a { font-weight: 650; text-underline-offset: .2rem; }
+    figure { margin: 2.5rem 0; }
+    figure img { border-radius: 12px; display: block; height: auto; max-width: 100%; width: 100%; }
+    figcaption { color: #687281; font-size: .88rem; margin-top: .75rem; text-align: center; }
+    .portrait-figure { margin-left: auto; margin-right: auto; max-width: 610px; }
+    .source-callout { background: #eaf6f6; border: 1px solid #d3eeee; border-radius: 14px; margin: 2.5rem 0; padding: 1.5rem; }
+    .source-callout > :first-child { margin-top: 0; }
+    .source-callout > :last-child { margin-bottom: 0; }
+    .funnel-text h4 { margin-top: 2rem; }
+    .funnel-text ol { margin: 1rem 0 1.35rem; padding-left: 1.5rem; }
+    .steps { border-bottom: 1px solid #dfe3e6; list-style: decimal-leading-zero; margin: 2.5rem 0; padding-left: 3rem; }
+    .steps > li { border-top: 1px solid #dfe3e6; display: list-item; margin: 0; padding: 1.45rem 0 1.45rem .65rem; width: auto; }
+    .steps > li::marker { color: #06a8a5; font-weight: 850; letter-spacing: .08em; }
+    .steps h3 { margin-top: 0; }
+    .steps li > div > :last-child { margin-bottom: 0; }
+    .steps ul, .delivery-list { margin: 1rem 0 1.35rem; padding-left: 1.35rem; }
+    .delivery-list { list-style: none; padding-left: 0; }
+    .delivery-list span { margin-right: .35rem; }
+    .faq { border-top: 1px solid #dfe3e6; padding: 1.2rem 0; }
+    .faq h3 { font-size: 1.3rem; margin: 0 0 .65rem; }
+    .faq p { margin-bottom: 0; }
+    @media (max-width: 640px) { .article-body { font-size: .98rem; } }
+  </style>
+</Layout>

@@ -3,6 +3,8 @@ import type { APIRoute } from 'astro';
 export const prerender = true;
 
 const urls = [
+  'https://fitnessxmarketing.com/posts/signature-fitness-coaching-offer/',
+  'https://fitnessxmarketing.com/posts/ai-lead-generation-for-personal-trainers/',
   'https://fitnessxmarketing.com/',
   'https://fitnessxmarketing.com/posts/',
   'https://fitnessxmarketing.com/newsletter/',
