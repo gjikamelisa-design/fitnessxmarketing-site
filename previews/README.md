@@ -31,14 +31,3 @@ Reports: [landing](lighthouse-landing.report.html), [booking](lighthouse-booking
 Run `npm test` for deferred loading, seven CTA handlers, UTM forwarding, fallback-link attribution, message origin and source validation, booking confirmation, duplicate-event prevention and iframe unloading. The booking event was simulated in the test harness; no real appointment was created.
 
 Every free-call CTA uses `#book` in the same tab. The booking view has its own logo-only header. Loading the landing view makes no Calendly request; opening booking creates its iframe, and leaving booking removes it. Only `utm_*` query parameters are forwarded. `trackEvent()` dispatches `cta_click`, `scheduler_open`, and `booking` to the existing Google Analytics property, without booking names or email addresses.
-
-## Production verification
-
-Deployed to Cloudflare Worker `fitnessxmarketing-site`, account `140ee340abe76a759ce87b4299f4a452`, version `7ba9e787-56de-4f64-8054-99980944e9e2`.
-
-- Public landing: https://fitnessxmarketing.com/
-- Public booking view: https://fitnessxmarketing.com/#book
-- Homepage and privacy page returned HTTP 200.
-- The public homepage HTML matched `dist/index.html` byte for byte.
-- A live browser visit confirmed seven CTA links, no Calendly iframe on the landing view, and campaign parameters passed to the booking iframe and plain-link fallback.
-- Live mobile screenshots: [landing](landing-live-mobile.jpg) and [booking](booking-live-mobile.jpg).
