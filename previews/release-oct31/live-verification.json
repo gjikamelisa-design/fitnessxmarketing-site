@@ -1,0 +1,52 @@
+{
+  "workerVersion": "7b675840-5bc5-4865-bd27-0a08e8cf7870",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/claude-for-fitness-businesses/",
+      "status": 200
+    },
+    {
+      "path": "/privacy-policy/",
+      "status": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "path": "/og-claude-for-fitness-businesses.png",
+      "status": 200
+    },
+    {
+      "path": "/posts/",
+      "status": 200
+    },
+    {
+      "path": "/tools/",
+      "status": 200
+    },
+    {
+      "path": "/newsletter/",
+      "status": 200
+    },
+    {
+      "path": "/tools/wearable-tracking-for-coaches/",
+      "status": 200,
+      "unchanged": true
+    },
+    {
+      "path": "/tools/wearable-tracking-for-coaches/biweekly-wearable-check-in-for-coaches/",
+      "status": 200,
+      "unchanged": true
+    },
+    {
+      "path": "/tools/wearable-tracking-for-coaches/vo2max-training-protocol/",
+      "status": 200,
+      "unchanged": true
+    }
+  ]
+}

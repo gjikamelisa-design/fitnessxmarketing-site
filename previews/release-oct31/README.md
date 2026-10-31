@@ -23,3 +23,13 @@ Campaign parameters are retained in session storage after acceptance, survive ho
 Events: `cta_click`, `scheduler_open`, `booking`, and `scheduler_fallback_click`. The booking event validates Calendly's origin and the iframe window and prevents duplicates. Tests simulate the event without creating an appointment.
 
 The `?preview=booked` helper works only on local hosts and does not emit scheduler/booking conversion events.
+
+## Live verification
+
+Deployed Worker version: `7b675840-5bc5-4865-bd27-0a08e8cf7870`.
+
+Homepage, Claude page, privacy policy, sitemap, social image, article index, tool index, and newsletter returned HTTP 200. The three wearable-tool pages matched their pre-release SHA-256 hashes.
+
+The live browser loaded zero GA4/Clarity tags before consent, both tags after acceptance (including Clarity's recording library), and zero after declining and reloading. Campaign tags survived a homepage-to-booking navigation with an untagged internal URL and appeared in the Calendly iframe and fallback URL. Calendly displayed available dates. No test appointment was created.
+
+Remaining account-level choices: confirm `booking` is marked as a GA4 key event; optionally connect GA4 inside Clarity. The tag installation itself is complete. First Clarity data may take time to appear.
