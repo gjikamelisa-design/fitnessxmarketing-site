@@ -145,6 +145,14 @@ const structuredData = {
       <h1>Practical systems for growing a fitness business.</h1>
       <p class="hero-copy">Marketing, sales, AI and coaching resources for personal trainers, coaches and independent fitness businesses.</p>
       <div class="decisions" aria-label="Choose where to start">
+        <article class="claude-offer" aria-labelledby="claude-offer-title">
+          <h2 class="offer-title" id="claude-offer-title">Get one Claude team member</h2>
+          <small>One organized Claude workspace for your fitness business, saving you 2–4+ hours a week.</small>
+          <div class="offer-actions">
+            <a class="offer-read-more" href="/claude-for-fitness-businesses/">Read more</a>
+            <a class="offer-book" href="/claude-for-fitness-businesses/#book" data-booking-cta="true">Ready to talk</a>
+          </div>
+        </article>
         <a href="/posts/">
           <span>Read & learn</span>
           <small>Articles and practical frameworks</small>
@@ -232,7 +240,7 @@ const structuredData = {
     .hero { padding-bottom: clamp(4rem, 8vw, 7rem); padding-top: clamp(4rem, 9vw, 7.5rem); }
 
     .eyebrow, .category, .tool-number {
-      color: #068f8c;
+      color: #277471;
       font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 0.14em;
@@ -254,14 +262,13 @@ const structuredData = {
       max-width: 64ch;
     }
 
-    .decisions { display: grid; gap: 0.85rem; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; }
-    .decisions a {
+    .decisions { display: grid; gap: 0.85rem; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 3rem; }
+    .decisions > a, .decisions > .claude-offer {
       align-items: flex-start;
       background: #fff;
       border: 1px solid #cfd6da;
       border-radius: 14px;
       color: #252a34;
-      cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
@@ -270,11 +277,16 @@ const structuredData = {
       text-decoration: none;
       transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
     }
-    .decisions a:hover, .decisions a:focus-visible { border-color: #068f8c; box-shadow: 0 12px 28px rgba(37, 42, 52, 0.1); transform: translateY(-2px); }
+    .decisions > a:hover, .decisions > a:focus-visible { border-color: #277471; box-shadow: 0 12px 28px rgba(37, 42, 52, 0.1); transform: translateY(-2px); }
     .decisions .featured { background: #252a34; border-color: #252a34; color: #fff; }
+    .decisions .claude-offer { background: #ffe6e7; border-color: #f5b8ba; }
+    .decisions .claude-offer:hover { background: #ffdcde; border-color: #ff8b8f; }
+    .decisions a:focus-visible { outline: 3px solid #252a34; outline-offset: 4px; }
     .decisions span { font-size: 1.05rem; font-weight: 800; }
+    .decisions .offer-title { font-size: 1.05rem; font-weight: 800; letter-spacing: normal; line-height: inherit; margin: 0; }
     .decisions small { color: #687281; font-size: 0.83rem; }
     .decisions .featured small { color: #cfd9dd; }
+    .decisions .claude-offer small { color: #4c4650; }
     .decisions .decision-action {
       border-bottom: 2px solid #08d9d6;
       color: #067f7d;
@@ -285,6 +297,12 @@ const structuredData = {
       text-transform: uppercase;
     }
     .decisions .featured .decision-action { color: #08d9d6; }
+    .offer-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 0.4rem 0.85rem; margin-top: auto; padding-top: 0.6rem; }
+    .offer-actions a { align-items: center; display: inline-flex; font-size: 0.78rem; font-weight: 800; justify-content: center; min-height: 48px; }
+    .offer-read-more { color: #6f2b31; text-decoration: underline; text-decoration-color: #ff5a5f; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .offer-read-more:hover { text-decoration-color: #6f2b31; }
+    .offer-book { background: #ff5a5f; border: 1px solid #ff5a5f; border-radius: 8px; color: #252a34; padding: 0.55rem 0.8rem; text-decoration: none; }
+    .offer-book:hover { background: #ff7478; }
     .content-section {
       border-top: 1px solid #dfe3e6;
       padding-bottom: clamp(4rem, 8vw, 7rem);
@@ -329,7 +347,7 @@ const structuredData = {
     .card-copy > p:last-child, .tool-card > p:not(.tool-number) { color: #596371; font-size: 0.92rem; line-height: 1.55; }
     .tool-card { display: flex; flex-direction: column; min-height: 290px; }
     .tool-number { margin: 0; }
-    .text-link { color: #068f8c; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; margin-top: auto; text-decoration: none; text-transform: uppercase; }
+    .text-link { color: #277471; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; margin-top: auto; text-decoration: none; text-transform: uppercase; }
 
     .newsletter-band { background: #252a34; color: #fff; padding: clamp(4rem, 8vw, 7rem) 0; }
     .newsletter-grid { align-items: center; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; }
@@ -338,9 +356,13 @@ const structuredData = {
     .newsletter-details { color: #08d9d6; display: inline-block; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; margin-top: 1rem; text-decoration: none; text-transform: uppercase; }
     .newsletter-details:hover, .newsletter-details:focus-visible { color: #1df7f4; text-decoration: underline; }
 
+    @media (min-width: 761px) and (max-width: 1000px) {
+      .decisions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
     @media (max-width: 760px) {
       .decisions, .newsletter-grid { grid-template-columns: 1fr; }
-      .decisions a { min-height: 104px; }
+      .decisions > a, .decisions > .claude-offer { min-height: 104px; }
       .section-heading { align-items: flex-start; flex-direction: column; }
       .card-scroller { grid-auto-columns: minmax(270px, 84%); }
     }

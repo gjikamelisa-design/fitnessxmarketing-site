@@ -1,0 +1,125 @@
+/* Preserve the Figma tokens and layout; adapt only booking and access needs. */
+#booking-view { display: none; }
+html[data-view='book'] #booking-view, html:has(#book:target) #booking-view { display: block; }
+html[data-view='book'] #landing-view, html:has(#book:target) #landing-view { display: none; }
+html[data-view='book'] .skip-link { display: none; }
+a, button, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #252a34; outline-offset: 5px; }
+.bg-ink :focus-visible { outline-color: #1df7f4; }
+header a, footer a, a[href*="upwork.com/freelancers"] { display: inline-flex; align-items: center; min-height: 48px; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px 20px; background: #252a34; color: #eaf6f6; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.booking-header { max-width: 1280px; margin: auto; padding: 16px 32px; border-bottom: 1px solid #d0dddd; }
+.booking-main { max-width: 1100px; padding: 36px 24px 40px; margin: auto; }
+.booking-intro { max-width: 700px; margin: 0 auto 24px; text-align: center; }
+.booking-intro h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.1; }
+.booking-intro p { margin-top: 16px; line-height: 1.6; color: #3a4252; }
+.booking-intro .booking-note { font-size: 14px; }
+.booked-social { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 12px; margin-top: 24px; }
+.booked-social a { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 48px; width: 48px; height: 48px; color: #3a4252; border-radius: 50%; }
+.booked-social a:hover { background: #dcecec; color: #252a34; }
+.booked-social svg { display: block; flex-shrink: 0; }
+.scheduler { position: relative; height: 780px; border-radius: 24px; overflow: hidden; background: #fff; }
+.scheduler iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+#scheduler-loading { padding: 32px; color: #3a4252; }
+.booking-fallback, .booking-footer { margin-top: 24px; text-align: center; font-size: 14px; line-height: 1.6; }
+.booking-fallback a, .booking-footer a { display: inline-flex; align-items: center; min-height: 48px; color: #277471; text-decoration: underline; text-underline-offset: 4px; }
+.booking-footer { padding: 0 24px 24px; color: #3a4252; }
+@media (max-width: 639px) {
+  [data-hero] { padding-top: 32px; padding-bottom: 48px; gap: 48px; }
+  [data-hero] h1 { font-size: 42px; }
+  [data-hero] h1 + p { font-size: 16px; line-height: 1.6; margin-top: 20px; }
+  [data-hero] h1 + p + div { margin-top: 24px; }
+  [data-landing-header] > div { padding-top: 8px; padding-bottom: 8px; }
+  [data-landing-header] a:last-child { font-size: 12px; }
+  .booking-header { padding: 8px 20px; }
+  .booking-main { padding: 24px 16px; }
+  .scheduler { height: 1060px; border-radius: 16px; }
+}
+
+/* Setup diagram in the dark "mechanism" section. Static final frame by default; plays once when armed and in view. */
+.os-flow { color: #eaf6f6; }
+.os-row { display: grid; gap: 10px; grid-template-columns: 1fr; align-items: stretch; }
+.os-card, .os-builds, .os-core { border-radius: 18px; padding: 16px; }
+.os-card { border: 1px solid #4a5163; background: #2d3340; }
+.os-builds { border: 1px dashed #4a5163; }
+.os-core { border: 2px solid #08d9d6; box-shadow: 0 0 28px rgba(8,217,214,.3); background: #2a303b; display: flex; flex-direction: column; justify-content: center; }
+.os-label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #b6bfce; }
+.os-label-core { color: #08d9d6; }
+.os-list { margin-top: 10px; display: grid; gap: 6px; }
+.os-item { display: flex; align-items: center; gap: 10px; font-size: 14px; line-height: 20px; color: #fff; }
+.os-dot { width: 10px; height: 10px; flex: none; border-radius: 999px; background: #08d9d6; box-shadow: 0 0 0 4px rgba(8,217,214,.2); }
+.os-core-text { margin-top: 8px; font-size: 19px; line-height: 1.25; font-weight: 800; color: #fff; }
+.os-arrow { display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; color: #08d9d6; transform: rotate(90deg); }
+.os-build-row { margin-top: 10px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.os-build { border: 1px solid #08d9d6; border-radius: 12px; background: rgba(8,217,214,.14); padding: 10px 6px; text-align: center; font-size: 14px; font-weight: 800; line-height: 18px; color: #fff; }
+.os-note { margin-top: 14px; font-size: 15px; line-height: 24px; color: #eaeaea; }
+@media (min-width: 1024px) {
+  .os-row { grid-template-columns: 1.15fr auto 1fr auto 1.35fr; gap: 12px; }
+  .os-arrow { transform: none; }
+}
+/* Stacked (phone and tablet): small, tight, centered. */
+@media (max-width: 1023px) {
+  .os-row, .os-note { max-width: 520px; margin-left: auto; margin-right: auto; }
+  .os-row { gap: 0; }
+  .os-card, .os-builds, .os-core { border-radius: 14px; padding: 10px 12px; }
+  .os-list { margin-top: 6px; gap: 2px; }
+  .os-item { font-size: 13px; line-height: 18px; gap: 8px; }
+  .os-dot { width: 8px; height: 8px; box-shadow: 0 0 0 3px rgba(8,217,214,.2); }
+  .os-label { font-size: 11px; letter-spacing: .12em; }
+  .os-core { box-shadow: 0 0 18px rgba(8,217,214,.28); }
+  .os-core-text { margin-top: 4px; font-size: 16px; line-height: 1.2; }
+  .os-arrow { height: 22px; font-size: 16px; }
+  .os-build-row { margin-top: 6px; gap: 6px; }
+  .os-build { border-radius: 10px; padding: 7px 4px; font-size: 13px; line-height: 16px; }
+  .os-note { margin-top: 10px; font-size: 14px; line-height: 20px; }
+}
+@keyframes os-item-in { from { color: #b6bfce; } }
+@keyframes os-dot-in { from { background: #6b7487; box-shadow: 0 0 0 0 rgba(8,217,214,0); } }
+@keyframes os-arrow-in { from { color: #6b7487; } }
+@keyframes os-core-in { from { border-color: #4a5163; box-shadow: 0 0 0 0 rgba(8,217,214,0); } }
+@keyframes os-build-in { from { border-color: #4a5163; border-style: dashed; background: transparent; color: #b6bfce; } }
+.os-armed .os-item { animation: os-item-in .4s ease-out both paused; }
+.os-armed .os-dot { animation: os-dot-in .4s ease-out both paused; }
+.os-armed .os-arrow { animation: os-arrow-in .4s ease-out both paused; }
+.os-armed .os-core { animation: os-core-in .5s ease-out both paused; }
+.os-armed .os-build { animation: os-build-in .4s ease-out both paused; }
+.os-armed .os-item:nth-child(2), .os-armed .os-item:nth-child(2) .os-dot { animation-delay: .7s; }
+.os-armed .os-item:nth-child(3), .os-armed .os-item:nth-child(3) .os-dot { animation-delay: 1.4s; }
+.os-armed .os-item:nth-child(4), .os-armed .os-item:nth-child(4) .os-dot { animation-delay: 2.1s; }
+.os-armed .os-arrow, .os-armed .os-core { animation-delay: 2.9s; }
+.os-armed .os-build:nth-child(1) { animation-delay: 3.7s; }
+.os-armed .os-build:nth-child(2) { animation-delay: 4.4s; }
+.os-armed .os-build:nth-child(3) { animation-delay: 5.1s; }
+.os-armed .os-flow.is-playing .os-item, .os-armed .os-flow.is-playing .os-dot, .os-armed .os-flow.is-playing .os-arrow, .os-armed .os-flow.is-playing .os-core, .os-armed .os-flow.is-playing .os-build { animation-play-state: running; }
+
+/* Two-step process graphic in the hero: connector line draws once (positioning lives in utility classes on the span). */
+.hero-step-line::after { content: ''; position: absolute; inset: 0; background: #277471; transform-origin: top; animation: hero-step-draw 1.2s ease-out .4s both; }
+@keyframes hero-step-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .hero-step-line::after { animation: none; } }
+
+/* "What's included" cards. */
+.included-card { position: relative; overflow: hidden; border-radius: 20px; background: #fff; padding: 20px 20px 22px; box-shadow: 0 1px 2px rgba(37,42,52,.06), 0 12px 28px -12px rgba(37,42,52,.18); transition: transform .25s ease, box-shadow .25s ease; }
+.included-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, #08d9d6, #1df7f4); }
+.included-card h3 { margin-top: 14px; }
+.included-icon { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 12px; background: #252a34; color: #08d9d6; }
+@media (hover: hover) { .included-card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(37,42,52,.06), 0 18px 34px -12px rgba(37,42,52,.26); } }
+@media (prefers-reduced-motion: reduce) { .included-card { transition: none; } .included-card:hover { transform: none; } }
+
+/* "How it works" step cards. */
+.climb-step { display: flex; gap: 16px; align-items: flex-start; border-radius: 18px; background: #fff; padding: 16px 18px; box-shadow: 0 1px 2px rgba(37,42,52,.06), 0 10px 24px -14px rgba(37,42,52,.2); }
+.climb-num { display: inline-flex; flex: none; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 999px; background: #252a34; color: #fff; font-weight: 800; font-size: 14px; }
+
+/* Coral CTA fill (#FF5A5F) with dark text: 4.71:1. Hover #FB585D keeps 4.56:1. */
+.cta-coral { background-color: #ff5a5f; color: #252a34; box-shadow: 0 10px 30px rgba(255,90,95,.28); }
+.cta-coral:hover { background-color: #fb585d; box-shadow: 0 12px 32px rgba(255,90,95,.4); }
+
+/* Card colors: 1 = pale glass #FF6B4A, 2 = #4f5bd5 (white text 5.5:1), 3 = #FF5A5F (dark text 4.71:1). */
+.included-card-1 { background: rgba(255,107,74,.13); border: 1px solid rgba(255,107,74,.4); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.included-card-1::before { background: #ff6b4a; }
+.included-card-2 { background: #4f5bd5; }
+.included-card-2::before { background: rgba(255,255,255,.6); }
+.included-card-2 h3, .included-card-2 p { color: #fff; }
+.included-card-3 { background: #ff5a5f; }
+.included-card-3::before { background: rgba(37,42,52,.35); }
+.included-card-3 h3, .included-card-3 p { color: #252a34; }

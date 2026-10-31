@@ -1,0 +1,85 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import FunnelLanding from '../components/FunnelLanding';
+import Clarity from '../components/Clarity.astro';
+import AnalyticsConsent from '../components/AnalyticsConsent.astro';
+import '../styles/funnel.css';
+import '../styles/funnel-enhancements.css';
+import manrope from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude for Fitness Businesses | Fitness x Marketing</title>
+    <meta name="description" content="Tried Claude. Still doing all the work? One Claude workspace and three custom workflows for your fitness business. Start with a free 30-minute strategy call." />
+    <link rel="canonical" href="https://fitnessxmarketing.com/claude-for-fitness-businesses/" />
+    <meta property="og:title" content="Tried Claude. Still doing all the work?" />
+    <meta property="og:description" content="One workspace. Three workflows. Start with a free 30-minute strategy call." />
+    <meta property="og:url" content="https://fitnessxmarketing.com/claude-for-fitness-businesses/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fitness x Marketing" />
+    <meta property="og:image" content="https://fitnessxmarketing.com/og-claude-for-fitness-businesses.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tried Claude. Still doing all the work? Claude for fitness businesses by Melisa Gjika, Fitness x Marketing." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tried Claude. Still doing all the work?" />
+    <meta name="twitter:description" content="One workspace. Three workflows. Start with a free 30-minute strategy call." />
+    <meta name="twitter:image" content="https://fitnessxmarketing.com/og-claude-for-fitness-businesses.png" />
+    <meta name="twitter:image:alt" content="Tried Claude. Still doing all the work? Claude for fitness businesses by Melisa Gjika, Fitness x Marketing." />
+    <meta name="theme-color" content="#eaf6f6" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preload" href={manrope} as="font" type="font/woff2" crossorigin />
+    <script is:inline>if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) { document.documentElement.classList.add('os-armed'); }</script>
+    <script is:inline>document.documentElement.dataset.view = location.hash === '#book' ? 'book' : 'landing';</script>
+    <Clarity />
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to content</a>
+    <div id="landing-view"><SiteHeader currentPath="/claude-for-fitness-businesses/" /><FunnelLanding /></div>
+    <div id="booking-view"><div id="book">
+      <SiteHeader currentPath="/claude-for-fitness-businesses/" />
+      <main id="booking-main" class="booking-main">
+        <div id="booking-flow">
+          <div class="booking-intro">
+            <h1 tabindex="-1" id="booking-title">Your free strategy call</h1>
+            <p>30 minutes. No obligation. Bring one recurring task and an example of how you handle it today.</p>
+            <p class="booking-note">The call is free. The $297 Claude Workspace Sprint is optional.</p>
+          </div>
+          <div id="scheduler" class="scheduler" aria-label="Book your free strategy call">
+            <p id="scheduler-loading" role="status">Loading available times…</p>
+          </div>
+          <p class="booking-fallback">Prefer a direct link or having trouble loading? <a id="calendly-fallback" href="https://calendly.com/gjikamelisa/discovery/">Book directly on Calendly</a></p>
+          <noscript><p>Use the Calendly link above to choose your time.</p></noscript>
+        </div>
+        <section id="booked-state" class="booking-intro booked-state" role="status" aria-live="polite" hidden>
+          <h1 tabindex="-1" id="booked-title">Your strategy call is booked.</h1>
+          <p>30 minutes. No obligation. Bring one recurring task and an example of how you handle it today.</p>
+          <p class="booking-note">The call is free. The $297 Claude Workspace Sprint is optional.</p>
+          <div class="booked-social">
+            <a href="https://www.instagram.com/fitnessxmarketing/" aria-label="FitnessxMarketing on Instagram" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="20" rx="5" width="20" x="2" y="2" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/melisa-gjika-95a960201/" aria-label="Melisa on LinkedIn" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" /><path d="M2 9h4v12H2z" /><circle cx="4" cy="4" r="2" /></svg>
+            </a>
+          </div>
+        </section>
+      </main>
+      <footer class="booking-footer">Independent consultancy. Not affiliated with or endorsed by Anthropic or Upwork. <a href="/privacy-policy/">Privacy</a></footer>
+    </div></div>
+    <script is:inline>
+      (function () {
+        var flow = document.querySelector('.os-flow');
+        if (!flow || !document.documentElement.classList.contains('os-armed')) return;
+        new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) { if (entry.isIntersecting) { flow.classList.add('is-playing'); observer.disconnect(); } });
+        }, { threshold: 0.5 }).observe(flow);
+      })();
+    </script>
+    <AnalyticsConsent />
+    <script src="../scripts/booking.ts"></script>
+  </body>
+</html>

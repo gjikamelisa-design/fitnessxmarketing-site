@@ -6,9 +6,24 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "node tests/booking.test.cjs && node tests/consent.test.cjs"
   },
   "dependencies": {
+    "@astrojs/react": "^7.1.2",
     "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.14.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "lighthouse": "^13.6.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.156.0"
   }
 }

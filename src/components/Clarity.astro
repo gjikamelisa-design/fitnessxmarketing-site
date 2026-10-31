@@ -1,0 +1,42 @@
+---
+const clarityId = 'xtgem716jj';
+const googleId = 'G-ZHVLV2DEVT';
+---
+<script is:inline define:vars={{ clarityId, googleId }}>
+  (function(){
+    var key='fxm_analytics_consent_v1', saved=null, loaded=false;
+    try{saved=JSON.parse(localStorage.getItem(key)||'null');if(!saved||!['granted','denied'].includes(saved.status)||Date.now()-saved.at>180*86400000)saved=null}catch(e){}
+    window.fxmHasAnalyticsChoice=Boolean(saved);
+    window.fxmAnalyticsAllowed=saved?.status==='granted';
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+    window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+    gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+    window.trackEvent=function(name,properties){if(window.fxmAnalyticsAllowed)gtag('event',name,properties||{})};
+    function start(){
+      if(loaded)return;loaded=true;
+      gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+      clarity('consentv2',{analytics_Storage:'granted',ad_Storage:'denied'});
+      // Local previews never send production analytics or recordings.
+      if(!['fitnessxmarketing.com','www.fitnessxmarketing.com'].includes(location.hostname))return;
+      gtag('js',new Date());gtag('config',googleId);
+      var google=document.createElement('script');google.async=true;google.src='https://www.googletagmanager.com/gtag/js?id='+googleId;document.head.append(google);
+      var microsoft=document.createElement('script');microsoft.async=true;microsoft.src='https://www.clarity.ms/tag/'+clarityId;document.head.append(microsoft);
+    }
+    window.fxmSetAnalyticsConsent=function(status){
+      var wasAllowed=window.fxmAnalyticsAllowed;
+      window.fxmHasAnalyticsChoice=true;window.fxmAnalyticsAllowed=status==='granted';
+      try{localStorage.setItem(key,JSON.stringify({status:status,at:Date.now()}))}catch(e){}
+      if(window.fxmAnalyticsAllowed)start();
+      else{
+        gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+        clarity('consentv2',{analytics_Storage:'denied',ad_Storage:'denied'});
+        try{sessionStorage.removeItem('fxm_campaign')}catch(e){}
+        document.cookie.split(';').forEach(function(cookie){var name=cookie.split('=')[0].trim();if(/^(_ga|_gid|_gat|_clck|_clsk)/.test(name)){['',location.hostname,'.'+location.hostname,'.fitnessxmarketing.com'].forEach(function(domain){document.cookie=name+'=; Max-Age=0; path=/'+(domain?'; domain='+domain:'')})}});
+      }
+      window.dispatchEvent(new Event('fxm:analytics-consent'));
+      if(wasAllowed&&!window.fxmAnalyticsAllowed)location.reload();
+    };
+    if(window.fxmAnalyticsAllowed)start();
+  })();
+</script>

@@ -1,5 +1,6 @@
 {
   "name": "fitnessxmarketing-site",
+  "account_id": "140ee340abe76a759ce87b4299f4a452",
   "main": "src/index.ts",
   "compatibility_date": "2026-08-29",
   "routes": [

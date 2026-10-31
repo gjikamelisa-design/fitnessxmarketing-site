@@ -1,0 +1,116 @@
+---
+import '../styles/manrope.css';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+const offerPath = '/claude-for-fitness-businesses/';
+const links = [
+  { href: '/', label: 'Home', active: currentPath === '/' },
+  { href: offerPath, label: 'Claude for Fitness Businesses', active: currentPath.startsWith(offerPath) },
+  { href: '/tools/', label: 'Tools', active: currentPath.startsWith('/tools') },
+  { href: '/posts/', label: 'Articles', active: currentPath.startsWith('/posts') || currentPath.startsWith('/blog') },
+  { href: '/newsletter/', label: 'Newsletter', active: currentPath.startsWith('/newsletter') },
+];
+---
+<header class="fxm-header" data-site-header="true">
+  <a class="fxm-brand" href="/" aria-label="FxM — Fitness x Marketing home">FxM<span aria-hidden="true">.</span></a>
+  <nav aria-label="Main navigation">
+    {links.map((link) => (
+      <a href={link.href} aria-current={link.active ? 'page' : undefined}>{link.label}</a>
+    ))}
+  </nav>
+  <a class="fxm-cta" href={`${offerPath}#book`} data-booking-cta="true">Book a free call</a>
+</header>
+
+<style is:global>
+  .fxm-header {
+    align-items: center;
+    background: #eaf6f6;
+    border-bottom: 1px solid #d0dddd;
+    display: flex;
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    gap: 2rem;
+    justify-content: space-between;
+    min-height: 72px;
+    padding: 0.9rem clamp(1.25rem, 4vw, 3.25rem);
+    position: relative;
+    z-index: 20;
+  }
+
+  .fxm-brand {
+    align-items: center;
+    display: inline-flex;
+    min-height: 48px;
+    color: #252a34;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-decoration: none;
+  }
+
+  .fxm-brand span { color: #277471; }
+
+  .fxm-header nav {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: clamp(1rem, 2.5vw, 2.25rem);
+    justify-content: center;
+  }
+
+  .fxm-header nav a {
+    align-items: center;
+    display: inline-flex;
+    min-height: 48px;
+    color: #3a4252;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .fxm-header nav a:hover,
+  .fxm-header nav a[aria-current='page'] { color: #252a34; }
+
+  .fxm-header nav a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: #08d9d6;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  .fxm-cta {
+    align-items: center;
+    background: #252a34;
+    border-radius: 999px;
+    color: #ffffff;
+    display: inline-flex;
+    font-size: 0.8rem;
+    font-weight: 800;
+    min-height: 48px;
+    padding: 0 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .fxm-cta:hover { background: #3a4252; }
+
+  .fxm-header a:focus-visible { outline: 2px solid #252a34; outline-offset: 4px; }
+
+  @media (max-width: 860px) {
+    .fxm-header { flex-wrap: wrap; gap: 0.6rem 1rem; }
+    .fxm-header nav {
+      border-top: 1px solid #d0dddd;
+      flex-basis: 100%;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.1rem;
+      justify-content: flex-start;
+      order: 3;
+      padding-top: 0.5rem;
+    }
+    .fxm-header nav a { align-items: center; display: inline-flex; min-height: 48px; }
+    .fxm-cta { margin-left: auto; }
+  }
+</style>

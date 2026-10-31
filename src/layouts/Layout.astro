@@ -1,4 +1,8 @@
 ---
+import SiteHeader from '../components/SiteHeader.astro';
+import Clarity from '../components/Clarity.astro';
+import AnalyticsConsent from '../components/AnalyticsConsent.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -42,14 +46,7 @@ const currentPath = Astro.url.pathname;
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZHVLV2DEVT"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-ZHVLV2DEVT');
-    </script>
+    <Clarity />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpeg" href={favicon} />
@@ -75,15 +72,7 @@ const currentPath = Astro.url.pathname;
     <title>{documentTitle}</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="https://fitnessxmarketing.com/">FITNESS <span>×</span> MARKETING</a>
-      <nav aria-label="Main navigation">
-        <a href="https://fitnessxmarketing.com/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a>
-        <a href="https://fitnessxmarketing.com/tools/" aria-current={currentPath.startsWith('/tools') ? 'page' : undefined}>Tools</a>
-        <a href="https://fitnessxmarketing.com/posts/" aria-current={currentPath.startsWith('/posts') || currentPath.startsWith('/blog') ? 'page' : undefined}>Articles</a>
-      </nav>
-      <a class="resource-hub" href="https://fitnessxmarketing.com/newsletter/" aria-current={currentPath.startsWith('/newsletter') ? 'page' : undefined}><span aria-hidden="true"></span> Newsletter</a>
-    </header>
+    <SiteHeader currentPath={currentPath} />
 
     <main class={mainClass}>
       <slot />
@@ -91,7 +80,11 @@ const currentPath = Astro.url.pathname;
 
     <footer class="site-footer">
       <p>&copy; {new Date().getFullYear()} Fitness x Marketing</p>
+      <a class="privacy-link" href="/privacy-policy/">Privacy Policy</a>
     </footer>
+
+    <AnalyticsConsent />
+    <script src="../scripts/analytics.ts"></script>
 
     <style is:global>
       :root {
@@ -207,6 +200,8 @@ const currentPath = Astro.url.pathname;
         font-size: 0.9rem;
         border-top: 1px solid var(--gray);
       }
+
+      .site-footer .privacy-link { align-items: center; color: #277471; display: inline-flex; min-height: 48px; text-underline-offset: 4px; }
 
       @media (max-width: 640px) {
         .site-header {

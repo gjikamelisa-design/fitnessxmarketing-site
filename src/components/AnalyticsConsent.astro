@@ -1,0 +1,26 @@
+<div class="analytics-preferences"><button type="button" data-analytics-settings>Analytics settings</button></div>
+<section id="analytics-consent" class="analytics-consent" aria-label="Optional analytics" hidden data-clarity-mask="true">
+  <div><strong>Help us improve this website</strong><p>Allow Google Analytics and Microsoft Clarity to measure visits and record site interactions? Booking works either way. <a href="/privacy-policy/">Privacy policy</a></p></div>
+  <div class="analytics-actions"><button type="button" data-analytics-choice="granted">Accept analytics</button><button type="button" data-analytics-choice="denied">Decline</button></div>
+</section>
+<script is:inline>
+  (function(){
+    var banner = document.getElementById('analytics-consent');
+    if(!window.fxmHasAnalyticsChoice) banner.hidden = false;
+    document.querySelectorAll('[data-analytics-settings]').forEach(function(button){button.addEventListener('click',function(){banner.hidden=false;banner.querySelector('button').focus()})});
+    banner.querySelectorAll('[data-analytics-choice]').forEach(function(button){button.addEventListener('click',function(){window.fxmSetAnalyticsConsent(button.dataset.analyticsChoice);banner.hidden=true})});
+  })();
+</script>
+<style is:global>
+  .analytics-preferences { text-align:center; padding:0 16px 16px; }
+  .analytics-preferences button { background:none; border:0; color:#277471; cursor:pointer; font:inherit; font-size:14px; min-height:48px; text-decoration:underline; text-underline-offset:4px; }
+  .analytics-consent { position:fixed; z-index:100; bottom:16px; left:16px; right:16px; max-width:820px; margin:auto; padding:20px; border:1px solid #acbec0; border-radius:14px; background:#fff; color:#252a34; box-shadow:0 4px 24px #252a3426; font-family:system-ui,sans-serif; }
+  .analytics-consent[hidden] { display:none; }
+  .analytics-consent strong { font-size:16px; }
+  .analytics-consent p { font-size:14px; line-height:1.6; margin:6px 0 14px; }
+  .analytics-consent a { color:#277471; text-decoration:underline; }
+  .analytics-actions { display:flex; flex-wrap:wrap; gap:10px; }
+  .analytics-actions button { cursor:pointer; min-height:48px; padding:10px 20px; border:1px solid #252a34; border-radius:8px; background:#252a34; color:#fff; font:600 14px system-ui,sans-serif; }
+  .analytics-actions button:last-child { background:#fff; color:#252a34; }
+  .analytics-consent :focus-visible, .analytics-preferences :focus-visible { outline:3px solid #277471; outline-offset:4px; }
+</style>
