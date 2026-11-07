@@ -129,12 +129,12 @@ const faqs = [
   {
     question: "How is this different from writing better prompts?",
     answer:
-      "Prompts live in one chat. Your workspace holds your business details, examples and rules, so every chat starts informed. Off-the-shelf software and third-party rules have worked so far, but the near future is custom-built setups made around your business.",
+      "Prompts live in one chat. Your workspace holds your business details, examples and rules, so every chat starts informed. Off-the-shelf software and third-party rules have worked so far, but the near future is custom-built setups made around your business. And you don’t have to learn a new way of working. Each workflow is fitted to the way you already do the task.",
   },
   {
     question: "What do you need from me?",
     answer:
-      "Almost nothing. Come to the call ready to talk and explain. I do the audit first, and if I need more from you, I’ll let you know.",
+      "Show me how you do your recurring tasks today and share a few examples you’re happy with. I do the audit first, and if I need more from you, I’ll let you know.",
   },
   {
     question: "What happens after seven days?",
@@ -171,8 +171,8 @@ export default function FunnelLanding() {
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate sm:text-xl sm:leading-9">
                 I organize one Claude workspace for your fitness business and
-                build three workflows inside it. They work like a super-intelligent
-                team member covering three roles.
+                set up three workflows inside it, fitted to how you already
+                work. You keep your habits. Claude takes the repetitive part.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <ButtonLink coral>Book a free strategy call</ButtonLink>
@@ -235,10 +235,10 @@ export default function FunnelLanding() {
             </div>
           </div>
           <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-20 lg:px-12">
-            <div aria-label="How the workspace is set up: your business details are loaded once, into one assistant, then build-outs chosen on the call" className="os-flow" data-stage="8" role="group">
+            <div aria-label="How the workspace is set up: your business details are loaded once, into one assistant, then workflows chosen on the call" className="os-flow" data-stage="8" role="group">
               <div className="os-row">
                 <div className="os-card">
-                  <p className="os-label">Loaded once</p>
+                  <p className="os-label">Loaded once: How you do each task today</p>
                   <ul className="os-list">
                     {[
                       "Your offers and pricing",
@@ -256,13 +256,13 @@ export default function FunnelLanding() {
                 <span aria-hidden="true" className="os-arrow">→</span>
                 <div className="os-core">
                   <p className="os-label os-label-core">Your gym or coach OS</p>
-                  <p className="os-core-text">One employee that knows how your business runs.</p>
+                  <p className="os-core-text">One workspace that works the way you do.</p>
                 </div>
                 <span aria-hidden="true" className="os-arrow">→</span>
                 <div className="os-builds">
-                  <p className="os-label">Build-outs, chosen with you on the call</p>
+                  <p className="os-label">Workflows, chosen with you on the call</p>
                   <div className="os-build-row">
-                    {["Build-out 1", "Build-out 2", "Build-out 3"].map((item, index) => (
+                    {["Workflow 1", "Workflow 2", "Workflow 3"].map((item, index) => (
                       <div className="os-build" key={item}>
                         {item}
                       </div>
@@ -297,7 +297,7 @@ export default function FunnelLanding() {
             <div className="mt-10 grid gap-4 md:grid-cols-3">
               {[
                 ["layers", "Your workspace", "Your offers, pricing, writing examples and rules, loaded into Claude once, so every chat starts knowing your business."],
-                ["flow", "Three workflows", "Chosen with you on the call, each aimed at saving you 2–4 hours a week. Typical picks: replying to inquiries, check-in replies and weekly recaps, planning a week of posts."],
+                ["flow", "Three workflows", "Chosen with you on the call. Each starts from your daily tasks and how you do it daily. Each aims to save you 2–4 hours a week. Typical picks: replying to inquiries, check-in replies and weekly recaps, planning a week of posts."],
                 ["video", "A Loom and a plan", "A personalized video showing how to run each workflow, plus a plan covering what Claude handles, what stays with you and what to build next."],
               ].map(([icon, title, description], index) => (
                 <article className={`included-card included-card-${index + 1}`} key={title}>
@@ -315,9 +315,9 @@ export default function FunnelLanding() {
             </div>
             <p className="mt-10 max-w-3xl text-lg leading-8 text-slate">
               <strong className="font-extrabold text-ink">What I need from you:</strong>{" "}
-              almost nothing. Come to the call ready to talk and explain. I do
-              the audit first and tell you if I need more. Afterward you own it
-              and run it yourself.
+              on the call, show me how you do each task today and share a few
+              examples you’re happy with. I do the audit first and tell you if
+              I need anything else. Afterward you own it and run it yourself.
             </p>
             <h3 className="mt-14 text-3xl font-extrabold tracking-tight text-ink">
               How it works
@@ -510,11 +510,11 @@ export default function FunnelLanding() {
                   Claude Workspace Sprint
                 </p>
                 <h2 className="max-w-3xl text-balance text-4xl leading-tight font-extrabold tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-                  Get one Claude team member covering three roles.
+                  Get one Claude workspace with three workflows, fitted to how you work.
                 </h2>
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-light">
                   Within seven days: one organized Claude workspace for your
-                  fitness business and three custom workflows. Each is aimed at
+                  fitness business and three workflows fitted to how you work. Each is aimed at
                   saving you 2–4+ hours a week.
                 </p>
               </div>
