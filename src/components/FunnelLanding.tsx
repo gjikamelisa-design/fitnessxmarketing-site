@@ -4,6 +4,7 @@ const bookingHref = "#book"
 const upworkHref = "https://www.upwork.com/freelancers/~013a012b9ce9380050?mp_source=share"
 const linkedInHref = "https://www.linkedin.com/in/melisa-gjika-95a960201/"
 const instagramHref = "https://www.instagram.com/fitnessxmarketing/"
+const clutchHref = "https://clutch.co/profile/fitness-x-marketing"
 
 function CheckIcon() {
   return (
@@ -437,7 +438,15 @@ export default function FunnelLanding() {
                 platforms like ABC Trainerize and ABC Glofox.
               </p>
               <p className="mt-6 text-sm leading-6 text-muted">
-                Top Rated Plus on Upwork · 4.9/5 · $100K+ earned
+                Top Rated Plus on Upwork · 4.9/5 · $100K+ earned ·{" "}
+                <a
+                  className="underline decoration-muted/40 underline-offset-4 transition hover:text-ink hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                  href={clutchHref}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  FxM reviews on Clutch
+                </a>
               </p>
               <div className="mt-6 grid max-w-2xl gap-4">
                 {[
