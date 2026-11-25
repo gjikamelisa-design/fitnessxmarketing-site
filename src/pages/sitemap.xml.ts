@@ -19,6 +19,7 @@ const urls = [
   'https://fitnessxmarketing.com/posts/trainer-objections/',
   'https://fitnessxmarketing.com/posts/ideal-client-for-coaches/',
   'https://fitnessxmarketing.com/posts/a-non-trendy-take-on-where-fitness-is-going/',
+  'https://fitnessxmarketing.com/posts/ai-in-fitness-industry/',
   'https://fitnessxmarketing.com/tools/',
   'https://fitnessxmarketing.com/tools/wearable-tracking-for-coaches/',
   'https://fitnessxmarketing.com/tools/wearable-tracking-for-coaches/biweekly-wearable-check-in-for-coaches/',

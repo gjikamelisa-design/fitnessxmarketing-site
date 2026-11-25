@@ -1,0 +1,886 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Fitness AI in 2026: What’s Built, Funded and Used';
+const h1 = 'What’s fitness doing with AI?';
+const description = 'A 2026 state of the industry report on fitness AI: where the money goes, what gyms use, and who owns the data. Every figure linked.';
+const canonical = '/posts/ai-in-fitness-industry/';
+const siteUrl = 'https://fitnessxmarketing.com';
+const articleUrl = `${siteUrl}${canonical}`;
+const imageDir = `${canonical}images`;
+const publishedTime = '2026-11-25T00:00:00+01:00';
+const modifiedTime = '2026-11-25T00:00:00+01:00';
+
+const images = {
+  fourJobs: {
+    src: `${imageDir}/four-jobs-of-fitness-ai.png`,
+    width: 1600,
+    height: 1230,
+    alt: 'Diagram of the four kinds of fitness AI: sensing, predictive, generative and automation, with example companies under each, including Whoop, Oura, Mindbody, Wodify, Trainerize, Zing Coach, Cora and ABC Fitness.',
+    caption: 'The four jobs AI does in fitness, and who is building each one.',
+  },
+  funding: {
+    src: `${imageDir}/fitness-startup-funding-devices-h1-2026.png`,
+    width: 1600,
+    height: 900,
+    alt: 'Waffle chart of fitness and wellness startup funding from January to June 2026, where each square is $10M. Devices took about $727M of $3.6B, Whoop alone took $575M, and fitness software took about $12M.',
+    caption: 'Devices took the largest share of first-half 2026 fitness funding. Sources: Crunchbase News, Business Wire.',
+  },
+  wearableRounds: {
+    src: `${imageDir}/largest-wearable-funding-rounds-2026.png`,
+    width: 1600,
+    height: 960,
+    alt: 'Ranked chart of the largest disclosed wearable funding rounds of 2026: Whoop $575M at a $10.1B valuation, Temple $54M, Eight Sleep $50M and Ultrahuman about $44M, with what each sells and what its AI does.',
+    caption: 'The four largest wearable rounds of 2026 and what each company’s AI does. Steps show rank, not scale.',
+  },
+};
+
+const socialImage = images.fourJobs.src;
+const imageAlt = images.fourJobs.alt;
+
+const sources = [
+  'https://news.crunchbase.com/health-wellness-biotech/fitness-startup-funding-rebounding-ai-data-h1-2026/',
+  'https://abcfitness.com/press-release/abc-fitness-ai-infrastructure/',
+  'https://athletechnews.com/mindbody-ai-features/',
+  'https://partner.zing.coach/',
+  'https://www.ycombinator.com/companies/cora',
+  'https://techcrunch.com/2026/03/31/whoop-valuation-10b-series-g-fundraise/',
+  'https://athletechnews.com/fitness-wellness-startups-have-raised-3-6-billion-crunchbase/',
+  'https://athletechnews.com/garmin-acquires-trainingpeaks-trainheroic/',
+  'https://www.androidauthority.com/google-health-app-coach-rebrand-3664205/',
+  'https://www.issaonline.com/blog/post/the-human-advantage-how-ai-is-reshaping-not-replacing-personal',
+  'https://www.bluevine.com/blog/small-business-ai-trends-report-2026',
+  'https://communityhub.strava.com/developers-api-7/api-agreement-update-how-data-appears-on-3rd-party-apps-7636',
+  'https://the5krunner.com/2026/10/14/garmin-api-intervals-third-party-apps/',
+  'https://developers.google.com/health/about?hl=en',
+  'https://www.wodify.com/blog/wodify-mcp-connector-api-access',
+  'https://abcfitness.com/press-release/summer_wellness_watch_report/',
+  'https://techcrunch.com/2025/09/09/smart-ring-maker-ouras-ceo-addresses-recent-backlash-says-future-is-a-cloud-of-wearables/',
+  'https://fortune.com/2025/09/09/oura-ceo-tom-hale-data-privacy-oura-ring-defense-department-palantir/',
+  'https://athletechnews.com/future-pulls-the-plug-on-ai-personal-training-commits-to-human-coaches/',
+];
+
+const mentions = [
+  'ABC Fitness', 'Mindbody', 'EGYM', 'Zing Coach', 'Les Mills', 'Cora', 'Whoop', 'Temple', 'Eight Sleep',
+  'Ultrahuman', 'Garmin', 'TrainingPeaks', 'Strava', 'Runna', 'Google Health', 'Fitbit', 'Wodify', 'Oura', 'Future',
+];
+
+const toImageObject = (image: { src: string; width: number; height: number; caption: string }) => ({
+  '@type': 'ImageObject',
+  url: `${siteUrl}${image.src}`,
+  contentUrl: `${siteUrl}${image.src}`,
+  width: image.width,
+  height: image.height,
+  caption: image.caption,
+});
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${articleUrl}#article`,
+      url: articleUrl,
+      headline: h1,
+      name: title,
+      alternativeHeadline: title,
+      description,
+      abstract: 'AI does four jobs in fitness: it collects data, predicts business outcomes, automates tasks and generates plans or messages. In the first half of 2026, investors put the biggest checks into devices that collect body data, established platforms bought AI coaching, and the fight over who owns fitness data became the deciding factor for trainers and gyms.',
+      datePublished: publishedTime,
+      dateModified: modifiedTime,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+      image: [toImageObject(images.fourJobs), toImageObject(images.funding), toImageObject(images.wearableRounds)],
+      thumbnailUrl: `${siteUrl}${socialImage}`,
+      articleSection: 'Fitness Industry',
+      inLanguage: 'en',
+      wordCount: 1510,
+      keywords: [
+        'fitness AI',
+        'AI in the fitness industry',
+        'fitness AI funding 2026',
+        'AI fitness coaching',
+        'AI for gyms',
+        'fitness data ownership',
+        'AI for personal trainers',
+      ],
+      about: [
+        { '@type': 'Thing', name: 'Artificial intelligence in the fitness industry' },
+        { '@type': 'Thing', name: 'Fitness technology funding' },
+        { '@type': 'Thing', name: 'Fitness data ownership' },
+      ],
+      mentions: mentions.map((name) => ({ '@type': 'Organization', name })),
+      citation: sources.map((url) => ({ '@type': 'CreativeWork', url })),
+      author: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: `${siteUrl}/`,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Fitness x Marketing',
+        url: `${siteUrl}/`,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${siteUrl}/posts/wearable-data-and-data-driven-coaching/fitness-x-marketing-logo.jpeg`,
+        },
+      },
+      isPartOf: { '@type': 'WebSite', '@id': `${siteUrl}/#website`, url: `${siteUrl}/`, name: 'Fitness x Marketing' },
+      breadcrumb: { '@id': `${articleUrl}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${articleUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Articles',
+          item: `${siteUrl}/posts/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: h1,
+          item: articleUrl,
+        },
+      ],
+    },
+  ],
+};
+
+const ext = { target: '_blank', rel: 'noopener noreferrer' };
+---
+
+<Layout
+  title={title}
+  titleTemplate={false}
+  description={description}
+  canonical={canonical}
+  image={socialImage}
+  imageAlt={imageAlt}
+  type="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  structuredData={structuredData}
+>
+  <article>
+    <header class="article-header">
+      <p class="eyebrow"><a href="/posts/">Articles</a> / Fitness Industry</p>
+      <h1>{h1}</h1>
+      <p class="dek">A 2026 state of the industry report on fitness AI: where the money goes, what gyms use, and who owns the data.</p>
+      <div class="byline">
+        <span>Fitness x Marketing</span>
+        <span aria-hidden="true">•</span>
+        <time datetime="2026-11-25">November 25, 2026</time>
+        <span aria-hidden="true">•</span>
+        <span>7 min read</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead"><a href="https://news.crunchbase.com/health-wellness-biotech/fitness-startup-funding-rebounding-ai-data-h1-2026/" {...ext}>Fitness and wellness startups</a> raised more than $3.6B in the first half of 2026, and almost every fitness company is doing something with AI. Some are building entire solutions around it. Others are turning a traditional product into an AI-enabled or AI-integrated one.</p>
+
+      <p>I went through market reports, funding data, and company announcements, and I lay out what I found in this article: the first signals of what matters and what’s being built with it.</p>
+
+      <nav class="contents" aria-label="Article contents">
+        <p>In this article</p>
+        <ol>
+          <li><a href="#four-jobs">The four jobs AI does for fitness brands</a></li>
+          <li><a href="#venture-funding">Venture: Who’s getting funded in fitness, and why</a></li>
+          <li><a href="#ai-coaching">AI coaching apps and personal trainers don’t sell the same thing</a></li>
+          <li><a href="#gyms">Gyms meet AI inside their software</a></li>
+          <li><a href="#data-fight">The data fight</a></li>
+          <li><a href="#where-fitness-ai-is-going">Where fitness AI is going</a></li>
+          <li><a href="#what-this-means">What this means for trainers and gyms</a></li>
+        </ol>
+      </nav>
+
+      <section id="four-jobs">
+        <h2>The four jobs AI does for fitness brands</h2>
+
+        <p>AI in the fitness industry does four jobs:</p>
+
+        <ol class="jobs">
+          <li><strong>Collects</strong> data</li>
+          <li><strong>Predicts</strong> business outcomes from large datasets</li>
+          <li><strong>Automates</strong> tasks</li>
+          <li><strong>Generates</strong> a plan or message</li>
+        </ol>
+
+        <p>Outside fitness, AI drives two outcomes for business: it takes repeatable work off people’s hands, and it finds patterns in more data in a few minutes, when it would take days for a human to do so.</p>
+
+        <p>Collecting data and predicting outcomes find the patterns. Automating tasks and generating plans do the repeatable work. Most brands use both.</p>
+
+        <p>So the useful question is not “is it AI?” It is “which job does it do, and does that job make me money or save me time?”</p>
+
+        <h3 id="established-vs-ai-first">Established platforms vs AI-first companies</h3>
+
+        <ol class="split-list">
+          <li>
+            <p><strong>Established platforms integrate AI capabilities into what they already sell.</strong></p>
+            <p>In gym software, for example, <a href="https://abcfitness.com/press-release/abc-fitness-ai-infrastructure/" {...ext}>ABC Fitness</a> added churn prediction, AI agents, and automated billing, and <a href="https://athletechnews.com/mindbody-ai-features/" {...ext}>Mindbody</a> added Clients at Risk and Big Spenders. Consumer platforms are doing the same (see the <a href="#ai-coaching">coaching section below</a>).</p>
+          </li>
+          <li>
+            <p><strong>The newer wave of AI-first companies builds the product around AI from day one.</strong></p>
+            <p><strong>Two examples:</strong> <a href="https://partner.zing.coach/" {...ext}>Zing Coach</a> sells AI coaching straight to gyms, and it has a partnership with Les Mills. <a href="https://www.ycombinator.com/companies/cora" {...ext}>Cora</a> provides personalized fitness coaching using health and wearable data, and adapts your plans over time.</p>
+          </li>
+        </ol>
+
+        <figure class="figure-medium">
+          <img
+            src={images.fourJobs.src}
+            alt={images.fourJobs.alt}
+            width={images.fourJobs.width}
+            height={images.fourJobs.height}
+            loading="eager"
+            decoding="async"
+          />
+          <figcaption>{images.fourJobs.caption}</figcaption>
+        </figure>
+      </section>
+
+      <section id="venture-funding">
+        <h2>Venture: Who’s getting funded in fitness, and why</h2>
+
+        <p>Fitness needs a sensing layer, because the data doesn’t exist until something captures it.</p>
+
+        <p>Meaning, we only know how we recovered, how hard our heart worked on a run, because something on our wrist, finger, or chest recorded it.</p>
+
+        <p>That’s why the biggest checks went to devices.</p>
+
+        <p>The four device rounds <a href="https://news.crunchbase.com/health-wellness-biotech/fitness-startup-funding-rebounding-ai-data-h1-2026/" {...ext}>Crunchbase News</a> reported for the first half of 2026 (Whoop, Temple, Eight Sleep and Ultrahuman) raised about $723M. <a href="https://techcrunch.com/2026/03/31/whoop-valuation-10b-series-g-fundraise/" {...ext}>Whoop</a> took $575M of that in one round. Crunchbase named no AI coaching app rounds in the same period.</p>
+
+        <figure class="figure-compact">
+          <img
+            src={images.funding.src}
+            alt={images.funding.alt}
+            width={images.funding.width}
+            height={images.funding.height}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>{images.funding.caption}</figcaption>
+        </figure>
+
+        <p>Why? A device collects your data every day. An app only knows what you type in. Investors back whoever owns that data, because it makes AI coaching worth a monthly fee.</p>
+
+        <p>The big platforms come second. <a href="https://athletechnews.com/fitness-wellness-startups-have-raised-3-6-billion-crunchbase/" {...ext}>Mindbody’s parent merged with EGYM</a> in a $7.5B deal. Garmin <a href="https://athletechnews.com/garmin-acquires-trainingpeaks-trainheroic/" {...ext}>bought TrainingPeaks</a>. They are buying AI coaching rather than waiting for startups to build it.</p>
+
+        <figure class="figure-compact">
+          <img
+            src={images.wearableRounds.src}
+            alt={images.wearableRounds.alt}
+            width={images.wearableRounds.width}
+            height={images.wearableRounds.height}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>{images.wearableRounds.caption}</figcaption>
+        </figure>
+      </section>
+
+      <section id="ai-coaching">
+        <h2>AI coaching apps and personal trainers don’t sell the same thing</h2>
+
+        <p>AI fitness coaching comes from three places: funded startups like Zing Coach and Cora, small indie apps you can find in Product Hunt or other directories, and big apps adding AI to what they already had, like Strava and Runna, or Fitbit rebranding to <a href="https://www.androidauthority.com/google-health-app-coach-rebrand-3664205/" {...ext}>Google Health</a>.</p>
+
+        <p>Every one of these apps runs on user data. Cora reads it from the wearable you already own. Google reads it from your Fitbit. That data shows what people actually do.</p>
+
+        <p>Apps that are software only do the same four jobs:</p>
+
+        <ol class="jobs">
+          <li><strong>Collect:</strong> it tracks and logs each workout.</li>
+          <li><strong>Generate:</strong> it writes the training plan.</li>
+          <li><strong>Automate:</strong> it handles the delivery.</li>
+          <li><strong>Predict:</strong> it reads how the week went and adjusts the plan.</li>
+        </ol>
+
+        <p>AI fitness coaching sells something narrower than a personal trainer does. It’s a way to get coaching advice and direction, and the data points you need to improve. That isn’t the same thing as personal training.</p>
+
+        <p>The next stage for them is a better product, but still a niche one. The end goal is habit formation, and getting there would also change how coaching is delivered.</p>
+
+        <p>The pressure on personal trainers is real, and it leads to one question: “<a href="/posts/ai-for-personal-trainers-top-uses-cases-tasks/">How can I use AI as a personal trainer?</a>” Many trainers haven’t started yet, and their clients aren’t pushing them. In a small <a href="https://www.issaonline.com/blog/post/the-human-advantage-how-ai-is-reshaping-not-replacing-personal" {...ext}>ISSA survey</a> of 90 students and graduates, 64% said their clients had not raised AI at all.</p>
+
+        <p>Trainers who have started use AI to compete with the apps built to replace them.</p>
+
+        <p><strong>Steer AI, and don’t let it steer you.</strong> In an AI coaching app, the data and the programming do the steering. The app reads the logs, changes the plan, and the client follows it.</p>
+
+        <p>When you steer, AI does the logging, the summaries, and the first draft of a program. You read the client, decide what changes and why, and keep the relationship. The data informs your decision. It doesn’t make it.</p>
+
+        <aside class="related-read">
+          <p class="kicker">Related guide</p>
+          <h2>Where does AI actually fit in a personal trainer’s business?</h2>
+          <p>See the tasks where AI delivers the highest return and where a specialist or human check still matters.</p>
+          <a class="button" href="/posts/ai-for-personal-trainers-top-uses-cases-tasks/">Read the AI use-case guide</a>
+        </aside>
+      </section>
+
+      <section id="gyms">
+        <h2>Gyms meet AI inside their software, and its job is automation</h2>
+
+        <p>Most gyms run on “traditional” software, spreadsheets, or older systems. There’s no fitness-specific data yet, but a <a href="https://www.bluevine.com/blog/small-business-ai-trends-report-2026" {...ext}>Bluevine survey</a> of US owners of businesses with 2 to 249 employees shows how much small businesses spend on AI each month:</p>
+
+        <ul>
+          <li>33% spend nothing on AI tools</li>
+          <li>28% spend $25 to $99 a month</li>
+          <li>16% spend $100 to $249 a month</li>
+          <li>10% spend $250 or more</li>
+        </ul>
+
+        <p>With budgets this small, most gyms will meet AI inside the software that already holds their member data: bookings, payments, check-ins, and inquiries.</p>
+
+        <p>You have three options right now. You can build your own system and own everything. You can keep one central layer that holds your data, and connect tools to it. Or you can run several specialist tools, each holding its own slice.</p>
+
+        <p>Whichever you pick, AI does four jobs inside a gym:</p>
+
+        <ul>
+          <li><strong>Collect:</strong> it pulls check-ins, bookings, payments, and inquiries into one member record, so nothing lives in five places.</li>
+          <li><strong>Predict:</strong> it spots which members are about to leave, while you can still do something about it.</li>
+          <li><strong>Automate:</strong> it handles the small repeat tasks, like payment reminders, booking confirmations, and first replies to inquiries.</li>
+          <li><strong>Generate:</strong> it writes the training plans, follow-up messages, and weekly reports your staff would otherwise write by hand.</li>
+        </ul>
+
+        <p>The first job decides the rest. AI can only predict, automate, and generate from what it has collected.</p>
+
+        {/* Case study slot: FxM gym case studies go here once published. */}
+      </section>
+
+      <section id="data-fight">
+        <h2>The data fight</h2>
+
+        <p>Across AI, the winners so far are the companies that collect data and do something with it at a larger scale than everyone else. Fitness AI works the same way. That’s why there’s a data fight: some platforms are closing their data off, and others are opening it.</p>
+
+        <p><a href="https://communityhub.strava.com/developers-api-7/api-agreement-update-how-data-appears-on-3rd-party-apps-7636" {...ext}>Strava</a> started restricting outside access in 2024. In 2026, <a href="https://the5krunner.com/2026/10/14/garmin-api-intervals-third-party-apps/" {...ext}>Garmin</a> paused new developer access and banned apps from passing its data on. <a href="https://developers.google.com/health/about?hl=en" {...ext}>Google</a> retired the old Fitbit connection the same year and now puts every app through a privacy and security review.</p>
+
+        <p><a href="https://www.wodify.com/blog/wodify-mcp-connector-api-access" {...ext}>Wodify</a> went the other way. It lets gym owners ask questions about their own data in Claude or ChatGPT. Its reason: gym software usually gives owners fixed reports, and owners want to build their own dashboards and automations. In Wodify’s words, “your data is yours.”</p>
+
+        <p>Customers are watching the same fight from the other side: who gets to see their data. In <a href="https://abcfitness.com/press-release/summer_wellness_watch_report/" {...ext}>ABC Fitness’s survey</a>, 55% of consumers said data and privacy worry them when they use AI fitness tools. Oura learned that in 2025. A <a href="https://techcrunch.com/2025/09/09/smart-ring-maker-ouras-ceo-addresses-recent-backlash-says-future-is-a-cloud-of-wearables/" {...ext}>public backlash</a> over who it works with went viral, and its CEO had to <a href="https://fortune.com/2025/09/09/oura-ceo-tom-hale-data-privacy-oura-ring-defense-department-palantir/" {...ext}>promise publicly</a> never to sell user data.</p>
+
+        <p><strong>My take:</strong> owning your data has two parts: you control who gets in, and you keep the right to take it out. Strava and Garmin show the first part. They decide who reads their data, even though it has cost them goodwill with users and developers. A gym needs both parts.</p>
+
+        <p>Toward outsiders, you decide who gets access. Toward your own software, you make sure you can get your data out.</p>
+
+        <p>Your check-ins, attendance, and app logs are what will help you improve your product, deliver it better, and keep and grow your members. Keep them in a system you control and can export. If a larger network can teach your system more, use it, as long as your data stays yours to take with you.</p>
+
+        <aside class="related-read wearable-cta">
+          <p class="kicker">Related guide</p>
+          <h2>Turn wearable data into a coaching service.</h2>
+          <p>See how trainers turn wearable data into programme decisions, a clear client deliverable and a service they can price sustainably.</p>
+          <a class="button" href="/posts/wearable-data-and-data-driven-coaching/">Read the wearable data guide</a>
+        </aside>
+      </section>
+
+      <section id="where-fitness-ai-is-going">
+        <h2>Where fitness AI is going</h2>
+
+        <p>Three signals show where fitness AI is heading:</p>
+
+        <ul>
+          <li><strong>Human coaching becomes the premium:</strong> AI apps compete on price, while <a href="https://athletechnews.com/future-pulls-the-plug-on-ai-personal-training-commits-to-human-coaches/" {...ext}>Future</a> scrapped its free AI beta and sells human coaching from $129 a month.</li>
+          <li><strong>Access to your own data:</strong> whoever holds the member data decides which tools read it and what AI learns from it.</li>
+          <li><strong>Automation and prediction become the main job:</strong> of the four jobs, these two will pay off first for fitness businesses: predicting who’s about to leave, and automating the work that keeps them.</li>
+        </ul>
+      </section>
+
+      <section id="what-this-means">
+        <h2>What this means for trainers and gyms</h2>
+
+        <p>AI in the fitness industry comes down to one question: who holds the data, and what do they do with it? The answer shows up at every level.</p>
+
+        <ul class="takeaways">
+          <li><strong>Investors pay for data they can’t get anywhere else.</strong> Devices raised about $723M in the first half of this year, while Crunchbase named no AI coaching app rounds. A device records the data itself. An app has to get it from somewhere else.</li>
+          <li><strong>AI coaching apps sell a plan. Trainers sell judgment.</strong> The apps are a cheaper way to get advice, which isn’t the same as being coached. Trainers are fine for now, as long as they use AI for the logging and the first draft, and keep making the calls themselves.</li>
+          <li><strong>For gyms, the data comes before the AI.</strong> AI can only work on what it can reach. So get your check-ins, bookings, and payments into one place you control and can export. Then start where it pays first: spotting who’s about to leave and automating the follow-up that keeps them.</li>
+        </ul>
+
+        <aside class="offer-cta" aria-labelledby="offer-cta-title">
+          <p class="kicker">Claude for fitness businesses</p>
+          <h2 id="offer-cta-title">Get one Claude workspace with three workflows, fitted to how you work.</h2>
+          <p>Your offers, your writing examples and your rules go into Claude once. Then Claude takes the recurring tasks we agree on. You still review everything.</p>
+
+          <div class="offer-flow">
+            <div class="offer-col">
+              <p class="offer-label">Loaded once</p>
+              <ul class="offer-chips">
+                <li>How you do each task today</li>
+                <li>Your offers and pricing</li>
+                <li>Your schedule and hours</li>
+                <li>Your writing examples and tone</li>
+                <li>Your rules, including what you review</li>
+              </ul>
+            </div>
+            <span class="offer-arrow" aria-hidden="true">→</span>
+            <div class="offer-col offer-os">
+              <p class="offer-label">Your gym or coach OS</p>
+              <p class="offer-os-card">One workspace that works the way you do.</p>
+            </div>
+            <span class="offer-arrow" aria-hidden="true">→</span>
+            <div class="offer-col">
+              <p class="offer-label">Three workflows · typical picks</p>
+              <ol class="offer-workflows">
+                <li>Replying to inquiries</li>
+                <li>Check-in replies and weekly recaps</li>
+                <li>Planning a week of posts</li>
+              </ol>
+            </div>
+          </div>
+
+          <p class="offer-terms"><strong>Free 30-minute call.</strong> If it’s a fit, the optional Claude Workspace Sprint is $297, one-time, built in 7 days.</p>
+          <div class="offer-actions">
+            <a class="button" href="/claude-for-fitness-businesses/">See what’s included</a>
+            <a class="offer-secondary" href="/claude-for-fitness-businesses/#book">Book a free strategy call</a>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </article>
+
+  <style>
+    article {
+      --article-width: 70ch;
+    }
+
+    .article-header {
+      border-bottom: 1px solid #dfe3e6;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .eyebrow,
+    .kicker {
+      color: #068f8c;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 6.8vw, 4.65rem);
+      letter-spacing: -0.045em;
+      line-height: 1.02;
+      margin: 0.8rem 0 1.3rem;
+      max-width: 18ch;
+    }
+
+    .dek {
+      color: #3a4252;
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+
+    .byline {
+      align-items: center;
+      color: #606a78;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      gap: 0.45rem;
+      margin-top: 1.7rem;
+    }
+
+    .byline span:first-child {
+      color: #252a34;
+      font-weight: 700;
+    }
+
+    .article-body {
+      font-size: 1.06rem;
+      margin: 0 auto;
+      max-width: var(--article-width);
+    }
+
+    .lead {
+      color: #252a34;
+      font-size: 1.3rem;
+      font-weight: 560;
+      line-height: 1.55;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 5vw, 2.75rem);
+      letter-spacing: -0.035em;
+      line-height: 1.18;
+      margin: 4.8rem 0 1.35rem;
+      scroll-margin-top: 2rem;
+    }
+
+    p,
+    li {
+      color: #3a4252;
+    }
+
+    li + li {
+      margin-top: 0.55rem;
+    }
+
+    strong {
+      color: #252a34;
+    }
+
+    a {
+      font-weight: 650;
+      text-underline-offset: 0.2rem;
+    }
+
+    figure {
+      margin: 2.5rem 0;
+    }
+
+    figure img {
+      border: 1px solid #dfe3e6;
+      border-radius: 12px;
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .hero-figure {
+      margin-left: calc((min(900px, 100vw - 3rem) - min(70ch, 100vw - 3rem)) / -2);
+      margin-right: calc((min(900px, 100vw - 3rem) - min(70ch, 100vw - 3rem)) / -2);
+      margin-top: 0;
+    }
+
+    .contents,
+    .source-note {
+      background: #f5fbfb;
+      border: 1px solid #d3eeee;
+      border-radius: 14px;
+      margin: 2.8rem 0;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .contents > p {
+      color: #252a34;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .contents ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .contents a {
+      color: #252a34;
+      text-decoration-color: #08d9d6;
+    }
+
+    .source-note p {
+      margin-top: 0;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+    }
+
+    .workflow {
+      align-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.8rem 0;
+    }
+
+    .workflow strong {
+      background: #f5fbfb;
+      border: 1px solid #d3eeee;
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+    }
+
+    .workflow span {
+      align-self: center;
+      color: #068f8c;
+      font-weight: 800;
+    }
+
+    .related-read,
+    .subscribe-cta {
+      background: #252a34;
+      border-radius: 16px;
+      color: #fff;
+      margin: 3.5rem 0 1rem;
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+    }
+
+    .related-read .kicker,
+    .subscribe-cta .kicker {
+      color: #08d9d6;
+      margin: 0;
+    }
+
+    .related-read h2,
+    .subscribe-cta h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .related-read p,
+    .subscribe-cta p {
+      color: #dbe2e5;
+    }
+
+    .button {
+      background: #08d9d6;
+      border: 1px solid #08d9d6;
+      color: #252a34;
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .button-light {
+      background: #fff;
+      border-color: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .hero-figure {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .button {
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 3.4vw, 1.7rem);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 3rem 0 1rem;
+      scroll-margin-top: 2rem;
+    }
+
+    figcaption {
+      color: #687281;
+      font-size: 0.88rem;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .split-list {
+      padding-left: 1.25rem;
+    }
+
+    .split-list li p:first-child {
+      margin-bottom: 0.35rem;
+    }
+
+    .split-list li p:last-child {
+      margin-top: 0;
+    }
+
+    .takeaways li + li {
+      margin-top: 1rem;
+    }
+    .figure-compact,
+    .figure-medium {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .figure-compact {
+      max-width: 460px;
+    }
+
+    .figure-medium {
+      max-width: 560px;
+    }
+
+    .offer-cta {
+      background: #252a34;
+      border-radius: 16px;
+      color: #fff;
+      margin: 3.5rem 0 1rem;
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+    }
+
+    .offer-cta .kicker {
+      color: #08d9d6;
+      margin: 0;
+    }
+
+    .offer-cta h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+      margin: 0.6rem 0 1rem;
+    }
+
+    .offer-cta p {
+      color: #dbe2e5;
+    }
+
+    .offer-cta strong {
+      color: #fff;
+    }
+
+    .offer-flow {
+      align-items: stretch;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 1.2fr auto 1fr auto 1.2fr;
+      margin: 1.6rem 0;
+    }
+
+    .offer-col {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .offer-label {
+      color: #08d9d6 !important;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .offer-chips,
+    .offer-workflows {
+      margin: 0;
+      padding: 0;
+    }
+
+    .offer-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      list-style: none;
+    }
+
+    .offer-chips li,
+    .offer-workflows li {
+      color: #fff;
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .offer-chips li {
+      background: rgba(8, 217, 214, 0.1);
+      border: 1px solid rgba(8, 217, 214, 0.35);
+      border-radius: 999px;
+      padding: 0.3rem 0.7rem;
+    }
+
+    .offer-chips li + li,
+    .offer-workflows li + li {
+      margin-top: 0;
+    }
+
+    .offer-os {
+      align-items: center;
+      background: #08d9d6;
+      border-color: #08d9d6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .offer-os .offer-label {
+      color: #252a34 !important;
+    }
+
+    .offer-os-card {
+      color: #252a34 !important;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .offer-workflows {
+      counter-reset: wf;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .offer-workflows li {
+      background: #fff;
+      border-radius: 10px;
+      color: #252a34;
+      counter-increment: wf;
+      font-weight: 700;
+      padding: 0.55rem 0.7rem;
+    }
+
+    .offer-workflows li::before {
+      color: #068f8c;
+      content: 'Workflow ' counter(wf);
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .offer-arrow {
+      align-self: center;
+      color: #08d9d6;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .offer-terms {
+      margin: 0 0 1.2rem;
+    }
+
+    .offer-actions {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem 1.4rem;
+    }
+
+    .offer-secondary {
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .offer-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-arrow {
+        justify-self: center;
+        transform: rotate(90deg);
+      }
+
+      .figure-compact,
+      .figure-medium {
+        max-width: 100%;
+      }
+    }
+  </style>
+</Layout>
