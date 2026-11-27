@@ -1,0 +1,581 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Pick the Right Gym Automation for Your Gym: 3 Options Compared';
+const metaTitle = 'Gym Automation: Software vs Ready-Made vs Custom Build';
+const description = 'Gym automation may already run in your software. See what it covers, when a ready-made AI tool helps, and when a custom build is worth it.';
+const canonical = '/posts/types-of-ai-automation-for-gyms/';
+const pageUrl = `https://fitnessxmarketing.com${canonical}`;
+const articleId = `${pageUrl}#article`;
+const publishedTime = '2026-11-27T12:00:00.000Z';
+const imageBase = '/posts/types-of-ai-automation-for-gyms/images';
+const heroImage = `https://fitnessxmarketing.com${imageBase}/gym-automation-routes.png`;
+const heroImageAlt = 'Which gym automation route fits: software first for one site on one platform, a ready-made AI tool for one clear problem, and a custom build for gyms with their own app, data, tech-comfortable team, clear processes and budget';
+const ext = { target: '_blank', rel: 'noopener noreferrer' };
+
+const faqs = [
+  {
+    q: 'Should I build my own gym automations or use what my gym software comes with?',
+    a: 'Start with what your software comes with. Build only for the tasks where your own way of working matters, like replies in your voice or a branded app.',
+  },
+  {
+    q: 'How do gyms use AI?',
+    a: 'AI automation for gyms comes in three forms: the automation already in their gym software, a ready-made AI tool for one job like answering calls, or an AI workspace or custom build around how they sell. Most should start with the software. In every case, a person still checks what goes out.',
+  },
+  {
+    q: 'What is the difference between gym automation and your gym software?',
+    a: 'The software is where your data lives. Automation is the set of rules or AI that acts on that data. Your software stores your members, bookings and payments. Automation uses that information to do something, like sending a reminder or flagging a member who stopped coming. Most gym software includes some automation, so check what yours does before you add another tool.',
+  },
+];
+
+const related = [
+  {
+    href: '/posts/personal-trainer-claude-setup/',
+    kicker: 'Case study',
+    title: "10 Hours a Week Back: A Client's AI Workspace Cleanup",
+    description: 'How one trainer went from 14 Claude projects to 10 and got 10+ hours back every week.',
+    image: '/posts/personal-trainer-claude-setup/images/weekly-plan-hub.png',
+    imageAlt: 'A weekly plan for a personal trainer with the top 3 priorities and tasks tagged by area',
+    width: 1400,
+    height: 830,
+  },
+  {
+    href: '/posts/ai-in-fitness-industry/',
+    kicker: 'Fitness industry',
+    title: 'Fitness AI in 2026: What’s Built, Funded and Used',
+    description: 'Where the money goes in fitness AI, what gyms actually use, and who owns the data.',
+    image: '/posts/ai-in-fitness-industry/images/four-jobs-of-fitness-ai.png',
+    imageAlt: 'The four kinds of fitness AI: sensing, predictive, generative and automation, with example companies under each',
+    width: 1600,
+    height: 1230,
+  },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': articleId,
+      headline: title,
+      name: metaTitle,
+      description,
+      abstract:
+        'Gym automation comes in three routes: the automation already in your gym software, a ready-made AI tool for one job, or a custom build around how your gym runs. Most gyms should start with their software.',
+      url: pageUrl,
+      mainEntityOfPage: pageUrl,
+      inLanguage: 'en',
+      datePublished: publishedTime,
+      dateModified: publishedTime,
+      articleSection: 'AI for Gyms',
+      genre: 'Guide',
+      image: {
+        '@type': 'ImageObject',
+        url: heroImage,
+        width: 1600,
+        height: 1240,
+        caption: 'Which gym automation route fits, by what your gym has today',
+      },
+      author: [
+        {
+          '@type': 'Person',
+          name: 'Melisa Gjika',
+          jobTitle: 'AI operations for fitness businesses',
+          worksFor: { '@id': 'https://fitnessxmarketing.com/#organization' },
+        },
+        { '@id': 'https://fitnessxmarketing.com/#organization' },
+      ],
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://fitnessxmarketing.com/#organization',
+        name: 'Fitness x Marketing',
+        url: 'https://fitnessxmarketing.com/',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://fitnessxmarketing.com/fitness-x-marketing-logo.jpeg',
+        },
+      },
+      isPartOf: { '@id': 'https://fitnessxmarketing.com/#website' },
+      audience: { '@type': 'Audience', audienceType: 'Gym and fitness studio owners' },
+      about: [
+        { '@type': 'Thing', name: 'Gym automation' },
+        { '@type': 'Thing', name: 'AI automation for gyms' },
+        { '@type': 'Thing', name: 'Gym management software' },
+        { '@type': 'Thing', name: 'Gym marketing automation' },
+      ],
+      mentions: [
+        { '@type': 'SoftwareApplication', name: 'Claude', applicationCategory: 'AI assistant', publisher: { '@type': 'Organization', name: 'Anthropic' } },
+        { '@type': 'SoftwareApplication', name: 'ChatGPT', applicationCategory: 'AI assistant', publisher: { '@type': 'Organization', name: 'OpenAI' } },
+        { '@type': 'SoftwareApplication', name: 'Goodcall', applicationCategory: 'AI receptionist', url: 'https://www.goodcall.com/' },
+        { '@type': 'SoftwareApplication', name: 'Healthdesk', applicationCategory: 'Lead follow-up', url: 'https://healthdesk.ai/' },
+        { '@type': 'SoftwareApplication', name: 'Zapier', applicationCategory: 'Workflow automation' },
+        { '@type': 'Organization', name: 'WorkLoopie', url: 'https://www.workloopie.com/' },
+      ],
+      keywords: [
+        'gym automation',
+        'AI automation for gyms',
+        'gym automation system',
+        'ready-made gym automation',
+        'gym marketing automation',
+        'AI receptionist',
+        'fitness business management software',
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/<[^>]+>/g, '') },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fitnessxmarketing.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://fitnessxmarketing.com/posts/' },
+        { '@type': 'ListItem', position: 3, name: metaTitle, item: pageUrl },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={metaTitle}
+  titleTemplate={false}
+  description={description}
+  canonical={canonical}
+  type="article"
+  image={heroImage}
+  imageAlt={heroImageAlt}
+  publishedTime={publishedTime}
+  modifiedTime={publishedTime}
+  structuredData={structuredData}
+>
+  <article>
+    <header class="article-header">
+      <p class="eyebrow"><a href="/posts/">Articles</a> / AI for Gyms</p>
+      <h1>{title}</h1>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">Gym automation comes in three routes:</p>
+      <ul>
+        <li>The automation already in your gym software</li>
+        <li>A ready-made AI tool for one job</li>
+        <li>A custom build around how your gym runs</li>
+      </ul>
+      <p>For most gyms, the software is the place to start. Add a ready-made tool for one clear problem, and build only where your way of working is the point.</p>
+      <p>The pick depends on the tools you already use, your data, and how comfortable you are running workflows.</p>
+
+      <p class="note note-coral">I set up Claude or ChatGPT around how your business already works. <a href="/claude-for-fitness-businesses/">Read more</a>.</p>
+
+      <section id="what-it-is">
+        <h2>What Gym Automation Is (and What It Isn't)</h2>
+        <p>Gym automation means a system handles the tasks that repeat every week, so you and your staff stop doing them by hand. You probably run some already: your software logs check-ins, and it may send a welcome email to new members or an offer when a membership is due for renewal.</p>
+        <p>AI automation for gyms takes that a step further because it learns from your own data. It helps you test messages faster and act sooner on what it finds. That is why it matters now: it moves what you already run through email or your CRM, the system that stores your leads and contacts, to the next step.</p>
+        <p>A gym automation system usually covers:</p>
+        <ul>
+          <li>Replies to new leads</li>
+          <li>Class and appointment reminders</li>
+          <li>Bookings and waitlists</li>
+          <li>Check-ins with members who stop coming</li>
+          <li>Weekly reports</li>
+        </ul>
+        <p>There are two kinds, and the difference shows up in what your members receive:</p>
+        <ul>
+          <li><strong>Rules-based workflow automation</strong> follows a trigger you set. For example, if a member misses two weeks, they get the same text as everyone else. It is reliable, but it can't tell a member on holiday from one about to quit.</li>
+          <li><strong>AI-powered automation</strong> reads that member's history first, then drafts a reply or makes a choice within limits you set. The member gets a message that fits them, and you still decide what goes out.</li>
+        </ul>
+        <p>For a task-by-task view, see <a href="/posts/ai-for-personal-trainers-top-uses-cases-tasks/">where AI fits task by task</a>.</p>
+        <figure class="portrait-figure">
+          <img src={`${imageBase}/ai-use-cases-for-personal-trainers.png`} alt="AI tasks grouped by return: lead response, check-ins, onboarding and automations first, then content, programs, nutrition and newsletters, with specialist areas like wearables and bookkeeping layered in later" width="1200" height="1238" loading="lazy" decoding="async" />
+          <figcaption>Where AI fits, task by task.</figcaption>
+        </figure>
+        <p>What automation doesn't do is replace the relationship. Someone on your team still owns each member.</p>
+      </section>
+
+      <section id="three-options">
+        <h2>Your Three Options for AI Automation in Your Gym</h2>
+        <p>Each one is a different way to set up AI automation for gyms like yours: your software, a ready-made tool or a custom build. Here is what each costs and where its limits are.</p>
+
+        <div class="steps">
+          <section id="software">
+            <h3>Software: the automation already in your platform</h3>
+            <p>Your fitness business management software probably has native automation built in. These are rules that run inside the gym management system you already use for bookings and payments.</p>
+            <p>The company behind your platform has built and tested these features across many gyms. That helps a smaller gym: you may not have enough members to see who is likely to cancel, but a platform that learns from many gyms can spot the signs sooner.</p>
+            <p>That is why it's the place to start. It runs on reliable infrastructure, the features are proven and your data is already in it. For most gyms, this is the way to go.</p>
+            <p><strong>Its limit:</strong> it works the platform's way. What you get depends on your plan, and anything outside the platform needs another tool.</p>
+          </section>
+
+          <section id="ready-made">
+            <h3>Ready-made automation: one tool, one job</h3>
+            <p>Ready-made gym automation is a tool you buy as it comes, for one task. Think of an AI receptionist that answers calls and texts, or gym marketing automation that follows up with every new lead.</p>
+            <p>These tools cost less and do one thing well. AI-first tools also work differently from traditional software. They read a message and answer it, instead of only firing a set rule.</p>
+            <p>For example, <a href="https://www.goodcall.com/pricing" {...ext}>Goodcall</a> answers calls from $79 a month, and <a href="https://healthdesk.ai/" {...ext}>Healthdesk</a> follows up with leads for $199 a month per location.</p>
+            <p>A ready-made tool sits outside your gym software, and that's where things slip. Say your AI receptionist books a trial class at 10 p.m. If it isn't connected to your software, the booking never shows up there.</p>
+            <p>No welcome email goes out, and your coach doesn't know someone is coming. Some tools connect on their own.</p>
+            <p>Others need someone to link them with Zapier, a tool that passes data between apps. Either way, every new tool is one more bill and one more thing to check. If the link breaks, the follow-ups stop and nobody tells you.</p>
+            <p>So keep your software as the base and use a ready-made tool for one job on top. That makes it a good first AI investment, or a fix for a set period or goal, like the January rush.</p>
+          </section>
+
+          <section id="custom-build">
+            <h3>Custom build: automation that fits how your gym runs</h3>
+            <p>In a custom build, a specialist builds a system around how your business actually runs. It fits best when you have your own or a branded app, a lot of your own data, and a team comfortable with tech. The build plugs into the tools you already use instead of adding another one.</p>
+            <p>One example: WorkLoopie built a Google Form, Google Sheets and Zapier flow for one fitness studio that creates or updates each client in its CRM and coaching app.</p>
+            <p>The build took three weeks and cut onboarding from 15 to 20 minutes to <a href="https://www.workloopie.com/customer-stories/those-fitness-chicks" {...ext}>8 minutes per client</a>, as WorkLoopie reports it.</p>
+            <p>This will most probably cost more; it needs clear processes first, and someone has to keep it current. It is also a question of whether most gyms need a system that size built from scratch.</p>
+            <p>FxM sits at the entry level of this route. I work inside your business, see how you do each recurring task, and set up a Claude or ChatGPT workspace with workflows around your offers, rules, and voice. That is where my work stops: connected systems like the one above are specialist jobs.</p>
+            <p>For most gyms, getting organized with me while you keep your software beats going fully custom. You get no custom software and no app, and you run and review everything.</p>
+            <p><a href="/claude-for-fitness-businesses/#book">Book a free call</a> to see if it fits. If you go ahead, the setup is $297, one time.</p>
+            <a class="article-card" href="/posts/personal-trainer-claude-setup/">
+              <img src="/posts/personal-trainer-claude-setup/images/weekly-plan-hub.png" alt="A weekly plan for a personal trainer with the top 3 priorities and tasks tagged by area" width="1400" height="830" loading="lazy" decoding="async" />
+              <span class="article-card-text">
+                <span class="kicker">Case study</span>
+                <strong>10 Hours a Week Back: A Client's AI Workspace Cleanup</strong>
+                <span class="related-desc">How one trainer went from 14 Claude projects to 10 and got 10+ hours back every week.</span>
+              </span>
+            </a>
+          </section>
+        </div>
+      </section>
+
+      <section id="how-to-choose">
+        <h2>How to Choose the Right Gym Automation</h2>
+        <p>Pick by your situation, not by the tool. A good gym automation system is one you will actually keep running. Answer these five questions:</p>
+        <ul>
+          <li>How comfortable are you with tech, AI and workflows?</li>
+          <li>How fast do you move between tools today?</li>
+          <li>How well do you understand what an automation can and can't do?</li>
+          <li>Do you have enough of your own data, or do you need a platform's?</li>
+          <li>Do you own an app or a set of tools you want to keep?</li>
+        </ul>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><td></td><th scope="col">Software</th><th scope="col">Ready-made</th><th scope="col">Custom build</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Who builds it</th><td>Your platform</td><td>The tool's maker</td><td>Specialist</td></tr>
+              <tr><th scope="row">Fits how you work</th><td>Partly</td><td>Rarely</td><td>Yes</td></tr>
+              <tr><th scope="row">Setup effort</th><td>Low</td><td>Low</td><td>Higher</td></tr>
+              <tr><th scope="row">Cost shape</th><td>Included or add-on</td><td>Per tool</td><td>Project fee</td></tr>
+              <tr><th scope="row">Data it learns from</th><td>Many gyms</td><td>Little</td><td>Yours</td></tr>
+              <tr><th scope="row">Tools to connect</th><td>None</td><td>One each</td><td>The ones you use</td></tr>
+              <tr><th scope="row">Best for</th><td>One platform</td><td>One clear task</td><td>Own app</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>The rule of thumb:</strong> check your software first, buy ready-made for one narrow job, and build only where your way of working is the point. Start with the task that takes the most hours each week. If it depends on how you sell or speak to members, start with a workspace, and go fully custom only if you outgrow it.</p>
+      </section>
+
+      <section id="which-route">
+        <h2>Which Gym Automation Route Fits Which Gym</h2>
+        <figure class="small-figure">
+          <img src={`${imageBase}/gym-automation-routes.png`} alt={heroImageAlt} width="1600" height="1240" loading="lazy" decoding="async" />
+          <figcaption>Find your gym in the left column, then follow the dot to its route.</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Software first</strong>, if you run one site on one platform and staff handle the rest. Turn on the native automation you already pay for before you buy anything else. This fits most gyms.</li>
+          <li><strong>Ready-made</strong>, if you have one clear problem, like missed calls or slow lead replies, or one goal for a set period. Add one AI receptionist or one gym marketing automation tool on top of your software.</li>
+          <li><strong>An AI workspace</strong>, if your replies, follow-ups and content depend on how you sell and speak to members. You keep your software and set up Claude or ChatGPT around your offers and voice.</li>
+          <li><strong>A full custom build</strong>, if you have a branded app, a lot of your own data, a team comfortable with tech, clear processes and a budget for setup and upkeep.</li>
+        </ul>
+        <p class="note"><strong>Example:</strong> a two-coach studio runs bookings in its gym software and answers DMs by hand at night. The software already covers reminders, so that stays. The DMs depend on how the owner sells, so they go to an AI workspace set up in the owner's voice, not to a full custom build.</p>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+          {faqs.map((f) => (
+            <div class="faq">
+              <h3>{f.q}</h3>
+              <p set:html={f.a} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="read-next">
+        <h2>Keep Reading</h2>
+        <div class="related-grid">
+          {related.map((r) => (
+            <a class="related-card" href={r.href}>
+              <img src={r.image} alt={r.imageAlt} width={r.width} height={r.height} loading="lazy" decoding="async" />
+              <span class="kicker">{r.kicker}</span>
+              <strong>{r.title}</strong>
+              <span class="related-desc">{r.description}</span>
+            </a>
+          ))}
+        </div>
+
+        <aside class="final-cta">
+          <p class="kicker">Free call</p>
+          <h2>Want to know which route fits your gym?</h2>
+          <p>We go through your recurring tasks, and you decide after.</p>
+          <a class="button button-light" href="/claude-for-fitness-businesses/#book">Book a free call</a>
+        </aside>
+      </section>
+    </div>
+  </article>
+
+  <style>
+    article {
+      --article-width: 70ch;
+    }
+
+    .article-header {
+      border-bottom: 1px solid #dfe3e6;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    .eyebrow,
+    .kicker {
+      color: #068f8c;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.06;
+      margin: 0.8rem 0 1.3rem;
+      max-width: 22ch;
+    }
+
+    .article-body {
+      font-size: 1.06rem;
+      margin: 0 auto;
+      max-width: var(--article-width);
+    }
+
+    .lead {
+      color: #252a34;
+      font-size: 1.3rem;
+      font-weight: 560;
+      line-height: 1.55;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.18;
+      scroll-margin-top: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 5vw, 2.75rem);
+      letter-spacing: -0.035em;
+      margin: 4.8rem 0 1.35rem;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+      letter-spacing: -0.015em;
+      margin: 0 0 0.8rem;
+    }
+
+    p,
+    li {
+      color: #3a4252;
+    }
+
+    li + li {
+      margin-top: 0.55rem;
+    }
+
+    strong {
+      color: #252a34;
+    }
+
+    a {
+      font-weight: 650;
+      text-underline-offset: 0.2rem;
+    }
+
+    figure {
+      margin: 2.5rem 0;
+    }
+
+    figure img {
+      border-radius: 12px;
+      display: block;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    figcaption {
+      color: #687281;
+      font-size: 0.88rem;
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .wide-figure {
+      margin-left: calc((min(900px, 100vw - 3rem) - min(70ch, 100vw - 3rem)) / -2);
+      margin-right: calc((min(900px, 100vw - 3rem) - min(70ch, 100vw - 3rem)) / -2);
+    }
+
+    /* Images line up with where bullet text starts (list indent) and keep the same inset on the right. */
+    .portrait-figure,
+    .small-figure {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    .note.note-coral {
+      background: #fff1ec;
+      border-left-color: #ff6b4a;
+    }
+
+    .note.note-coral a {
+      color: #e04f2e;
+      text-decoration-color: #ff6b4a;
+    }
+
+    .article-card {
+      align-items: center;
+      border: 1px solid #dfe3e6;
+      border-radius: 16px;
+      color: #252a34;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 150px minmax(0, 1fr);
+      margin: 2rem 0 0;
+      padding: 0.75rem;
+      text-decoration: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .article-card:hover {
+      border-color: #08d9d6;
+      box-shadow: 0 18px 40px -28px rgba(37, 42, 52, 0.45);
+    }
+
+    .article-card img {
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      height: auto;
+      object-fit: cover;
+      object-position: top left;
+      width: 100%;
+    }
+
+    .article-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .article-card strong {
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .note {
+      background: #eaf6f6;
+      border-left: 4px solid #08d9d6;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .steps {
+      border-bottom: 1px solid #dfe3e6;
+      margin: 2.5rem 0;
+    }
+
+    .steps > section {
+      border-top: 1px solid #dfe3e6;
+      padding: 1.75rem 0;
+    }
+
+    .steps > section > :last-child {
+      margin-bottom: 0;
+    }
+
+    .button {
+      background: #252a34;
+      border: 1px solid #252a34;
+      color: #fff;
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 0.85rem 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .final-cta {
+      background: #252a34;
+      border-radius: 16px;
+      color: #fff;
+      margin: 3.5rem 0 2rem;
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+    }
+
+    .final-cta .kicker {
+      color: #08d9d6;
+      margin: 0;
+    }
+
+    .final-cta h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .final-cta p {
+      color: #dbe2e5;
+    }
+
+    .button-light {
+      background: #08d9d6;
+      border-color: #08d9d6;
+      color: #252a34;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 2rem 0; border: 1px solid #dfe3e6; border-radius: 14px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.98rem; }
+    thead th, thead td { background: #252a34; color: #fff; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-align: left; text-transform: uppercase; padding: 0.9rem 1.1rem; }
+    tbody th, tbody td { border-top: 1px solid #dfe3e6; padding: 0.9rem 1.1rem; text-align: left; vertical-align: top; }
+    tbody th { color: #252a34; font-weight: 700; }
+    tbody td { color: #3a4252; }
+
+    .faq-list { border-top: 1px solid #dfe3e6; margin-top: 1.5rem; }
+    .faq { border-bottom: 1px solid #dfe3e6; padding: 1.4rem 0; }
+    .faq h3 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+    .faq p { margin: 0; }
+
+    .related-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 1.5rem 0 0; }
+    .related-card { border: 1px solid #dfe3e6; border-radius: 16px; color: #252a34; display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; text-decoration: none; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+    .related-card:hover { border-color: #08d9d6; box-shadow: 0 18px 40px -28px rgba(37, 42, 52, 0.45); }
+    .related-card img { aspect-ratio: 16 / 10; border-radius: 10px; height: auto; object-fit: cover; object-position: top; width: 100%; }
+    .related-card .kicker { margin-top: 0.4rem; }
+    .related-card strong { font-size: 1.1rem; line-height: 1.3; }
+    .related-desc { color: #3a4252; font-size: 0.95rem; font-weight: 400; }
+
+    @media (max-width: 640px) {
+      .article-body { font-size: 1rem; }
+      .wide-figure { margin-left: 0; margin-right: 0; }
+      .button { text-align: center; width: 100%; }
+      .related-grid { grid-template-columns: 1fr; }
+      .article-card { grid-template-columns: 96px minmax(0, 1fr); }
+    }
+  </style>
+</Layout>
