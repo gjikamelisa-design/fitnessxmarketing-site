@@ -571,7 +571,6 @@ export default function FunnelLanding() {
           <a className="hover:text-ink hover:underline" href="/">Home</a>
           <a className="hover:text-ink hover:underline" href="/posts/">Articles</a>
           <a className="hover:text-ink hover:underline" href="/tools/">Free tools</a>
-          <a className="hover:text-ink hover:underline" href="/newsletter/">Newsletter</a>
         </nav>
       </footer>
     </div>

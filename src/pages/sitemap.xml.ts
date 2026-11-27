@@ -10,7 +10,6 @@ const urls = [
   'https://fitnessxmarketing.com/',
   'https://fitnessxmarketing.com/claude-for-fitness-businesses/',
   'https://fitnessxmarketing.com/posts/',
-  'https://fitnessxmarketing.com/newsletter/',
   'https://fitnessxmarketing.com/posts/wearable-data-and-data-driven-coaching/',
   'https://fitnessxmarketing.com/posts/yelp-chatgpt-personal-trainers/',
   'https://fitnessxmarketing.com/posts/ai-for-personal-trainers-top-uses-cases-tasks/',

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 
 const title = 'Where Fitness Is Really Heading in 2026 (No Hype)';
 const h1 = 'A Reality Check on Fitness Heading Into 2026';
@@ -239,7 +240,7 @@ const structuredData = {
           <p class="kicker">Related guide</p>
           <h2>Where does AI actually fit in a personal trainer’s business?</h2>
           <p>See the tasks where AI delivers the highest return and where a specialist or human check still matters.</p>
-          <a class="button" href="/posts/ai-for-personal-trainers-top-uses-cases-tasks">Read the AI use-case guide</a>
+          <a class="button" href="/posts/ai-for-personal-trainers-top-uses-cases-tasks/">Read the AI use-case guide</a>
         </aside>
       </section>
 
@@ -252,7 +253,7 @@ const structuredData = {
           <p class="kicker">Fitness x Marketing</p>
           <h2>Get the next practical fitness-business breakdown.</h2>
           <p>Join the newsletter for useful strategy on marketing, client growth, coaching and AI.</p>
-          <a class="button button-light" href="https://fitnessxmarketing.com/newsletter/">Subscribe</a>
+          <NewsletterSignup dark={true} />
         </aside>
       </section>
     </div>
